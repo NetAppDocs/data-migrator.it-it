@@ -1,0 +1,91 @@
+---
+settings:
+  name: NetApp Data Migrator
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: it-it,us-en,de-de,es-es,fr-fr,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: Documentazione di NetApp Data Migrator
+    url: "/index.html"
+  - title: Note di rilascio
+    entries:
+    - title: Novità
+      url: "/whats-new.html"
+    - title: matrice di supporto
+      url: "/support-matrix.html"
+    - title: Problemi noti
+      url: "/known-issues.html"
+    - title: Limitazioni note
+      url: "/known-limitations.html"
+  - title: Inizia
+    entries:
+    - title: Scopri di più su NetApp Data Migrator
+      url: "/learn-about-data-migrator.html"
+    - title: Decidi se utilizzare NetApp Data Migrator
+      url: "/decide-to-use-data-migrator.html"
+    - title: Avvio rapido
+      url: "/quick-start.html"
+    - title: Requisiti di rete
+      entries:
+      - title: Verificare l'accesso alla rete
+        url: "/networking-requirements.html"
+      - title: Requisiti delle porte
+        url: "/port-requirements.html"
+  - title: Installare, configurare e aggiornare
+    entries:
+    - title: Scopri come installare NetApp Data Migrator
+      url: "/learn-about-install.html"
+    - title: Registrati per un account
+      url: "/register-for-account.html"
+    - title: Distribuisci il piano di controllo e i worker Linux
+      url: "/deploy-control-plane-and-linux-workers.html"
+    - title: Crea le macchine virtuali del piano di controllo e dei worker
+      url: "/create-control-plane-and-worker-vms.html"
+    - title: Convalidare il piano di controllo e la distribuzione dei worker
+      url: "/validate-control-plane-vm.html"
+    - title: Accedi all'interfaccia utente di NetApp Data Migrator
+      url: "/access-data-migrator-ui.html"
+    - title: Configura NetApp Data Migrator
+      url: "/configure-data-migrator.html"
+    - title: Aggiorna il piano di controllo e i worker
+      url: "/upgrade.html"
+  - title: Utilizzare NetApp Data Migrator
+    entries:
+    - title: Creare e gestire progetti
+      url: "/manage-projects.html"
+    - title: Gestisci utenti
+      entries:
+      - title: Aggiungi e gestisci gli utenti
+        url: "/manage-users.html"
+      - title: Gestire il controllo degli accessi
+        url: "/access-control.html"
+    - title: Aggiungere e gestire i file server
+      url: "/manage-file-servers.html"
+    - title: Configura le notifiche in tempo reale
+      url: "/configure-notifications.html"
+    - title: Gestire le opzioni di migrazione
+      entries:
+      - title: Pianifica la migrazione dei dati
+        url: "/configure-bulk-discover.html"
+      - title: Configura la migrazione in blocco
+        url: "/configure-bulk-migrate.html"
+      - title: Configurare il passaggio in blocco
+        url: "/configure-bulk-cutover.html"
+    - title: Gestire i job e le esecuzioni dei job
+      url: "/manage-jobs.html"
+    - title: Genera pacchetto di supporto
+      url: "/generate-support-bundle.html"
+  - title: Domande frequenti
+    url: "/faq.html"
+  - title: Ottieni aiuto
+    entries:
+    - title: Registrati per ricevere supporto
+      url: "/register-for-support.html"
+    - title: Risoluzione dei problemi
+      url: "/troubleshoot.html"
+  - title: Note legali
+    url: "/legal-notices.html"

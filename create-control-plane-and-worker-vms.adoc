@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: create-control-plane-and-worker-vms.html 
+keywords: aws, azure, google cloud, ova, control plane, worker vm, images, linux, windows 
+summary: 'Creare la macchina virtuale (VM) del piano di controllo e le VM worker Linux e Windows per accedere a NetApp Data Migrator.' 
+---
+= Creare il piano di controllo e le macchine virtuali di lavoro per accedere a NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Creare la macchina virtuale (VM) del piano di controllo e le VM worker Linux e Windows per accedere a NetApp Data Migrator.
+
+.Prima di iniziare
+Solo per le migrazioni SMB, scarica Windows Worker Installer dal link:https://mysupport.netapp.com/site/downloads["Sito di supporto NetApp"^].
+
+.Informazioni su questa attività
+È possibile creare la macchina virtuale del piano di controllo e la macchina virtuale worker Linux utilizzando le immagini che hai distribuito tramite AWS, Azure o Google Cloud service oppure i modelli OVA. La macchina virtuale worker Windows viene creata utilizzando il Windows Worker Installer. La macchina virtuale worker Linux supporta le migrazioni NFS e la macchina virtuale worker Windows supporta le migrazioni SMB. È possibile creare più macchine virtuali worker in base alle proprie esigenze.
+
+.Passaggi
+. Utilizzare l'immagine del piano di controllo distribuita per creare una macchina virtuale del piano di controllo con la seguente configurazione consigliata:
++
+[cols="1,2a"]
+|===
+| Descrizione | Impostazione consigliata 
+
+
+| Configurazione VM  a| 
+** Immagine: Immagine personalizzata importata per il piano di controllo
+** Tipo di scheda di interfaccia di rete: gVNIC
+** Dimensioni: 8 vCPU, 64 GB di RAM
+** Storage: 200 GiB
++
+--
+Per la pianificazione dello storage, è consigliabile allocare circa 1,1 GB di spazio su disco per ogni milione di file. È possibile stimare il fabbisogno totale di spazio su disco moltiplicando il numero previsto di file (in milioni) per 1,1. Ad esempio, se si prevedono circa 5 milioni di file, lo spazio su disco stimato necessario per i metadati dei file sarà di 5 × 1,1 GB = 5,5 GB.
+
+Inoltre, è necessario allocare il seguente storage:
+
+*** 50 GB aggiuntivi per le immagini Docker, l'archiviazione del sistema operativo e altri componenti a livello di sistema
+*** Prevedere uno spazio buffer aggiuntivo per far fronte alla crescita futura e ai costi operativi
+
+
+--
+
+
+
+
+| Hyperscaler  a| 
+** AWS: istanza r7i.2xlarge
+** Dimensioni della macchina virtuale Azure: Standard_E8ds_v5
+** Tipo di macchina Google Cloud: c3-highmem-8
+
+
+|===
+. Utilizzare l'immagine worker Linux distribuita per creare la macchina virtuale worker Linux per supportare la migrazione NFS con la seguente configurazione consigliata:
++
+[cols="1,2a"]
+|===
+| Descrizione | Impostazione consigliata 
+
+
+| Configurazione VM  a| 
+** Immagine: Immagine importata personalizzata per il worker Linux
+** Tipo di scheda di interfaccia di rete: gVNIC
+** Dimensioni: 4 vCPU, 16 GB di RAM
+** Spazio di archiviazione: 100 GB
+
+
+
+
+| Hyperscaler  a| 
+** AWS: r7i.2xlarge
+** Dimensioni della macchina virtuale Azure: Standard_E8ds_v5
+** Tipo di macchina Google Cloud: c3-highmem-8
+
+
+|===
+. Crea una macchina virtuale di lavoro Windows per supportare le migrazioni SMB utilizzando Windows Worker Installer:
++
+.. Crea una macchina virtuale Windows con le seguenti impostazioni di configurazione consigliate:
++
+*** Immagine: Windows Server 2022 Base
+*** Architettura: 64bit
+*** Dimensioni: 16 vCPU, 64 GB di RAM
+*** Tipo di scheda di interfaccia di rete: gVNIC
+*** Assicurarsi che il protocollo Desktop remoto (RDP) (3389) sia aperto
+
+
+.. Crea una sessione di lavoro remota utilizzando RDP.
++
+Scopri di più su link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-rdp.html["Connessioni RDP"^].
+
+.. Copiare ed eseguire Windows Worker Installer sulla macchina virtuale del piano di controllo.
+
+
+
+
+.E ora?
+Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile scegliere una delle seguenti opzioni:
+
+* Facoltativamente,link:validate-control-plane-vm.html["Convalidare la macchina virtuale del piano di controllo"]
+* link:access-data-migrator-ui.html["Accedere all'interfaccia utente di NetApp Data Migrator e connettersi al piano di controllo e ai worker"]
+

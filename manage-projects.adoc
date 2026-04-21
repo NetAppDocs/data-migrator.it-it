@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: manage-projects.html 
+keywords: projects, project management, user roles, create project, project admin 
+summary: 'Utilizza la scheda Progetti nel NetApp Data Migrator pannello di controllo per creare, modificare o passare da un progetto all"altro.' 
+---
+= Creare e gestire progetti in NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare la scheda Progetti nel piano di controllo di NetApp Data Migrator per creare, modificare o passare da un progetto all'altro.
+
+
+
+== Crea un progetto
+
+Gli utenti amministratori dell'app possono creare un nuovo progetto in NetApp Data Migrator e assegnare a tale progetto utenti con ruoli definiti.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Impostazioni* > *Progetti* per visualizzare un elenco dei progetti esistenti.
+. Seleziona *Aggiungi progetto* e si apre una nuova finestra.
+. Inserisci il *Nome del progetto* e la *Descrizione del progetto (facoltativa)*.
+. Aggiungi utenti al tuo progetto:
++
+** Seleziona un *Utente* dall'elenco a discesa.
+** Assegna un *ruolo* all'utente (*App Admin*, *Project Admin* o *Project Viewer*).
+** Seleziona *+Aggiungi*.
+
+
+. Seleziona *Salva e conferma*.
+. Seleziona *Invia* e appare un messaggio di conferma che indica che il progetto è stato creato correttamente.
+
+
+
+
+== Modifica un progetto
+
+Puoi modificare rapidamente i dettagli del tuo progetto, se necessitano di aggiornamenti.
+
+.Passaggi
+. Seleziona *Impostazioni* nella barra di navigazione in alto.
+. Seleziona la scheda *Progetti* per visualizzare un elenco dei progetti esistenti.
+. Seleziona *(⋮)* accanto ai dettagli del progetto che desideri modificare, quindi seleziona *Modifica progetto* dal menu a tendina.
+. Aggiorna il nome del progetto, la descrizione del progetto o aggiungi nuovi utenti come richiesto.
+. Seleziona *Invia* per salvare le modifiche.
+
+
+
+
+== Passa da un progetto all'altro
+
+Se stai monitorando più progetti contemporaneamente, puoi passare rapidamente da uno all'altro.
+
+.Passaggi
+. Seleziona il menu a tendina *Progetto* dalla barra di navigazione superiore,
+. Seleziona il nome del progetto corrente per aprire il menu *Selezione progetto* e viene visualizzato un elenco dei progetti disponibili.
+. Utilizza la barra *Cerca progetti* per trovare rapidamente il progetto a cui desideri passare.
+. Seleziona la casella di controllo accanto al nome del progetto a cui desideri passare.
+. Seleziona *Switch* per caricare il progetto selezionato.
+

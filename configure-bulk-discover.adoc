@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: configure-bulk-discover.html 
+keywords: bulk discover, storage inventory, export paths, data scan, migration planning 
+summary: 'Configura la funzione Bulk Discover in NetApp Data Migrator per generare una panoramica dell"intera capacità di archiviazione esistente prima di iniziare la migrazione dei dati.' 
+---
+= Pianifica la migrazione dei dati in NetApp Data Migrator utilizzando Bulk Discover
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Configura la funzione Bulk Discover in NetApp Data Migrator per generare rapidamente una panoramica dell'intera capacità di archiviazione esistente prima di iniziare la migrazione dei dati. Una chiara comprensione dei file archiviati e delle strutture di sistema può contribuire a semplificare il processo di migrazione dei dati.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Storage Servers* > *File Servers* per visualizzare un elenco dei file server disponibili.
+. Seleziona il nome del server su cui desideri eseguire una ricerca in blocco, quindi seleziona *Bulk Discover*.
+. Seleziona *Pianificazione lavoro*, quindi seleziona una delle seguenti opzioni:
++
+** *Inizia ora* se vuoi che la scoperta abbia inizio immediatamente.
+** *Programma data e ora (UTC)* se desideri programmare il processo di rilevamento. Inserisci la data e l'ora in cui desideri che il job abbia inizio.
+
+
+. Scegli una delle seguenti opzioni per *Scan Alternate Data Streams*:
++
+** Seleziona *Sì* se desideri che NetApp Data Migrator rilevi i flussi di dati alternativi (ADS) associati ai tuoi file.
+** Seleziona *No* se non desideri che NetApp Data Migrator rilevi l'ADS associato ai tuoi file.
+
+
+. Nella casella di testo *Percorsi da escludere*, inserisci i percorsi che desideri escludere dal processo di rilevamento. Ogni percorso deve essere inserito su una nuova riga.
+. Utilizza la *barra di ricerca* per trovare percorsi di esportazione specifici (tra quelli elencati) che desideri includere nel processo di rilevamento, quindi seleziona la casella di controllo accanto al/ai *percorso/i di esportazione*.
++
+I percorsi di esportazione non più raggiungibili vengono disabilitati e non possono essere utilizzati nel processo di rilevamento. Ad esempio, i percorsi di esportazione che sono stati eliminati o che non compaiono più nell'output di  `showmount -e` per NFS o i percorsi che non vengono restituiti durante l'enumerazione delle condivisioni SMB vengono disabilitati.
+
+. Seleziona *Invia* e verrà visualizzato un messaggio di notifica che conferma la creazione del *Bulk Discover Job*. Seleziona il link *View Job Listing* in questo messaggio per visualizzare la pagina *Job Config List*, dove il lavoro appena creato è elencato nella tabella *Job Listings*.
+

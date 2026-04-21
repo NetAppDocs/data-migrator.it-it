@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: learn-about-install.html 
+keywords: aws installation, prerequisites, control plane, worker vm, ec2 
+summary: Scopri come installare il piano di controllo NetApp Data Migrator e le macchine virtuali worker. 
+---
+= Scopri come installare NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario installare un control plane e dei worker per eseguire i job di migrazione NFS e SMB utilizzando NetApp Data Migrator.
+
+* *Piano di controllo*: Il piano di controllo funge da livello centrale di gestione e controllo. Distribuisci il piano di controllo su una macchina virtuale (VM) Linux, quindi distribuisci i worker.
+* *Workers*: I worker sono macchine virtuali che eseguono la migrazione dei dati. È possibile distribuire più worker in base alla scalabilità e alle proprie esigenze. Il tipo di worker dipende dal protocollo:
++
+** Un worker Linux supporta le migrazioni NFS.
+** Un worker Windows supporta le migrazioni SMB.
+
+
+
+
+Innanzitutto, si distribuiscono la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando i servizi cloud AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal sito di supporto NetApp.
+
+Dopo la distribuzione, si creano le macchine virtuali del piano di controllo e di lavoro per accedere a NetApp Data Migrator. La macchina virtuale del piano di controllo e la macchina virtuale di lavoro Linux vengono create utilizzando le immagini distribuite. La macchina virtuale di lavoro Windows viene creata utilizzando Windows Worker Installer, che si scarica dal sito di supporto NetApp.
+
+.E ora?
+Dopo aver appreso come installare NetApp Data Migrator, puoi link:register-for-account.html["registrarsi per un account"].

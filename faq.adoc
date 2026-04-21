@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: faq.html 
+keywords: frequently asked questions, troubleshooting, connection errors, authentication, protocol errors 
+summary: Trova le risposte alle domande più frequenti su NetApp Data Migrator relative a errori di connessione, errori di autenticazione, problemi di protocollo ed errori di autorizzazione. 
+---
+= Domande frequenti (FAQ) per NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Se riscontri un problema durante l'utilizzo di NetApp Data Migrator, potresti risolverlo rapidamente consultando le domande frequenti (FAQ) di altri utenti.
+
+.Quali possono essere le cause degli errori NT_STATUS_IO_TIMEOUT / NT_STATUS_ACCESS_DENIED / NT_STATUS_HOST_UNREACHABLE / NT_STATUS_UNSUCCESSFUL?
+Questo errore può verificarsi se si inseriscono informazioni host errate. Assicurarsi che il nome host o l'indirizzo IP del server siano corretti e che il server sia raggiungibile. Verificare la connettività di rete e che il DNS sia risolvibile, se necessario.
+
+.Quali possono essere le cause dell'errore "Credenziali errate - NT_STATUS_LOGON_FAILURE"?
+L'inserimento di nome utente o password errati può causare errori di autenticazione e di accesso. Assicurati di aver inserito le credenziali di accesso corrette.
+
+.Cosa significa "Versioni di protocollo NFS o SMB non supportate"?
+Ciò significa che la versione del protocollo utilizzata dal file server non è supportata. Verificare la compatibilità delle versioni del protocollo e aggiornare o configurare il file server se necessario.
+
+.Quali possono essere le cause dell'errore 'Percorso di esportazione non valido'?
+Assicurarsi che il percorso di esportazione sia inserito correttamente e che esista sul server.
+
+.Quali possono essere le cause dell'errore "Directory di lavoro non valida"?
+Verifica di aver inserito la directory di lavoro corretta per il percorso di esportazione selezionato.
+
+.Perché ricevo un errore di 'permessi di scrittura' sulla directory di lavoro?
+Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallirà e l'utente non sarà in grado di eseguire i job. Verificare che l'utente che riscontra l'errore disponga dei permessi di scrittura necessari.

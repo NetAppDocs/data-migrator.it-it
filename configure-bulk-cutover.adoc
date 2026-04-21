@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: configure-bulk-cutover.html 
+keywords: bulk cutover, final sync, cutover job, chain of custody, migration approval 
+summary: Utilizza la funzione Bulk Cutover in NetApp Data Migrator per eseguire la sincronizzazione finale dei dati tra i sistemi di origine e di destinazione. 
+---
+= Configura il cutover in blocco in NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza la funzione Bulk Cutover in NetApp Data Migrator per eseguire la sincronizzazione finale tra i sistemi di origine e di destinazione. Una volta completate le migrazioni di base e avviate le sincronizzazioni incrementali, puoi unire più percorsi in un unico job di cutover.
+
+
+
+== Avvia un lavoro di cutover
+
+Segui questi passaggi per avviare un cutover.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Storage Servers* > *File Servers*.
+. Seleziona il nome del file server per il quale desideri creare un'attività di cutover.
+. Seleziona *Bulk Cutover*.
+. Nella pagina *Seleziona percorso*, seleziona la casella di controllo accanto a *Source Path*.
+. Selezionare la casella di controllo accanto al percorso di origine (conferma del cutover job).
+. Seleziona *Procedi.*
+. Seleziona la casella di controllo accanto al nome di un job per confermare che stai avviando un job di *Bulk Cutover*.
++
+
+NOTE: È possibile selezionare un job quando un job di Bulk Migrate è in esecuzione in parallelo.
+
+. Seleziona *Invia* per avviare il tuo processo di Bulk Cutover.
++
+Viene visualizzato il messaggio di conferma *Il lavoro di cutover è stato creato*.
+
+. Puoi selezionare il link *Visualizza Job Listing* accanto a questo messaggio per aprire la pagina Elenco configurazioni Job, dove è elencato il tuo nuovo job.
+
+
+
+
+== Approva un lavoro di cutover in blocco
+
+Segui questi passaggi per approvare un cutover.
+
+.Passaggi
+. Nella pagina *Processi*, selezionare la scheda *Elenco esecuzioni processi*.
+. Seleziona il menu delle azioni accanto al tuo lavoro di cutover.
+. Seleziona *Review*.
++
+Viene visualizzata la finestra di dialogo *Cutover Confirmation*.
+
+. Seleziona il link *Scarica il report CoC*.
++
+Esamina il report per verificare se il cutover è andato a buon fine e se tutti i dati sono stati migrati correttamente dalla sorgente alla destinazione.
+
+. Selezionare la casella di controllo accanto a *Ho esaminato e verificato il documento COC e tutte le altre informazioni essenziali*.
+. Se le informazioni contenute nel report COC ti soddisfano, seleziona *Conferma* per approvare il *Bulk Cutover*.
++
+Lo stato cambia in *Complete.*
+
+

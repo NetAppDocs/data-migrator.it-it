@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: quick-start.html 
+keywords: quick start, installation, first project, control plane 
+summary: 'Per iniziare a utilizzare NetApp Data Migrator, è necessario configurare le macchine virtuali di controllo e di lavoro utilizzando i modelli AWS, Azure, Google Cloud o Open Virtual Appliance (OVA).' 
+---
+= Guida rapida per NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per iniziare a utilizzare NetApp Data Migrator sono necessari alcuni passaggi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Scopri di più su NetApp Data Migrator
+[role="quick-margin-para"]
+NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB. Verifica che NetApp Data Migrator supporti le tue esigenze di migrazione dei dati e scegli l'opzione di implementazione più adatta al tuo ambiente:
+
+[role="quick-margin-list"]
+* AWS
+* Azure
+* Servizi Google Cloud
+* Modelli di Open Virtual Appliance (OVA)
+
+
+[role="quick-margin-para"]
+Esamina link:decide-to-use-data-migrator.html["Decidi se utilizzare NetApp Data Migrator"] e il link:networking-requirements.html["Requisiti di rete"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Installazione e configurazione
+[role="quick-margin-para"]
+NetApp Data Migrator utilizza un piano di controllo e nodi worker. Per prima cosa, si distribuiscono la VM del piano di controllo e le VM worker in base alle proprie esigenze di migrazione. Per NFS, si distribuisce un worker Linux e per SMB, si distribuisce un worker Windows. È possibile utilizzare NFS o SMB, o entrambi i protocolli. Dopo la distribuzione, si creano la VM del piano di controllo e le VM worker e si accede all'interfaccia utente di NetApp Data Migrator.
+
+[role="quick-margin-para"]
+link:learn-about-install.html["Scopri come installare NetApp Data Migrator"]
+
+[role="quick-margin-para"]
+Impara come:
+
+[role="quick-margin-list"]
+. link:deploy-control-plane-and-linux-workers.html["Distribuisci la macchina virtuale del piano di controllo e la macchina virtuale worker Linux"]
+. link:create-control-plane-and-worker-vms.html["Creare la macchina virtuale del piano di controllo e le macchine virtuali di lavoro"]
+. link:access-data-migrator-ui.html["Accedere all'interfaccia utente di NetApp Data Migrator"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Configura e gestisci
+[role="quick-margin-para"]
+Innanzitutto, accedi come amministratore utilizzando le credenziali predefinite e aggiorna nome utente e password. Dopodiché, puoi creare il tuo primo progetto e aggiungere i file server per avviare i workflow di migrazione.
+
+[role="quick-margin-para"]
+Impara come:
+
+[role="quick-margin-list"]
+. link:configure-data-migrator.html["Configura NetApp Data Migrator"]
+. link:manage-projects.html["Creare e gestire progetti in NetApp Data Migrator"]
+

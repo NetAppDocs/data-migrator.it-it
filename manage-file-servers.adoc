@@ -1,0 +1,233 @@
+---
+sidebar: sidebar 
+permalink: manage-file-servers.html 
+keywords: file servers, nfs, smb, worker association, export paths 
+summary: Utilizza NetApp Data Migrator per aggiungere, configurare e modificare i file server che utilizzano i protocolli NFS o SMB. 
+---
+= Aggiungere e gestire i file server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare NetApp Data Migrator per aggiungere, configurare e modificare file server che utilizzano i protocolli NFS o SMB.
+
+
+
+== Aggiungi un nuovo file server
+
+Aggiungi un nuovo file server NFS o SMB e configura le macchine virtuali di lavoro.
+
+A seconda della configurazione del sistema, utilizzare l'opzione Altro NAS o Dell Isilon workflow.
+
+[role="tabbed-block"]
+====
+.Altri NAS
+--
+.Passaggi
+. Nel pannello di navigazione a sinistra, selezionare *Storage Servers*.
+. Seleziona *File Servers* > *+Add*.
++
+Si apre la pagina *Server di file*, seguita dalla pagina *Tipo di server*.
+
+. Inserisci il nome del server, quindi seleziona *Tipo di server* come Altro NAS.
++
+Si apre la pagina *Credenziali*.
+
+. Inserisci il *nome host* (o indirizzo IP) del server NFS o SMB.
+. Se si utilizza un file server NFS:
++
+** Inserisci un *nome utente* per accedere alle condivisioni file NFS.
+** Facoltativamente, inserisci una *Password*.
+** Selezionare una *versione del protocollo* per NFS.
+** Nel pannello *Meccanismo di recupero dei percorsi di esportazione* selezionare *Rilevamento automatico* o *Caricamento manuale*:
++
+*Auto Discover* rileva automaticamente i percorsi di esportazione.
+
++
+*Caricamento manuale* carica manualmente i percorsi di esportazione, oppure in ambienti in cui *Rilevamento automatico* non è supportato, come il servizio Google Cloud NetApp Volumes (GCNV) Flex. Dopo aver aggiunto un file server, <<manually-upload-export-paths,è necessario caricare manualmente i percorsi di esportazione>>.
+
+
+
+. Se si utilizza un file server *SMB*:
++
+** Inserisci un *nome utente* per accedere alle condivisioni file SMB.
+** Inserisci una *password*.
+** Selezionare una *versione del protocollo* per SMB.
+
+
+. Seleziona la scheda *Workers*.
++
+.. Nella colonna *Associati*, seleziona il pulsante di attivazione/disattivazione accanto a ciascuno dei worker che desideri associare a un server.
+.. Seleziona *Procedi* per avviare un'operazione di pre-verifica che controlla se uno o più worker selezionati dispongono di connettività a NetApp Data Migrator.
+
+
+. Una volta completata la verifica preliminare, è necessario risolvere eventuali errori segnalati. (Consultare le File Server Frequently Asked Questions (FAQ) per dettagli su come risolvere gli errori).
++
+Se il controllo preliminare viene completato senza errori, selezionare la scheda *Configurazione lavoro*, quindi selezionare *Fine*. Il nome del file server viene visualizzato nell'elenco dei *file server*.
+
++
+Lo stato di un file server è indicato nella colonna *Stato* della tabella *File Servers*. I tipi di stato includono:
+
++
+** *Attivo*: Non sono presenti errori e tutti i dettagli sono stati convalidati.
+** *In corso:* La convalida del server è in corso.
+** *Bozza*: Nessun lavoratore è stato associato a un file server.
+** *Errore*: Si sono verificati problemi con le autorizzazioni, non sono disponibili percorsi oppure è disponibile solo / come percorso di esportazione. Questi problemi possono verificarsi se si seleziona *Rilevamento automatico* per il percorso di esportazione durante la creazione del file server.
+
+
+
+
+--
+.Dell Isilon
+--
+.Passaggi
+. Nel pannello di navigazione a sinistra, selezionare *Storage Servers*.
+. Seleziona *File Servers* > *+Add*.
++
+Si apre la pagina *Server di file*, seguita dalla pagina *Tipo di server*.
+
+. Inserisci un *Nome di configurazione* per il tuo file server Isilon.
+. Seleziona *Dell Isilon* dal menu a tendina *Tipo di server*.
++
+Si apre la sezione *Console di gestione*:
+
+. Inserire l'*Host di gestione* (host name o indirizzo IP della console di gestione Isilon).
+. Inserisci il *nome utente* per accedere all'API di gestione di Isilon.
+. Inserisci la *password*.
+. Seleziona *Procedi* per recuperare il certificato TLS dal cluster Isilon.
+. Esamina i dettagli del *Certificato TLS* visualizzati nella finestra modale:
++
+.. Verificare l'emittente del certificato, le date di validità e l'impronta digitale.
+.. Seleziona *Accetta* per considerare attendibile il certificato e procedere.
+.. Seleziona *Rifiuta* per annullare se non ti fidi del certificato.
+
+
+. Si apre la pagina *Credenziali di zona*:
++
+.. Seleziona una o più *Zone di accesso* tra le zone disponibili rilevate.
+.. Per ciascuna zona selezionata, configurare le credenziali del protocollo:
+.. Seleziona l'*indirizzo IP NFS* dal menu a tendina.
+.. Inserisci un *nome utente* per accedere ai percorsi di esportazione NFS.
+.. Inserisci l'indirizzo IP SMB.
+.. Inserisci un *nome utente* per accedere alle condivisioni file SMB.
+.. Inserisci una *password*.
+
+
++
+
+NOTE: Se un SmartConnect Service IP (SSIP) è configurato sul cluster Isilon, puoi selezionare il domain name della zona SmartConnect dall'elenco a discesa Indirizzo IP. Quando si utilizza un domain name abilitato SSIP, l'infrastruttura Isilon SmartConnect gestisce il bilanciamento del carico delle connessioni e lo risolve a livello di storage. NetApp Data Migrator non esegue un bilanciamento del carico aggiuntivo in questa configurazione.
+
+. Si apre la scheda *Workers*:
++
+.. Per ogni combinazione di zona e protocollo, assegnare i worker:
++
+Nella colonna *Associati*, seleziona il pulsante di attivazione/disattivazione accanto a ciascuno dei lavoratori che desideri associare.
+
+.. Seleziona *Procedi* per avviare un'operazione di pre-verifica che controlla se uno o più worker selezionati dispongono di connettività a NetApp Data Migrator e al file server Isilon.
+
+
+. Una volta completata la verifica preliminare, risolvi eventuali errori segnalati.
++
+Se il controllo preliminare viene completato senza errori, il nome del tuo file server viene visualizzato nell'elenco dei file server. Il menu a tendina dei file server visualizzati mostra le zone configurate.
+
+
+
+--
+====
+
+
+== Carica manualmente i percorsi di esportazione e directory
+
+NetApp Data Migrator consente di caricare manualmente i percorsi di esportazione e i percorsi di directory da utilizzare nelle operazioni di migrazione dei dati per il protocollo NFS. Questa funzionalità è utile in ambienti in cui il rilevamento automatico dei percorsi di esportazione NFS non è disponibile. Ad esempio, per l'utilizzo con il servizio GCNV Flex o quando si migrano i percorsi di directory anziché l'intero percorso di esportazione. Se si seleziona *Caricamento manuale* nel pannello *Meccanismo di recupero dei percorsi di esportazione*, è necessario scaricare e compilare il file modello fornito da NetApp Data Migrator dopo aver terminato la creazione di un file server.
+
+
+NOTE: Utilizza questa opzione quando devi configurare la migrazione a livello di directory. Nei casi in cui la migrazione riguarda directory specifiche anziché intere esportazioni, inserisci i percorsi delle directory direttamente nel foglio di calcolo Excel. In questo modo, il flusso di lavoro di migrazione elaborerà ogni directory singolarmente, senza richiedere input a livello di esportazione.
+
+.Passaggi
+. Nel pannello di navigazione a sinistra, selezionare *Storage Servers*.
+. Seleziona *File Servers*.
+. Seleziona *Clicca qui per caricare i percorsi di esportazione*.
+. Seleziona *Scarica modello* per scaricare un modello di file CSV.
+. Salva i percorsi di esportazione e i percorsi delle directory nel file CSV.
+. Seleziona *Click here to Upload Export Paths*, quindi seleziona il file CSV contenente i percorsi di esportazione e i percorsi delle directory.
++
+I percorsi di esportazione e i percorsi delle directory sono visualizzati sotto *Paths*.
+
+. Se devi includere altri percorsi di esportazione o percorsi di directory, aggiungili al tuo file, quindi seleziona *Ricarica percorsi di esportazione*.
+
+
+Al termine del caricamento, i percorsi di esportazione e i percorsi delle directory possono presentare uno dei seguenti stati:
+
+* *Valido*: Il percorso è stato caricato correttamente ed è possibile montare e smontare questo percorso.
+* *Non valido*: il percorso non è riuscito a essere caricato.
+* *Disabilitato*: Il percorso è disponibile, ma non è presente nel file che hai caricato.
+
+
+
+
+== Modifica i dettagli del file server
+
+Se necessario, è possibile apportare modifiche a un file server precedentemente configurato.
+
+Modifica i dettagli del file server utilizzando l'opzione del flusso di lavoro "Altro NAS o Dell Isilon".
+
+[role="tabbed-block"]
+====
+.Altri NAS
+--
+.Passaggi
+. Seleziona il menu delle azioni accanto al file server che desideri modificare.
+. Seleziona *Modifica file server*. Se hai selezionato l'opzione *Caricamento manuale* per *Recupero percorso di esportazione caricamento*, vengono visualizzati solo i percorsi validi.
+. Seleziona la scheda *Tipo di server*, apporta le modifiche necessarie, quindi seleziona *Procedi*.
+. Seleziona la scheda *Credenziali*, apporta le modifiche necessarie, quindi seleziona *Procedi*.
+. Seleziona la scheda *Workers*, apporta le modifiche necessarie, quindi seleziona *Submit*.
+
+
+--
+.Dell Isilon
+--
+.Passaggi
+. Seleziona il menu delle azioni accanto al Parent File Server che desideri modificare.
+. Selezionare *Modifica file server*.
+. Seleziona la scheda *Tipo di server*:
++
+.. Aggiorna il *Nome della configurazione* se necessario.
+.. Aggiorna *Nome utente* o *Password* se necessario.
+.. Seleziona *Procedi*.
+
+
++
+
+NOTE: Non è possibile modificare il *Tipo di server* (Dell Isilon) e l'*Host di gestione*.
+
+. Seleziona la scheda *Credenziali di zona*:
++
+.. Aggiungi nuove zone selezionando zone aggiuntive dall'elenco disponibile.
+.. Aggiorna le credenziali del protocollo per ciascuna zona:
++
+Aggiorna l'indirizzo IP NFS, il nome utente o la password secondo necessità.
+
++
+Aggiorna l'indirizzo IP SMB, il nome utente o la password a seconda delle necessità.
+
+.. Seleziona *Procedi*.
+
+
+. Seleziona la scheda *Workers*:
++
+.. Aggiorna le assegnazioni dei worker per ogni zona e protocollo attivando o disattivando i worker nella colonna *Associated*.
+.. Seleziona *Procedi* per eseguire la convalida preliminare su tutti i worker appena assegnati.
+
+
+. Selezionare la scheda *Job Config*:
++
+.. Aggiorna la *directory di lavoro* se necessario.
+.. Seleziona *Fine*.
+
+
+
+
+--
+====

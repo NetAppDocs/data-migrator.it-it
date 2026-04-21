@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: configure-data-migrator.html 
+keywords: configure, log, in, project, create, app admin 
+summary: 'Accedi come App Admin (amministratore) utilizzando le credenziali predefinite e aggiorna il tuo nome utente e password.' 
+---
+= Configura NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver installato NetApp Data Migrator, è necessario accedere come App Admin (amministratore) utilizzando il nome utente e la password predefiniti.
+
+
+
+== Accedi a NetApp Data Migrator
+
+Accedi a NetApp Data Migrator, quindi modifica le tue credenziali di accesso e crea il tuo primo progetto.
+
+.Passaggi
+. Apri un browser web e vai a NetApp Data Migrator:
++
+`\https://<private_IP_address>/`
+
+. Nella pagina *Welcome*, inserisci il nome utente predefinito in *Username/Email*.
+. Inserisci la password predefinita in *Password*.
+. Seleziona *Accedi*.
++
+Si apre la pagina *Reimposta password*.
+
+. Inserisci una nuova password che soddisfi i seguenti requisiti di sicurezza:
++
+** Include almeno 8 caratteri
+** Include almeno una lettera maiuscola
+** Include almeno una lettera minuscola
+** Include almeno un numero
+** Include almeno un carattere speciale
+
+
+. Seleziona *Reimposta password*. Si apre la pagina *I tuoi dati*.
+. Inserisci il tuo *Nome*, *Cognome* e *Indirizzo email*.
+. Seleziona *Procedi*. Si apre la pagina *Crea un nuovo progetto*.
+. Seleziona *Crea progetto*, quindi inserisci i seguenti dettagli:
++
+** *Nome del progetto*: Inserisci un nome descrittivo per il tuo progetto.
+** *Descrizione del progetto (facoltativa)*: Puoi fornire ulteriori dettagli sul tuo progetto.
+
+
+. Seleziona *Create*.
++
+Il nuovo progetto viene visualizzato nella barra delle notifiche nella parte superiore del NetApp Data Migrator control plane.
+
+
+
+
+
+== Disconnettiti da NetApp Data Migrator
+
+Dopo aver effettuato il logout da NetApp Data Migrator, al successivo accesso dovrai utilizzare le credenziali appena create (indirizzo email e password).
+
+.Passaggi
+. Seleziona l'icona *Utente* (accanto a *Impostazioni*).
+. Seleziona *Esci*. Si apre la pagina *Benvenuto*.
+. Nei campi *Email* e *Password*, inserisci l'indirizzo email e la password che hai registrato quando ti sei <<log-in,effettuato l'accesso>>.
+. Seleziona *Accedi*.
+
+
+.E ora?
+Dopo aver appreso come configurare NetApp Data Migrator, puoi link:manage-projects.html["usa NetApp Data Migrator"].

@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: support-matrix.html 
+keywords: support matrix, nfs, smb, file servers, protocol versions 
+summary: Scopri il supporto di NetApp Data Migrator per funzionalità, file server e protocolli. 
+---
+= NetApp Data Migrator supporto per funzionalità, file server e protocolli
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator supporta determinate funzionalità, file server e protocolli.
+
+
+
+== Funzionalità supportate e non supportate
+
+NetApp Data Migrator supporta una serie di funzionalità per le migrazioni NFS e SMB. Alcune funzionalità non sono supportate.
+
+
+
+=== Funzionalità supportate
+
+[cols="1,2a"]
+|===
+| Descrizione | Funzionalità supportata 
+
+
+| Gestione delle autorizzazioni e degli audit  a| 
+* Segnalazione della catena di custodia
+* Elenco di controllo degli accessi discrezionale (DACL)
+* Conservare l'elenco di controllo degli accessi (ACL)
+* Rimappatura dell'identificativo utente (UID) e dell'identificativo di sicurezza (SID)
+
+
+
+
+| Oggetti e collegamenti del file system  a| 
+* Gestione dei collegamenti rigidi
++
+NetApp Data Migrator migra oggetti e collegamenti come file separati.
+
+* Collegamenti simbolici
++
+*Nota*: Supportato per le migrazioni NFS
+
+
+
+
+
+| Conservazione dei metadati dei file  a| 
+* Conservare il tempo di accesso
+* Preservare l'ora di creazione
+* Conservare il tempo modificato
+* Mantieni le autorizzazioni
+
+
+
+
+| Comportamento di migrazione e coerenza dei dati  a| 
+* Propagazione dell'eliminazione
+* migrazione incrementale
+* Supporto per file aperti
+* Supporto al passaggio
+
+
+
+
+| Controllo ed esecuzione della migrazione  a| 
+* Esclusioni di pattern di file
+* Pianificazione della migrazione
+
+
+|===
+
+
+=== Funzionalità non supportate
+
+[cols="1,2a"]
+|===
+| Descrizione | Funzionalità non supportata 
+
+
+| Gestione delle autorizzazioni e degli audit  a| 
+Elenco di controllo degli accessi al sistema (SACL)
+
+*Nota*: Non supportato per le migrazioni SMB
+
+
+
+| Oggetti e collegamenti del file system  a| 
+* Segui le giunzioni NTFS
+* Collegamenti simbolici
++
+*Nota*: Non supportato per le migrazioni SMB
+
+* Flussi di dati alternativi
++
+NetApp Data Migrator è in grado di individuare ma non di migrare flussi di dati alternativi.
+
+
+
+
+
+| Conservazione dei metadati dei file  a| 
+Attributi di file selettivi
+
+
+
+| Comportamento di migrazione e coerenza dei dati  a| 
+Migrazione di snapshot
+
+|===
+
+
+== Server di file supportati
+
+NetApp Data Migrator supporta determinati file server come origine e destinazione per la migrazione dei dati.
+
+[cols="1,2a"]
+|===
+| Descrizione | File server supportato 
+
+
+| Fonte  a| 
+Qualsiasi server NAS, ad esempio Dell Isilon, ONTAP, Vanilla Linux, Windows, Cloud Volumes ONTAP
+
+
+
+| Destinazione  a| 
+Tutti i livelli di servizio di Azure NetApp Files (ANF), Google Cloud NetApp Volumes (GCNV), Amazon FSx for NetApp ONTAP (FSxN), Cloud Volumes ONTAP
+
+|===
+
+
+== Protocolli di migrazione NFS e SMB supportati
+
+NetApp Data Migrator supporta determinate versioni dei protocolli NFS e SMB per la migrazione dei dati.
+
+[cols="1,2a"]
+|===
+| Protocollo | Versioni supportate 
+
+
+| NFS  a| 
+4.1, 3.0
+
+
+
+| SMB  a| 
+3.1, 3.0, 2.0
+
+|===

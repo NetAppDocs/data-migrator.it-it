@@ -1,0 +1,161 @@
+---
+sidebar: sidebar 
+permalink: learn-about-data-migrator.html 
+keywords: netapp, data migrator, migration, multicloud, file workloads 
+summary: 'NetApp Data Migrator è un"applicazione software di migrazione dei dati di livello enterprise, multicloud, che semplifica la migrazione di file non strutturati da sistemi di storage locali o storage di terze parti a servizi di cloud storage pubblici basati su NetApp.' 
+---
+= Scopri di più su NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator è un'applicazione software di migrazione dei dati di livello enterprise, multicloud, che semplifica la migrazione di dati di file non strutturati da sistemi di storage on-premises o storage di terze parti a servizi di cloud storage pubblici basati su NetApp. NetApp Data Migrator è un'applicazione indipendente che viene eseguita su macchine virtuali gestite dall'utente ed elimina la necessità di script personalizzati complessi e strumenti separati.
+
+Puoi utilizzare NetApp Data Migrator per individuare i tuoi ambienti di storage esistenti, generare rapidamente un inventario dei file e creare piani per migrare i tuoi dati da un server di storage di origine ai servizi di NetApp cloud storage. Dopo l'inizio della migrazione dei dati, puoi monitorare i job di migrazione tramite l'interfaccia utente. Puoi anche generare report sulla Chain of Custody (CoC) che utilizzano checksum per aiutarti a verificare le operazioni di migrazione dei dati.
+
+NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB. Distribuisci nodi worker nel tuo ambiente per mantenere controllo e sicurezza durante la migrazione. I worker facilitano trasferimenti di dati in parallelo, migliorando le prestazioni e la scalabilità. NetApp Data Migrator include funzionalità come controlli preliminari e sincronizzazione incrementale per garantire una migrazione fluida ed efficiente con tempi di inattività minimi. Puoi mantenere attivi i sistemi di origine per la maggior parte del processo di migrazione, quindi eseguire un cutover quando sei pronto. NetApp Data Migrator offre anche una solida gestione dei log e degli errori, consentendo di risolvere i problemi e ripristinare senza dover riavviare l'intero processo di migrazione.
+
+Prima di iniziare a lavorare con NetApp Data Migrator, è utile familiarizzare con la terminologia chiave.
+
+Piano di controllo:: Il piano di controllo consente di accedere alle attività di migrazione. Dal piano di controllo è possibile eseguire le seguenti operazioni:
++
+--
+* Gestisci progetti, utenti, job e file server.
+* Pianifica e assegna le esecuzioni dei job ai lavoratori disponibili.
+* Monitorare l'esecuzione dei processi, raccogliere i log e segnalare lo stato.
+* Applicare il controllo degli accessi e le autorizzazioni degli utenti.
+* Configura un server di posta elettronica SMTP per notifiche in tempo reale.
+
+
+--
+Cutover:: Il job di cutover è l'ultimo passaggio della migrazione. È necessario per la sincronizzazione finale tra i sistemi di origine e di destinazione. Un job di cutover esegue le seguenti azioni:
++
+--
+* Interrompe i processi di migrazione in corso per i percorsi selezionati
+* Esegue una sincronizzazione finale per garantire che i dati siano coerenti
+* Genera un rapporto sulla catena di custodia (CoC) per la convalida
+* È necessaria la tua approvazione per contrassegnare la migrazione come completa
+
+
+--
+Scoprire:: Un processo Discover analizza e inventaria i dati su un file server di origine o di destinazione. Crea un report con i dettagli sui file e le directory nei percorsi di esportazione selezionati su un file server di origine o di destinazione, aiutandoti a comprendere la portata e la complessità dei tuoi dati prima di iniziare la migrazione. Un processo Discover esegue le seguenti azioni:
++
+--
+* Analizza la struttura e il contenuto dei percorsi di esportazione
+* Raccoglie metadati quali nomi dei file, dimensioni, permessi e timestamp
+* Genera report e istogrammi dettagliati per la pianificazione e la verifica
+
+
+--
+Percorso di esportazione:: Un percorso di esportazione rappresenta la posizione dei dati da includere in un'operazione di Discover, Migrate o Cutover. I percorsi di esportazione sono le unità fondamentali di dati copiate in qualsiasi flusso di lavoro di migrazione e presentano le seguenti caratteristiche:
++
+--
+* Specifico del protocollo (esportazioni NFS o condivisioni SMB)
+* Convalidato per accessibilità e autorizzazioni
+* Utilizzato come input per la creazione di processi (Discovery, Migrate, Cutover)
+
+
+--
+Lavoro:: Un job è una struttura logica di un'attività di migrazione dei dati. Specifica cosa fare, dove farlo e come deve essere eseguito. È possibile riutilizzare i job e pianificarli o avviarli manualmente.
++
+--
+--
+Un lavoro comprende due componenti principali:
+
+* *Definizione del job*: Una sequenza predefinita di passaggi, ad esempio scan, sync o report.
+* *Configurazione del lavoro*: parametri definiti dall'utente, come percorsi di origine o di destinazione, regole di esclusione e pianificazione.
+
+
+--
+--
+NetApp Data Migrator supporta tre principali tipi di processi:
+
+* Ruolo di Discovery: inventaria e analizza i dati di origine e di destinazione.
+* Processo di migrazione: trasferisce i dati dalla sorgente alla destinazione.
+* Operazione di cutover: finalizza la migrazione e passa al sistema di destinazione.
+
+
+--
+--
+Esecuzione del lavoro:: Un'esecuzione di un job è una singola istanza di esecuzione di un job. Le esecuzioni di un job consentono di monitorare, gestire e risolvere i problemi relativi all'esecuzione delle attività di migrazione in real-time. Un'esecuzione di un job include i seguenti dettagli:
++
+--
+* Possiede un timestamp e un ID di esecuzione univoci
+* Può trovarsi in uno dei seguenti stati: Pronto, In esecuzione, In pausa, Arrestato, Errore, Bloccato o Completato
+* Genera registri, metriche e dettagli a livello di attività
+
+
+--
+Migrare:: Un'operazione di migrazione sposta i dati da un file server di origine a un file server di destinazione in modo sicuro, efficiente e con interruzioni minime. Presenta le seguenti caratteristiche:
++
+--
+* Esegue la migrazione di base (copia completa iniziale)
+* Supporta la sincronizzazione incrementale (aggiornamenti in base alle modifiche)
+* Consente di configurare opzioni quali modelli di esclusione, rimappatura delle autorizzazioni e conservazione del tempo di accesso
+* Include verifiche preliminari di autorizzazioni, capacità e connettività
+
+
+--
+Progetto:: Un progetto è uno spazio di lavoro logico che include tutti i componenti e le attività relativi a una specifica attività di migrazione dei dati. Rappresenta l'unità organizzativa di livello superiore all'interno di NetApp Data Migrator. Un progetto presenta le seguenti caratteristiche:
++
+--
+* Un nome e una descrizione unici
+* Utenti associati con ruoli definiti (Amministratore di progetto, Visualizzatore di progetto)
+* Server di file collegati, processi, worker e configurazioni
+
+
+I progetti consentono di isolare le attività di migrazione, semplificando la gestione simultanea di più migrazioni tra team, reparti o clienti diversi.
+
+--
+Server di archiviazione (file server):: Un server di archiviazione (file) è un componente fondamentale nel flusso di lavoro di migrazione. Archivia i dati da migrare o funge da destinazione per i dati migrati.
++
+--
+* NetApp Data Migrator supporta i file server NFS e SMB
+* Ciascun file server è configurato con i seguenti dettagli:
++
+** Un nome e un tipo di server
+** Credenziali di autenticazione
+** Collaboratori associati per l'esecuzione di compiti di migrazione
+
+
+
+
+--
+Utenti:: Gli utenti gestiscono le attività di migrazione dei dati. Gli utenti App Admin (amministratori) assegnano ruoli ad altri utenti che determinano il loro livello di accesso e controllo.
++
+--
+--
+NetApp Data Migrator supporta tre ruoli utente:
+
+* *Amministratore dell'app*: Fornisce privilegi amministrativi completi che consentono di gestire altri utenti, progetti e impostazioni di sistema
+* *Amministratore di progetto*: Fornisce l'autorizzazione per gestire progetti specifici e configurare, creare e monitorare i lavori
+* *Visualizzatore di progetto*: Fornisce accesso in sola lettura per visualizzare i dettagli del progetto, lo stato dei lavori e i report
+
+
+--
+L'autenticazione avviene tramite email e password, e il controllo degli accessi basato sui ruoli (RBAC) gestisce le autorizzazioni. Questo garantisce un accesso sicuro e appropriato al ruolo a dati sensibili e operazioni. NetApp Data Migrator utilizza RBAC per gestire le autorizzazioni e contribuisce a proteggere l'accesso alle risorse.
+
+--
+Lavoratore:: Un worker è una macchina virtuale che esegue operazioni concrete sui dati, ad esempio, la copia di dati da source a destination.
++
+--
+* I lavoratori sono responsabili dell'esecuzione di attività quali la scansione di directory, la copia di file e la sincronizzazione dei metadati.
+* I worker consentono l'elaborazione distribuita, permettendo a NetApp Data Migrator di scalare in modo efficiente su grandi set di dati e ambienti multipli.
+* Gli operatori trasmettono informazioni statistiche di alto livello sulla migrazione dei dati al piano di controllo.
+* Si installa e si registra un worker utilizzando NetApp Data Migrator.
+* Ciascun worker possiede le seguenti caratteristiche:
++
+** È associato a uno o più file server
+** Riporta metriche di sistema quali CPU, memoria e stato (online o offline) al piano di controllo
+** Fornisce informazioni statistiche high-level sulla migrazione dei dati al piano di controllo
+
+
+
+
+--
+
+
+.E ora?
+Dopo aver appreso informazioni su NetApp Data Migrator, puoi link:decide-to-use-data-migrator.html["decidere se utilizzare il software per le operazioni di migrazione dei dati"].

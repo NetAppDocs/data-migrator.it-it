@@ -1,0 +1,252 @@
+---
+sidebar: sidebar 
+permalink: known-issues.html 
+keywords: known issues, workarounds 
+summary: Esamina i problemi noti e le soluzioni alternative per NetApp Data Migrator. 
+---
+= Problemi noti per NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+I problemi noti identificano le problematiche che potrebbero impedire il corretto utilizzo di questa versione del prodotto. Leggere attentamente questi problemi noti.
+
+
+
+== Configurazione
+
+
+
+=== Mancata corrispondenza delle autorizzazioni di accesso durante l'utilizzo della mappatura SID
+
+NetApp Data Migrator potrebbe segnalare un `Missing ACE in target` errore durante l'utilizzo della mappatura SID. Questo errore indica una mancata corrispondenza delle autorizzazioni di accesso tra i sistemi di origine e di destinazione, poiché la mappatura SID non è stata eseguita a livello radice.
+
+.Soluzione alternativa
+Fornire la mappatura CSV per l'origine e la destinazione SID come mostrato nei due scenari seguenti:
+
+[role="tabbed-block"]
+====
+.Scenario 1
+--
+Fornire il SID nel foglio di mappatura CSV per gli utenti o i gruppi eliminati o rimossi dall'Active Directory di origine, come mostrato nell'esempio seguente:
+
+[cols="1,1a"]
+|===
+| sid_source | sid_target 
+
+
+| S-1-5-21-2444020195-1862089444-1769087368-1000  a| 
+S-1-5-21-3481156262-2863848796-4292454742-512
+
+|===
+--
+.Scenario 2
+--
+Per gli utenti o i gruppi attivi in Active Directory, inserire i nomi utente o i nomi dei gruppi nel foglio di mappatura CSV esclusivamente in minuscolo. Includere il prefisso di dominio (domain\nomeutente), come mostrato nel seguente esempio:
+
+[cols="1,1a"]
+|===
+| sid_source | sid_target 
+
+
+| rootdomain\user1  a| 
+rootdomain\utente2
+
+|===
+--
+====
+
+
+=== Limitazione della migrazione in blocco per le directory dello stesso livello
+
+Quando si utilizza la funzionalità di migrazione in blocco, non è possibile creare più processi di migrazione contemporaneamente per directory che si trovano allo stesso livello nella gerarchia delle directory di origine e di destinazione. Ad esempio, cartelle dello stesso livello nella stessa operazione di condivisione per una sorgente e una destinazione. Il tentativo di includere tali directory in un'unica configurazione di migrazione in blocco causa l'errore nella creazione del processo.
+
+.Soluzione alternativa
+Create i processi di migrazione uno alla volta per le directory che si trovano allo stesso livello, invece di aggiungerle insieme.
+
+
+
+=== Migrazione a livello di directory con timbratura delle autorizzazioni ereditate
+
+Nelle migrazioni a livello di directory, le autorizzazioni ereditate sulla directory radice selezionata non vengono applicate alla destinazione. Poiché NetApp Data Migrator non applica le autorizzazioni ereditate per la directory radice, anche le sottodirectory e i file che si basano sull'eredità non ricevono le autorizzazioni ereditate.
+
+Questo problema riguarda solo la propagazione delle autorizzazioni ereditate dalla directory radice. NetApp Data Migrator applica correttamente le autorizzazioni esplicite impostate direttamente su file e directory (autorizzazioni non ereditate) durante la migrazione.
+
+.Soluzione alternativa
+Al termine della migrazione, riapplicare o reimpostare manualmente le autorizzazioni ereditate sulla directory radice nella destinazione. Ciò consente la corretta propagazione delle autorizzazioni ereditate a tutte le sottodirectory e ai file
+
+
+
+=== Validazione del caricamento manuale della mappatura UID e GID in NFS
+
+Durante le migrazioni NFS, se il file CSV di mappatura UID e GID contiene ID utente o ID di gruppo numerici che non esistono nel sistema di destinazione, NetApp Data Migrator applica (contrassegna) tali valori così come sono. NetApp Data Migrator non verifica se l'UID o il GID specificato esiste nella destinazione e non segnala alcun errore o avviso nell'interfaccia utente. Ciò può comportare la migrazione di file con proprietà errate. È necessario fornire la mappatura UID e GID corretta.
+
+.Soluzione alternativa
+Assicurarsi che tutti i valori UID e GID specificati nel file CSV di mappatura corrispondano a utenti e gruppi validi ed esistenti nel sistema di destinazione prima di avviare la migrazione. Verificare manualmente l'esistenza di utenti e gruppi nella destinazione per evitare che NetApp Data Migrator applichi una proprietà errata durante la migrazione.
+
+
+
+=== Il controllo preliminare della migrazione visualizza un falso avviso di spazio insufficiente
+
+Durante i controlli preliminari della migrazione, potresti visualizzare il seguente avviso, anche se la destinazione dispone di spazio sufficiente:
+
+[listing]
+----
+Insufficient destination space for selected path. Do you still want to proceed with the migration?
+----
+Questo può accadere se si salta la fase di rilevamento e NetApp Data Migrator utilizza un comando generico che legge l'intera dimensione del dispositivo a blocchi anziché la dimensione effettiva del dataset.
+
+.Soluzione alternativa
+Eseguire Discovery prima di un'esecuzione di migrazione. Ciò garantisce che le informazioni sull'utilizzo del disco siano disponibili per l'operazione di pre-verifica. Se l'avviso è ancora presente:
+
+. Confermare che il rilevamento è stato completato.
+. Verificare manualmente che il volume di destinazione disponga di spazio sufficiente.
+. Se lo spazio disponibile è sufficiente, è possibile procedere in tutta sicurezza con la migrazione dei dati.
+
+
+
+
+== Report
+
+
+
+=== Excel visualizza autorizzazioni errate nel file del report COC
+
+Quando si apre il file CSV del report della catena di custodia (CoC) in Microsoft Excel, alcune autorizzazioni di file o cartelle potrebbero apparire come #NAME?, ad esempio -rwxrwxrwx, anziché i valori effettivi.
+
+Questo accade perché Excel interpreta erroneamente alcune stringhe di autorizzazione (che iniziano con - o =) come formule, causando errori di visualizzazione. Il file CSV in sé è corretto, si tratta solo di un problema di visualizzazione.
+
+.Soluzione alternativa
+Per visualizzare le autorizzazioni corrette di file e cartelle, apri il file CSV utilizzando una delle seguenti applicazioni:
+
+* Fogli Google
+* Apple Numbers
+* Visualizzatore CSV online
+* Editor di testo, ad esempio Notepad++
+
+
+
+
+=== Nessun messaggio di errore quando il processo di rilevamento in blocco fallisce a causa di problemi di rete
+
+Se l'host o il server di destinazione si arresta durante un'operazione di rilevamento in blocco, NetApp Data Migrator potrebbe non visualizzare un messaggio di errore. Ciò può dare l'impressione che l'operazione sia ancora in esecuzione normalmente.
+
+I processi di rilevamento si aggiornano ogni 30 secondi. Se noti che il numero di file, il numero di directory o la dimensione dei dati non si aggiornano, ciò potrebbe indicare un problema di rete.
+
+.Soluzione alternativa
+. Verifica la connettività di rete:
++
+.. Apri il terminale della macchina virtuale worker.
+.. Esegui un ping all'indirizzo IP del server di destinazione.
++
+Se non si riceve risposta, la destinazione potrebbe essere irraggiungibile.
+
+
+
+. Ripristina l'interfaccia di rete:
++
+.. Utilizza SSH per connetterti al server di destinazione:
++
+[source, cli]
+----
+ssh <destination_IP>
+----
+.. Individua il nome dell'interfaccia, ad esempio eth0:
++
+[source, cli]
+----
+ipconfig
+----
+.. Riporta online l'interfaccia di rete:
++
+[source, cli]
+----
+ifup <interface_name>
+----
+
+
+. Se necessario, ripetere i passaggi 1 e 2 per il server di origine.
+
+
+
+
+=== Impossibile cambiare utente su Windows worker
+
+Il passaggio a un account utente diverso su un computer Windows di lavoro potrebbe non riuscire a causa di connessioni di rete esistenti. Ciò può impedire l'accesso al file server.
+
+.Soluzione alternativa
+. Rimuovere la connessione precedente aprendo il prompt dei comandi sul worker Windows ed eseguendo i seguenti comandi:
++
+[source, cli]
+----
+net use
+----
++
+[source, cli]
+----
+net use <IP address> /delete
+----
+. Passa al nuovo account utente e accedi al file server.
+
+
+
+
+== Validazione
+
+
+
+=== Le dimensioni dei file potrebbero differire dopo la migrazione anche se i conteggi corrispondono
+
+Dopo il completamento della migrazione dei dati, il numero totale di file è corretto, ma alcuni file potrebbero avere dimensioni diverse rispetto alla sorgente originale. Ciò può accadere se la rete viene interrotta o se si verificano problemi con il server durante il trasferimento dei file.
+
+.Soluzione alternativa
+. Esamina il report COC della migrazione per identificare i file contrassegnati come errati.
+. Eseguire nuovamente la migrazione finché gli errori non vengono risolti.
+
+
+
+
+== Flussi di lavoro
+
+
+
+=== L'operazione è rimasta in pausa o bloccata per più di 20 minuti
+
+Potrebbe essere necessario intervenire quando si osservano problemi di connettività di rete, problemi di stabilità del volume di origine o di destinazione, o entrambi. Il processo potrebbe trovarsi nello stato Paused o Running senza alcun progresso visibile. Ciò potrebbe accadere se i servizi di origine o di destinazione non sono disponibili, o se il servizio worker subisce un'interruzione.
+
+.Soluzione alternativa
+. Verifica l'origine e la destinazione.
++
+Se risultano offline, riavviateli per ripristinare la connettività.
+
+. Verifica lo stato del worker.
++
+Se il worker è offline, utilizzare SSH per connettersi alla VM ed eseguire il seguente comando:
+
++
+[source, cli]
+----
+systemctl restart datamigrator-worker.service
+----
+. Riavvia la macchina virtuale:
++
+Se il problema persiste, riavviare la worker VM.
+
+
+
+
+
+=== Lo stato di esecuzione del processo è fuorviante quando si verificano errori
+
+Alcune esecuzioni dei processi di migrazione riscontrano errori e mostrano uno stato Completato o Con errore. Ciò può generare confusione nell'interpretazione dello stato di esecuzione del processo di migrazione.
+
+Definizioni di stato:
+
+* Completato: L'esecuzione di un'attività è terminata, ma potrebbe contenere errori.
+* Errore: l'esecuzione del processo non è riuscita a causa di un problema critico.
+
+
+.Soluzione alternativa
+Verifica l'esito dell'esecuzione del processo controllando i dettagli dell'esecuzione per individuare eventuali errori, soprattutto se lo stato è Completato. Non fare affidamento solo sull'etichetta di stato finché non avrai risolto il problema.

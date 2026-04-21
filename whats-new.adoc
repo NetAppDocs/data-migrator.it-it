@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: netapp, data, migrator, whats new, release, notes 
+summary: Scopri le novità di questo sito di documentazione. 
+---
+= Novità di NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Scopri le novità di NetApp Data Migrator.
+
+
+
+== 22 aprile 2026
+
+NetApp Data Migrator 2026.04.0 offre una nuova soluzione per la migrazione dei file di dati. Puoi utilizzare NetApp Data Migrator per migrare i dati da sistemi di storage locali o di terze parti ai servizi di NetApp cloud storage. NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB.
+
+link:learn-about-data-migrator.html["Scopri di più su NetApp Data Migrator"]

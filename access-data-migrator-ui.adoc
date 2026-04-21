@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: access-data-migrator-ui.html 
+keywords: netapp, data, migrator, ui, control, plane, access, worker, linux, windows 
+summary: 'Accedi all"interfaccia utente di NetApp Data Migrator dopo la distribuzione, effettua l"accesso al piano di controllo e connetti i worker Linux e Windows distribuiti.' 
+---
+= Accedere all'interfaccia utente di NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver distribuito la VM del piano di controllo e aver verificato che i servizi e i pod siano in esecuzione correttamente, accedi all'interfaccia utente di NetApp Data Migrator e connettiti al piano di controllo, ai worker Linux e ai worker Windows.
+
+.Prima di iniziare
+Verifica di disporre dell'indirizzo IP privato della VM del piano di controllo, che hai ottenuto quando link:deploy-control-plane-and-linux-workers.html["è stata distribuita la macchina virtuale del piano di controllo"]. Utilizzi l'indirizzo IP privato della VM del piano di controllo per accedere all'interfaccia utente.
+
+.Passaggi
+. ${post_edited_translations.segment}
++
+`\https://<control-plane-private-ip-address>/`
+
+. Utilizza il nome utente e la password predefiniti per accedere.
+. In base al tipo di migrazione, seleziona una delle seguenti schede:
++
+*NFS*: Questa opzione è per le migrazioni NFS (worker Linux).
+
++
+*SMB*: Questa opzione è per le migrazioni SMB (Windows workers).
+
+. Segui le istruzioni visualizzate sullo schermo per utilizzare il piano di controllo e connetterti alle macchine virtuali worker distribuite.
++
+Nella pagina iniziale, selezionare *Visualizza istruzioni per la configurazione del worker*.
+
+. Controlla lo stato nella sezione *Workers* per verificare che il worker sia connesso correttamente.
++
+Una volta che i worker sono stati connessi correttamente, è possibile configurare l'ambiente NetApp Data Migrator ed eseguire i processi di migrazione.
+
+
+
+.E ora?
+Dopo aver appreso come accedere all'interfaccia utente di NetApp Data Migrator, è possibile link:configure-data-migrator.html["configurare NetApp Data Migrator"].

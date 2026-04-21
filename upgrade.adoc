@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: upgrade.html 
+keywords: upgrade, control plane, worker vm, upgrade bundle, version update 
+summary: Aggiornare un piano di controllo, un worker Linux o un worker Windows in NetApp Data Migrator. 
+---
+= Aggiorna il piano di controllo e i worker in NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile aggiornare un piano di controllo, un worker Linux o un worker Windows in NetApp Data Migrator.
+
+.Prima di iniziare
+* Interrompi tutte le esecuzioni dei processi e rendi tutti i processi inattivi.
+* Scarica il pacchetto di aggiornamento (file tar.gz) dal NetApp Support Site e salvalo nella tua directory locale.
+* Verificate che i worker in uso siano online. I worker che risultano offline durante un aggiornamento non vengono aggiornati.
+
+
+
+
+== Passaggio 1: Carica il pacchetto di aggiornamento
+
+Carica il pacchetto di aggiornamento dalla tua directory locale.
+
+.Passaggi
+. Accedi all'interfaccia utente di NetApp Data Migrator, quindi vai alla pagina iniziale.
+. Seleziona l'icona di aiuto nell'angolo in alto a destra.
+. Seleziona la scheda *Aggiorna*.
+. Seleziona *Seleziona file*, quindi seleziona il file tar.gz del pacchetto di upgrade.
+. Seleziona *Carica* dopo aver selezionato il file.
++
+Attendi che venga visualizzato il messaggio che conferma che il caricamento e la convalida sono completi.
+
+. Facoltativamente, è possibile riavviare il processo selezionando *Start Over* per caricare un file diverso.
+
+
+
+
+== Fase 2: Aggiornare il piano di controllo e i worker
+
+Aggiornare il piano di controllo seguito dal worker Linux o dal worker Windows.
+
+.Passaggi
+. Selezionare *Aggiorna*. Il sistema avvia l'aggiornamento del control plane. Questo richiede circa cinque-dieci minuti.
++
+Durante l'aggiornamento, l'interfaccia utente potrebbe risultare temporaneamente non disponibile poiché l'applicazione si sta riavviando con la nuova versione. Accedi nuovamente all'interfaccia utente non appena sarà di nuovo accessibile.
+
+. Al termine dell'aggiornamento, tornare alla pagina *Upgrade*.
+. Verificare che lo stato dell'aggiornamento sia *Success*.
+. Dopo un aggiornamento del piano di controllo riuscito, l'aggiornamento dei worker si avvia automaticamente per tutti i worker online.
++
+
+NOTE: I worker online installano e riavviano automaticamente la nuova versione. I worker offline non vengono aggiornati.
+
+. Se l'aggiornamento di un worker non si avvia automaticamente, utilizzare SSH per connettersi al worker e avviare l'aggiornamento:
++
+[role="tabbed-block"]
+====
+.Worker Linux
+--
+[source, cli]
+----
+sudo /opt/datamigrator/staging/<version>/upgrade.sh <version>
+----
+--
+.Worker Windows
+--
+[source, cli]
+----
+ExecutionPolicy Bypass -File C:\datamigrator\staging\<version>\upgrade.ps1 -Version <version>
+----
+--
+====
+
+
+
+
+== Passaggio 3: Visualizzare i registri e risolvere i problemi
+
+Consulta i log della macchina virtuale per supportare la risoluzione dei problemi che si verificano durante l'aggiornamento.
+
+.Passaggi
+. Connettiti alla macchina virtuale del piano di controllo tramite SSH ed esegui il seguente comando per visualizzare i log:
++
+[source, cli]
+----
+tail -f /upgrade/upgrade-<version>.log
+----
+. Connettiti alla macchina virtuale Linux worker o Windows worker tramite SSH e visualizza i log utilizzando il seguente percorso:
++
+[role="tabbed-block"]
+====
+.Worker Linux
+--
+[source, cli]
+----
+/opt/datamigrator/upgrade.log
+----
+--
+.Worker Windows
+--
+[source, cli]
+----
+C:\datamigrator\upgrade.log
+----
+--
+====
+. Se l'aggiornamento non riesce, il sistema ripristina automaticamente la versione precedente e l'interfaccia utente visualizza lo stato dell'aggiornamento come *Failed*.
++
+Esamina i log di Ansible, quindi contatta il supporto NetApp e allega i log di Ansible alla tua comunicazione.
+
+

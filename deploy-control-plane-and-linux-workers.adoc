@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: deploy-control-plane-and-linux-workers.html 
+keywords: aws installation, prerequisites, control plane, worker vm, ec2 
+summary: Scopri come installare il piano di controllo NetApp Data Migrator e le macchine virtuali worker. 
+---
+= Distribuisci il piano di controllo e le macchine virtuali di lavoro Linux per NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Distribuisci la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux per NetApp Data Migrator utilizzando i servizi AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Il worker Linux supporta le migrazioni di dati NFS.
+
+.Prima di iniziare
+Scarica le immagini di NetApp Data Migrator dal link:https://mysupport.netapp.com/site/downloads["NetApp sito di supporto"^]:
+
+. Seleziona *NetApp Data Migrator*.
+. Segui le istruzioni nella pagina di download di NetApp Data Migrator per accedere alle immagini di NetApp Data Migrator.
+
+
+.Informazioni su questa attività
+Scegli la scheda AWS, Azure, Google Cloud o OVA a seconda dell'opzione di distribuzione.
+
+[role="tabbed-block"]
+====
+.AWS
+--
+Ripetere i seguenti passaggi per il piano di controllo e per le Amazon Machine Images (AMIs) dei worker Linux.
+
+.Passaggi
+. Utilizza gli ID AMI forniti per individuare le AMI nel tuo account AWS in *EC2* > *AMIs* > *Private images*.
+. Copia gli AMI nel tuo account:
++
+.. Seleziona l'AMI, quindi seleziona *Azioni* > *Copia AMI*
+.. Selezionare la regione di destinazione (se necessario).
+.. Abilita la crittografia e seleziona la tua chiave KMS.
+.. Attendi che lo stato dell'AMI mostri *Disponibile*.
+
+
+
+
+--
+.Azure
+--
+Ripetere i seguenti passaggi per il piano di controllo e per i VHD dei worker Linux.
+
+.Passaggi
+. Copia i file VHD in Archiviazione BLOB di Azure:
++
+[source, cli]
+----
+az storage blob copy start \
+  --source-uri "<PROVIDED_SAS_URL>" \
+  --destination-blob "<VHD_FILE_NAME>.vhd" \
+Group 1065216673, Grouped object  --destination-container <YOUR_CONTAINER_NAME> \
+  --account-name <YOUR_STORAGE_ACCOUNT> \
+  --account-key <YOUR_STORAGE_ACCOUNT_KEY>
+----
+. Crea una nuova immagine di Azure dal file VHD copiato:
++
+[source, cli]
+----
+az image create \
+  --resource-group <YOUR_RESOURCE_GROUP> \
+  --name <YOUR_IMAGE_NAME> \
+  --source https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/<YOUR_CONTAINER_NAME>/<VHD_FILE_NAME>.vhd \
+  --os-type linux \
+  --location <YOUR_AZURE_REGION>
+----
+
+
+--
+.Google Cloud
+--
+.Passaggi
+. Verifica che le API di Google Cloud necessarie per importare le immagini e distribuire il piano di controllo e le VM di lavoro siano abilitate. Per ulteriori informazioni, consulta la link:https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/get-started/enable-services#enabling_required_services_on_the_host_project["Documentazione Google Cloud"^].
+. Crea un bucket di Google Cloud Storage se non ne esiste già uno. Questo bucket viene utilizzato per archiviare gli archivi delle immagini (.tar.gz) durante l'operazione di importazione.
++
+Scopri come link:https://cloud.google.com/storage/docs/creating-buckets#console["crea un bucket di Google Cloud Storage"^].
+
+. Configura i ruoli e le autorizzazioni IAM. In questo modo, l'API di migrazione delle macchine virtuali disporrà delle autorizzazioni di accesso necessarie e il servizio di migrazione potrà accedere al bucket di Google Cloud Storage e creare le immagini.
++
+.. Assegna all'account di servizio objectViewer l'accesso al bucket di destinazione di Cloud Storage:
++
+[source, cli]
+----
+gcloud storage buckets add-iam-policy-binding gs://<GCS_BUCKET> \
+  --member=serviceAccount:service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com \
+  --role=roles/storage.objectViewer
+----
++
+L'account di servizio necessita dell'autorizzazione roles/storage.objectViewer per leggere i file immagine delle VM dal bucket di Cloud Storage durante il processo di migrazione.
+
++
+Quando l'API di migrazione delle macchine virtuali è abilitata, Google Cloud crea automaticamente un account di servizio con il seguente formato:
+
++
+`service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com`
+
++
+*** `++ gcp-sa` è l'account di servizio Google Cloud
+*** `vmmigration` è l'identificativo del servizio di migrazione delle macchine virtuali
+*** `iam.gserviceaccount.com` è il dominio standard per gli account di servizio di Google Cloud
+
+
+.. Crea un account amministratore sul `vmmigration` servizio:
++
+[source, cli]
+----
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member=user:<YOUR_EMAIL> \
+  --role=roles/vmmigration.admin
+----
++
+Questo ti concede le autorizzazioni amministrative per la migrazione delle macchine virtuali a livello di progetto.
+
+
+
+. Recupera e carica i file immagine:
++
+.. Scarica il file immagine del piano di controllo `.tar.gz` e il file immagine del worker Linux `.tar.gz` da link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^].
+.. Carica i  `.tar.gz` file nel tuo bucket di Google Cloud Storage.
+
+
+. Dopo aver caricato gli archivi delle immagini su Google Cloud Storage, crea le immagini delle macchine virtuali utilizzando il VM Migration Service eseguendo il seguente comando per ciascuna immagine (control plane e Linux worker).
++
+[source, cli]
+----
+--source-file=gs://<GCS_BUCKET>/<IMAGE_NAME>.tar.gz \
+  --image-name=<IMAGE_NAME> \
+  --location=<REGION> \
+  --target-project=projects/<PROJECT_ID>/locations/global/targetProjects/<PROJECT_ID> \
+  --project=<PROJECT_ID>
+----
++
+Questo comando crea una nuova immagine di macchina virtuale di Google Cloud Platform dall'archivio fornito nella regione specificata.
+
+. Elenca le operazioni di importazione delle immagini e conferma il completamento:
++
+[source, cli]
+----
+gcloud migration vms image-imports list --location=<REGION> --project=<PROJECT_ID>
+----
+
+
+--
+.OVA
+--
+.Passaggio
+Scarica il file immagine del piano di controllo `.ova` e il file immagine del worker Linux `.ova` da link:https://mysupport.netapp.com/site/["Sito di supporto NetApp"^].
+
+--
+====
+.E ora?
+Dopo aver appreso come distribuire una macchina virtuale del piano di controllo e una macchina virtuale di lavoro Linux, è possibile link:create-control-plane-and-worker-vms.html["creare il piano di controllo e le macchine virtuali di lavoro"].

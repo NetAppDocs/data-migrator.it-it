@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: manage-users.html 
+keywords: user management, rbac, app admin, user accounts, access control 
+summary: 'Aggiungi e gestisci gli utenti di NetApp Data Migrator con controllo degli accessi in base al ruolo, inclusa la creazione di account, l"assegnazione di ruoli e l"abilitazione o la disabilitazione dell"accesso.' 
+---
+= Aggiungere e gestire gli utenti in NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator utilizza link:access-control.html["Controllo degli accessi in base al ruolo (RBAC)"] per fornire una gestione sicura ed efficiente delle attività di migrazione dei dati. Dopo aver configurato le macchine virtuali (VM) di controllo e di lavoro, gli utenti App Admin possono creare e assegnare ruoli ai nuovi utenti. Ciò consente ai nuovi utenti di accedere, visualizzare o gestire progetti ed eseguire altre attività di migrazione, a seconda delle loro autorizzazioni.
+
+.Informazioni su questa attività
+È necessario aver effettuato l'accesso come App Admin per aggiungere un nuovo utente, abilitare o disabilitare un utente esistente o reimpostare la password di un utente.
+
+
+
+== Aggiungi un nuovo utente
+
+Crea un nuovo utente e condividi la password temporanea.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Impostazioni* > *Utenti* per visualizzare l'elenco degli utenti registrati.
+. Seleziona *Aggiungi utente*.
+. Inserisci il *Nome*, il *Cognome* e l'indirizzo *Email* del nuovo utente.
+. Se il nuovo utente necessita di autorizzazioni di amministratore, selezionare la casella di controllo *App Admin*.
+. Seleziona *Invia*.
+. Seleziona il link *Copia* (accanto al campo della password) per copiare la password temporanea, che viene visualizzata in formato mascherato.
+. Seleziona *Chiudi*.
+. Condividi la password temporanea copiata con il nuovo utente, che potrà quindi utilizzarla per accedere. Al primo accesso, gli verrà richiesto di cambiare la password.
+
+
+
+
+== Disabilitare un utente esistente
+
+Disabilita l'accesso a NetApp Data Migrator per gli altri utenti. In questo modo si impedisce agli utenti di accedere, ma non vengono eliminati i dati dell'utente, i processi di migrazione precedenti o i log associati a tale utente.
+
+.Passaggi
+. Seleziona l'icona *Impostazioni* nella barra di navigazione.
+. Seleziona la scheda *Utenti* per visualizzare l'elenco degli utenti registrati.
+. Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente che stai disabilitando, quindi seleziona *Disabilita accesso* dal menu a tendina.
++
+Lo stato dell'utente cambia da *Attivo* a *Inattivo* e l'utente non riesce ad accedere a NetApp Data Migrator.
+
+
+
+
+
+== Abilitare un utente
+
+Ripristina l'accesso a NetApp Data Migrator per un utente disabilitato, consentendogli di accedere ed eseguire azioni in base alle autorizzazioni assegnate.
+
+.Passaggi
+. Seleziona l'icona *Impostazioni* nella barra di navigazione.
+. Seleziona la scheda *Utenti* per visualizzare l'elenco degli utenti registrati.
+. Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente che stai abilitando, quindi seleziona *Abilita accesso* dal menu a discesa.
++
+Lo stato dell'utente cambia da *Inattivo* a *Attivo*. L'utente può ora accedere a NetApp Data Migrator.
+
+
+
+
+
+== Reimposta la password di un utente
+
+Reimposta la password per un utente esistente.
+
+
+NOTE: Per reimpostare la password di un utente App Admin quando non è disponibile nessun altro App Admin, contattare ng-ndm-downloads@netapp.com per ottenere lo script di reimpostazione della password.
+
+.Passaggi
+. Seleziona l'icona *Impostazioni* nella barra di navigazione.
+. Seleziona la scheda *Utenti* per visualizzare l'elenco degli utenti registrati.
+. Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente di cui devi reimpostare la password, quindi seleziona *Reimposta password* dal menu a tendina.
++
+Viene visualizzato un messaggio che conferma che la reimpostazione della password è avvenuta con successo.
+
+. Seleziona il link *Copia* (accanto al campo della password) per copiare la password temporanea visualizzata in formato mascherato.
+. Condividi la password temporanea copiata con l'utente.
+

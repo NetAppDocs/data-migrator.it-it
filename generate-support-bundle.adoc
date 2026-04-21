@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: generate-support-bundle.html 
+keywords: support bundle, diagnostics, troubleshooting, log files, download report 
+summary: Genera e scarica un bundle di supporto NetApp Data Migrator contenente log diagnostici, report degli errori e dati di configurazione per la risoluzione dei problemi. 
+---
+= Genera un pacchetto di supporto NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator consente di generare un pacchetto di supporto per la risoluzione di eventuali problemi riscontrati. Questo pacchetto contiene informazioni diagnostiche come file di registro, report di errore e dati di configurazione.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Aiuto* nella barra di navigazione, quindi seleziona l'opzione Pacchetto di supporto.
+. Seleziona *Data*. Inserisci l'intervallo di date che desideri includere nel pacchetto di supporto.
+. Seleziona *Altre metriche*. Inserisci le altre metriche che desideri includere nel pacchetto di supporto.
+. Seleziona *Genera pacchetto di supporto*. Quando il pacchetto è pronto, *Scarica report* diventa attivo.
+. Seleziona *Scarica il report*.
+

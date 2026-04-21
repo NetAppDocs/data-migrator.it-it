@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="4821361904f08ed800ae73ad92927d3d" category="summary">NetApp Data Migrator utilizza il controllo degli accessi in base al ruolo (RBAC) per gestire le autorizzazioni degli utenti, consentendo agli App Admin di assegnare ruoli ad altri utenti.</block>
+  <block id="f02b2be434e8a727287102f6a252e24c" category="doc">Gestisci il controllo degli accessi per NetApp Data Migrator</block>
+  <block id="d7c622d175e7320d211daad224463513" category="paragraph">NetApp Data Migrator utilizza il controllo degli accessi in base al ruolo (RBAC) per gestire le autorizzazioni degli utenti. RBAC consente agli utenti App Admin (amministratori) di assegnare uno qualsiasi dei seguenti tre ruoli ad altri utenti, garantendo un controllo degli accessi sicuro e operazioni efficienti. Gli utenti App Admin concedono le autorizzazioni ad altri utenti in base alle loro responsabilità e ai requisiti di accesso.</block>
+  <block id="918f97579e4443ee0226f731ca1b2454" category="list-text">*Amministratore dell'app*: Questo livello di accesso consente agli utenti di gestire le impostazioni generali del sistema, i ruoli utente e le autorizzazioni di accesso.</block>
+  <block id="0ffac7595c5d5ad698326101c205f97d" category="list-text">*Amministratore di progetto*: Questo livello di accesso consente agli utenti di gestire specifici progetti di migrazione, inclusa la configurazione e l'esecuzione dei job.</block>
+  <block id="9bec1a049bf6b183e7f01837d1d0b38b" category="list-text">*Visualizzatore di progetto*: Questo livello di accesso fornisce agli utenti l'accesso in sola lettura per monitorare l'avanzamento della migrazione, i log e i report. Questo ruolo è pensato per gli utenti che necessitano di monitorare e osservare l'avanzamento dei progetti di migrazione dei dati, ma non sono tenuti a eseguire azioni che potrebbero alterare o interferire con un progetto.</block>
+  <block id="cbd7227ec8822f2a9c681211cd2b2e47" category="paragraph">La tabella seguente fornisce un riepilogo delle azioni e delle autorizzazioni dei ruoli utente.</block>
+  <block id="004bf6c9a40003140292e97330236c53" category="cell">Azione</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descrizione</block>
+  <block id="bc99e1a834c7a116f4e5a1926fec7a4b" category="cell">Amministratore dell'app</block>
+  <block id="4a77ffaf07c1c0b1e953880f4462ccf9" category="cell">Amministratore del progetto</block>
+  <block id="60c9a7fbaded19745dee96e2591b5dd5" category="cell">Visualizzatore di progetto</block>
+  <block id="1bc2957f5ad93e6de5200e68a0926979" category="cell">Distribuzione degli agenti</block>
+  <block id="b91a46c270503cceee464d9cc98301be" category="cell">L'utente può accedere a *Visualizza le istruzioni per la configurazione del worker*</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">Sì</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="paragraph">No</block>
+  <block id="5fed933898706fd78ac043eef2dcc541" category="cell">Crea un utente</block>
+  <block id="b65eb58d7c9b34d0dd8eaf85b51dc84a" category="cell">L'utente può creare nuovi account utente</block>
+  <block id="f923f903857a5387d3db70494e074632" category="cell">Elenca utenti</block>
+  <block id="6cc4f9db0272e87efc4f7aef344f47da" category="cell">L'utente può visualizzare un elenco di utenti</block>
+  <block id="5d7d916557fc1d11c4ac2409e17441dd" category="cell">Gestisci la configurazione</block>
+  <block id="f180e689374b19f7086f777798b94512" category="cell">L'utente può gestire le impostazioni di configurazione</block>
+  <block id="f616e8b19078a6728addbab5c26541d1" category="cell">Gestisci lavoro</block>
+  <block id="fe05f8b474a5c2ed2d4a69e491757560" category="cell">L'utente può gestire i processi di migrazione</block>
+  <block id="c91c7b93c28cd18741b71f727ee81ee3" category="cell">Rapporti</block>
+  <block id="1f9a56de57c8e8b5ae1500f6842190b8" category="cell">L'utente può accedere alle opzioni per scaricare i report</block>
+  <block id="ba623d3bcb3f92061c623e7ba585a677" category="cell">Aggiorna progetto</block>
+  <block id="4a20713ddddd493d7a982089f2d8e7ac" category="cell">L'utente può modificare un progetto</block>
+  <block id="f9ff25aac7d17c14e19d286ae0a043e2" category="cell">Visualizza un progetto</block>
+  <block id="dc7a98ce3350dab03f5e08beee2be9cf" category="cell">L'utente può accedere alla pagina dell'elenco dei progetti</block>
+  <block id="be86ca474df5e14056bc0f20d2cdb767" category="cell">Crea un progetto</block>
+  <block id="2d490fff311df40dd93e29f99112f7b5" category="cell">L'utente può creare un progetto</block>
+  <block id="04e2fa8a65517a2edb23d527f3b18b8d" category="cell">Salva SMTP</block>
+  <block id="2d538349110055d188b1b161a4f6f4d1" category="cell">L'utente può aggiungere o modificare i dettagli SMTP</block>
+  <block id="4131a47b90245e698ff17260f9aa8fa2" category="summary">Accedi all'interfaccia utente di NetApp Data Migrator dopo la distribuzione, effettua l'accesso al piano di controllo e connetti i worker Linux e Windows distribuiti.</block>
+  <block id="bba519d0273fc545ec8a0eda7178c85c" category="doc">Accedere all'interfaccia utente di NetApp Data Migrator</block>
+  <block id="251eddead9eeff785f849aa0655b368f" category="paragraph">Dopo aver distribuito la VM del piano di controllo e aver verificato che i servizi e i pod siano in esecuzione correttamente, accedi all'interfaccia utente di NetApp Data Migrator e connettiti al piano di controllo, ai worker Linux e ai worker Windows.</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Prima di iniziare</block>
+  <block id="133ea86f1607a2d480c47f6e7726ddec" category="inline-link-macro">è stata distribuita la macchina virtuale del piano di controllo</block>
+  <block id="ef36a05239a3ef82b65b5fc75b47cd9a" category="paragraph">Verifica di disporre dell'indirizzo IP privato della VM del piano di controllo, che hai ottenuto quando <block ref="b713e00d541e82e4f58ea133e9b1520d" category="inline-link-macro-rx"></block>. Utilizzi l'indirizzo IP privato della VM del piano di controllo per accedere all'interfaccia utente.</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Passaggi</block>
+  <block id="451af897e2ad83a812621e959105663f" category="list-text">${post_edited_translations.segment}</block>
+  <block id="2e1fbfc868f4121471d4fee2563be03a" category="paragraph"><block ref="41ac7b764f12237e8a19ee966045da1f" prefix="" category="inline-code"></block></block>
+  <block id="3b9b583d53710398a6b9516f89e216ce" category="list-text">Utilizza il nome utente e la password predefiniti per accedere.</block>
+  <block id="334e64be38c81fde8ba773e178c909f4" category="list-text">In base al tipo di migrazione, seleziona una delle seguenti schede:</block>
+  <block id="6eb7a962c965cb0f7c579d6b275f7c73" category="paragraph">*NFS*: Questa opzione è per le migrazioni NFS (worker Linux).</block>
+  <block id="f6b034ffb89dcbedb3e9122b0fec0090" category="paragraph">*SMB*: Questa opzione è per le migrazioni SMB (Windows workers).</block>
+  <block id="53382efc8d30cb7b67f54a38e7a73f7e" category="list-text">Segui le istruzioni visualizzate sullo schermo per utilizzare il piano di controllo e connetterti alle macchine virtuali worker distribuite.</block>
+  <block id="c68c3837aaf840cec302cd98e4de25e6" category="paragraph">Nella pagina iniziale, selezionare *Visualizza istruzioni per la configurazione del worker*.</block>
+  <block id="cbc86ed7a1779fea6df3ea3b0e24c65b" category="list-text">Controlla lo stato nella sezione *Workers* per verificare che il worker sia connesso correttamente.</block>
+  <block id="4e33e6ed8061b5502ae7957b4f0debc0" category="paragraph">Una volta che i worker sono stati connessi correttamente, è possibile configurare l'ambiente NetApp Data Migrator ed eseguire i processi di migrazione.</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">E ora?</block>
+  <block id="9a4c92be3cfd0d8c4e5f2cc68d66bdf0" category="inline-link-macro">configurare NetApp Data Migrator</block>
+  <block id="5a28d0f81430b8b9faa8e3faf94a8949" category="paragraph">Dopo aver appreso come accedere all'interfaccia utente di NetApp Data Migrator, è possibile <block ref="eb61382f2bad59bb62f83c02035f2305" category="inline-link-macro-rx"></block>.</block>
+  <block id="51b99ea2354394ff1092c103509ccc36" category="summary">Utilizza la funzione Bulk Cutover in NetApp Data Migrator per eseguire la sincronizzazione finale dei dati tra i sistemi di origine e di destinazione.</block>
+  <block id="7fed1ba6a385026467b1c86f9fd1d712" category="doc">Configura il cutover in blocco in NetApp Data Migrator</block>
+  <block id="51be7e6ef751cd9ff13cb2267fd7150b" category="paragraph">Utilizza la funzione Bulk Cutover in NetApp Data Migrator per eseguire la sincronizzazione finale tra i sistemi di origine e di destinazione. Una volta completate le migrazioni di base e avviate le sincronizzazioni incrementali, puoi unire più percorsi in un unico job di cutover.</block>
+  <block id="df4a7c4be419a6027452e739e9d7a7e9" category="section-title">Avvia un lavoro di cutover</block>
+  <block id="4a19765a52cb7b078e0c60fef3d01f09" category="paragraph">Segui questi passaggi per avviare un cutover.</block>
+  <block id="9b4589cb01c1cffb60da40d95406e28b" category="list-text">Accedi a NetApp Data Migrator.</block>
+  <block id="80e42802b345b31373483c9e5b712463" category="list-text">Seleziona *Storage Servers* &gt; *File Servers*.</block>
+  <block id="68a3336bf8fe230a94c34c82b0b74a50" category="list-text">Seleziona il nome del file server per il quale desideri creare un'attività di cutover.</block>
+  <block id="11eb060703c5fe76f1af75c126d310a5" category="list-text">Seleziona *Bulk Cutover*.</block>
+  <block id="e562cfd62f1801784f2f3cf6c3c569af" category="list-text">Nella pagina *Seleziona percorso*, seleziona la casella di controllo accanto a *Source Path*.</block>
+  <block id="57f2cecc0eef0d3f0ae462c30ffeb996" category="list-text">Selezionare la casella di controllo accanto al percorso di origine (conferma del cutover job).</block>
+  <block id="b74bf2ecb25f4010a9250d808366fd9c" category="list-text">Seleziona *Procedi.*</block>
+  <block id="7d2bca1fc64db9e7d167f7045e6068b0" category="list-text">Seleziona la casella di controllo accanto al nome di un job per confermare che stai avviando un job di *Bulk Cutover*.</block>
+  <block id="48793918c3cac256347c6f47502a6324" category="admonition">È possibile selezionare un job quando un job di Bulk Migrate è in esecuzione in parallelo.</block>
+  <block id="1a80a47ef2f6882ed8173f7652fb3fc7" category="list-text">Seleziona *Invia* per avviare il tuo processo di Bulk Cutover.</block>
+  <block id="280d6c51f63c8390a817118a5cc7ddd3" category="paragraph">Viene visualizzato il messaggio di conferma *Il lavoro di cutover è stato creato*.</block>
+  <block id="c6dabc1f813ae186e36d5c5d23e5fd36" category="list-text">Puoi selezionare il link *Visualizza Job Listing* accanto a questo messaggio per aprire la pagina Elenco configurazioni Job, dove è elencato il tuo nuovo job.</block>
+  <block id="dc43384221aadf441fb56925cde36520" category="section-title">Approva un lavoro di cutover in blocco</block>
+  <block id="f7fb517f490b23ee9f475f28618c2417" category="paragraph">Segui questi passaggi per approvare un cutover.</block>
+  <block id="1beaf51f3950838b267bb0f11b927748" category="list-text">Nella pagina *Processi*, selezionare la scheda *Elenco esecuzioni processi*.</block>
+  <block id="5b3b7f3cd0d32f906fcbbf8fb1d705de" category="list-text">Seleziona il menu delle azioni accanto al tuo lavoro di cutover.</block>
+  <block id="b99a9a5879442c5ad3ae30c94964ccb3" category="list-text">Seleziona *Review*.</block>
+  <block id="531330f2326fb3283c827799b9c4dec0" category="paragraph">Viene visualizzata la finestra di dialogo *Cutover Confirmation*.</block>
+  <block id="ffc9534ab431605bc11f516d99c43ba5" category="list-text">Seleziona il link *Scarica il report CoC*.</block>
+  <block id="cc5fcd3fba3014c23240ac1c1497d8b7" category="paragraph">Esamina il report per verificare se il cutover è andato a buon fine e se tutti i dati sono stati migrati correttamente dalla sorgente alla destinazione.</block>
+  <block id="67116d320a2bb4f66b0bb10629a28264" category="list-text">Selezionare la casella di controllo accanto a *Ho esaminato e verificato il documento COC e tutte le altre informazioni essenziali*.</block>
+  <block id="228159fcd8ad29c01efe569a236253d2" category="list-text">Se le informazioni contenute nel report COC ti soddisfano, seleziona *Conferma* per approvare il *Bulk Cutover*.</block>
+  <block id="e15884a19074f86e7c09ab35a649f46a" category="paragraph">Lo stato cambia in *Complete.*</block>
+  <block id="c7c7190135e9f9b9ece90813a338db20" category="summary">Configura la funzione Bulk Discover in NetApp Data Migrator per generare una panoramica dell'intera capacità di archiviazione esistente prima di iniziare la migrazione dei dati.</block>
+  <block id="237c9334ef000476a7394e5432d15caa" category="doc">Pianifica la migrazione dei dati in NetApp Data Migrator utilizzando Bulk Discover</block>
+  <block id="5fe4d49f2bb62d43bc8130b371624a60" category="paragraph">Configura la funzione Bulk Discover in NetApp Data Migrator per generare rapidamente una panoramica dell'intera capacità di archiviazione esistente prima di iniziare la migrazione dei dati. Una chiara comprensione dei file archiviati e delle strutture di sistema può contribuire a semplificare il processo di migrazione dei dati.</block>
+  <block id="996e73c7461d886afe19727bc21490cf" category="list-text">Seleziona *Storage Servers* &gt; *File Servers* per visualizzare un elenco dei file server disponibili.</block>
+  <block id="8eef17af229d9974a423c51577657da9" category="list-text">Seleziona il nome del server su cui desideri eseguire una ricerca in blocco, quindi seleziona *Bulk Discover*.</block>
+  <block id="4ad61ed3eebd122efb6373bdff80b6d8" category="list-text">Seleziona *Pianificazione lavoro*, quindi seleziona una delle seguenti opzioni:</block>
+  <block id="90d449d963866835f03aebec004adec6" category="list-text">*Inizia ora* se vuoi che la scoperta abbia inizio immediatamente.</block>
+  <block id="776d91f489c41dc480313599429022d8" category="list-text">*Programma data e ora (UTC)* se desideri programmare il processo di rilevamento. Inserisci la data e l'ora in cui desideri che il job abbia inizio.</block>
+  <block id="ec612ce3f200b4c2ad7488256be9be02" category="list-text">Scegli una delle seguenti opzioni per *Scan Alternate Data Streams*:</block>
+  <block id="26f67c023990c39890e2fc88083d1acb" category="list-text">Seleziona *Sì* se desideri che NetApp Data Migrator rilevi i flussi di dati alternativi (ADS) associati ai tuoi file.</block>
+  <block id="9db88ff5db96c9cd9c9c254a6a10d998" category="list-text">Seleziona *No* se non desideri che NetApp Data Migrator rilevi l'ADS associato ai tuoi file.</block>
+  <block id="23aa07a919b422e82048c83eaa11fdee" category="list-text">Nella casella di testo *Percorsi da escludere*, inserisci i percorsi che desideri escludere dal processo di rilevamento. Ogni percorso deve essere inserito su una nuova riga.</block>
+  <block id="0b1a6aba743e5817c0e2fde514af1c01" category="list-text">Utilizza la *barra di ricerca* per trovare percorsi di esportazione specifici (tra quelli elencati) che desideri includere nel processo di rilevamento, quindi seleziona la casella di controllo accanto al/ai *percorso/i di esportazione*.</block>
+  <block id="f5f9bbbb5b9949b693fcb9afc02c0bf1" category="paragraph">I percorsi di esportazione non più raggiungibili vengono disabilitati e non possono essere utilizzati nel processo di rilevamento. Ad esempio, i percorsi di esportazione che sono stati eliminati o che non compaiono più nell'output di <block ref="55fb64f15dd3d0c53de3a4d095218569" prefix=" " category="inline-code"></block> per NFS o i percorsi che non vengono restituiti durante l'enumerazione delle condivisioni SMB vengono disabilitati.</block>
+  <block id="d9ef6c926d575b1081ad9bd10cfb8a20" category="list-text">Seleziona *Invia* e verrà visualizzato un messaggio di notifica che conferma la creazione del *Bulk Discover Job*. Seleziona il link *View Job Listing* in questo messaggio per visualizzare la pagina *Job Config List*, dove il lavoro appena creato è elencato nella tabella *Job Listings*.</block>
+  <block id="52651e9e259665a27e120a368f26f728" category="summary">Utilizza la funzione Bulk Migrate in NetApp Data Migrator per trasferire grandi volumi di dati da una posizione di origine a una di destinazione.</block>
+  <block id="82a11be88932c60c6c29c06b4c233449" category="doc">Eseguire la migrazione dei dati utilizzando NetApp Data Migrator</block>
+  <block id="505619737019b89dd9d4c16b706d8f62" category="paragraph">Utilizza le funzionalità di migrazione in blocco di NetApp Data Migrator per trasferire grandi volumi di dati da una posizione di origine a una di destinazione.</block>
+  <block id="a2d8cf659766e21d3e11e4f9a79d56c0" category="section-title">Passaggio 1: Configurare la migrazione in blocco in NetApp Data Migrator</block>
+  <block id="b2e1f3e6312c7b8aad6ed527c694618d" category="paragraph">È necessario definire i server per Bulk Migrate prima di poter utilizzare le funzionalità di Bulk Migrate.</block>
+  <block id="219fce68df0e060529d041bc226f8111" category="list-text">Seleziona il *File Server Name* per il quale desideri creare il job.</block>
+  <block id="699fcc2d622cb7cc67663305534ed067" category="list-text">Seleziona *Migrazione in blocco*.</block>
+  <block id="4dbe34dcfaf21a426bc5f1d0a9947fc0" category="section-title">Passaggio 2: Aggiungi le mappature di origine e destinazione</block>
+  <block id="87834d34f8d8989b4c54caedbea8b7d4" category="paragraph">Aggiungi le mappature di origine e di destinazione per specificare i percorsi di esportazione di origine e di destinazione per la tua migrazione.</block>
+  <block id="a270c874dd3f23eef6fb2f8c7a227252" category="list-text">Seleziona il percorso di esportazione nell'origine che desideri migrare.</block>
+  <block id="1ada8f7056024f536b0017b8a818a648" category="list-text">Facoltativamente, seleziona *Aggiungi directory di origine* se desideri eseguire una migrazione a livello di directory.</block>
+  <block id="5657e4af05fc77ede4d05249c45b45e9" category="paragraph">Dopo aver selezionato *Aggiungi directory di origine*, viene visualizzata la vista Esplora directory. Questa vista mostra l'elenco delle directory a livello radice. È possibile navigare fino alla directory desiderata oppure copiare e incollare direttamente il percorso della directory desiderata nella barra di ricerca della finestra Esplora directory per accedere a quella cartella.</block>
+  <block id="96a001e4dedac46d583f146f571969b2" category="list-text">Dopo aver selezionato la directory di origine, selezionare il file server di destinazione e il percorso di esportazione di destinazione.</block>
+  <block id="72f51b9743f5e36c1ea9f0ecd58e0f52" category="list-text">Facoltativamente, selezionare la directory nel percorso di esportazione di destinazione.</block>
+  <block id="eefcae75419b78d75bfc79496b19979e" category="paragraph">Se non si seleziona una directory nel percorso di esportazione di destinazione, la migrazione avviene a livello principale del percorso di esportazione selezionato.</block>
+  <block id="8831a2a9218d9ad9780279eb56459895" category="list-text">Dopo aver selezionato i percorsi di origine e di destinazione, seleziona *Aggiungi mappatura* per aggiungere la mappatura selezionata. Puoi creare più mappature per percorsi e directory di esportazione differenti.</block>
+  <block id="2b030877d1f1c8f607d5ca91b0a78034" category="paragraph">NetApp Data Migrator impedisce di selezionare una mappatura che abbia una connessione padre o figlio con una mappatura esistente. Ciò evita conflitti durante la migrazione.</block>
+  <block id="d753c570fa3cb330988352990ab9d256" category="list-text">Facoltativamente, è possibile eliminare o modificare una mappatura selezionando l'opzione *Modifica* o *Elimina*.</block>
+  <block id="59c71fe0ee9891f4b357478a9f0b05ea" category="list-text">Dopo aver aggiunto le mappature, selezionare *Procedi*.</block>
+  <block id="6e7276e697785c1151ded5bdc2b7e6c2" category="section-title">Passaggio 3: Personalizza il processo di migrazione in blocco</block>
+  <block id="cdffa971bc37c6ea429061f382706f1b" category="paragraph">Dalla pagina *Opzioni* è possibile selezionare diverse impostazioni per personalizzare il processo di Bulk Migrate in base alle proprie esigenze.</block>
+  <block id="054b4f3ea543c990f6b125f41af6ebf7" category="cell">Opzione</block>
+  <block id="53de9558db4284118c92c948fe5d5062" category="cell">Modelli di percorso esclusi</block>
+  <block id="fd6a2d100c8f79156ebf6d0acc1560fd" category="paragraph">Definisce i percorsi o le directory specifici da escludere dall'elaborazione. Ciò contribuisce a ottimizzare lo storage e le prestazioni saltando i file non necessari.</block>
+  <block id="b2d7b0df61dab0c76bd9c566bd24ff53" category="list-text">È possibile inserire più modelli di percorso, uno per riga.</block>
+  <block id="65eb767384fc37283189756aec69a4c0" category="list-text">È possibile inserire un carattere jolly <block ref="3389dae361af79b04c9c8e7057f60cc6" prefix="(" category="inline-code"></block> per selezionare più file o cartelle.</block>
+  <block id="f3eda43d0e3be869eeee59cc434c9697" category="list-text">Esempi di esclusioni:</block>
+  <block id="345d8aa7375b5de168baa2d72106f334" category="list-text"><block ref="f54b2b60498c09ff44ebf22381d6373c" prefix="" category="inline-code"></block>: Esclude tutti i file e le cartelle all'interno di qualsiasi directory di snapshot</block>
+  <block id="82bac5ef0147b5d60483f8d501227c3f" category="list-text"><block ref="3f763766aef1e7f764f69bfa8ce878f7" prefix="" category="inline-code"></block>: Esclude i file di registro</block>
+  <block id="2985ff2a0d24cdc2355a4ccfa9d1d9d9" category="list-text"><block ref="cbf258df55b17a18bba2ba23cef66778" prefix="" category="inline-code"></block>: Esclude i file temporanei</block>
+  <block id="722fe1f6d22c0695404492fa4518d9f2" category="cell">Programma di sincronizzazione incrementale</block>
+  <block id="e835f3861a378dd665368b313251f1a5" category="paragraph">Configura la frequenza con cui i dati vengono sincronizzati in modo incrementale. In questo modo vengono aggiornate solo le modifiche apportate dall'ultima sincronizzazione, migliorando l'efficienza della migrazione e riducendo i tempi di elaborazione.</block>
+  <block id="0b1132f19cad793f2687f25662d2c8e6" category="list-text">Seleziona *Disattivato* per disattivare la sincronizzazione incrementale.</block>
+  <block id="ba7982c8b14e51913792d3ae2df46cbc" category="list-text">Seleziona *Imposta pianificazione* per specificare una pianificazione di sincronizzazione. Puoi scegliere di sincronizzare i dati ogni ora, ogni giorno o ogni settimana.</block>
+  <block id="73a42fe909ffc5e15a75cd0977894b32" category="list-text">Seleziona *Espressione Cron* se sei un utente esperto e desideri definire una pianificazione di sincronizzazione personalizzata utilizzando un'espressione cron, per un controllo più granulare sui tempi di sincronizzazione.</block>
+  <block id="6dfd407960448084b5a0f7c341f29515" category="cell">Migra file</block>
+  <block id="e011c45ef18e58a0f53e9fc9c6901ae7" category="paragraph">Seleziona i file da migrare in base alla data dell'ultima modifica.</block>
+  <block id="dc8948b915144964bce1f670fe4ace9d" category="list-text">Seleziona *Tutti* per migrare tutti i file, indipendentemente dalla data di modifica.</block>
+  <block id="26e40508e41d8e4ced00ebe03695a193" category="list-text">Seleziona *Escludi file precedenti a (UTC)* per escludere i file precedenti a una data specificata.</block>
+  <block id="b94727e59c0fedfed37fa08bc69a519c" category="cell">Preserva a-time (Access Time)</block>
+  <block id="1a1f5a07ace08898f81128e362e8e27d" category="paragraph">Mantiene il timestamp di accesso originale al file, invece di aggiornarlo con l'ora della migrazione.</block>
+  <block id="15c487a98f4213c0d55f465020b0226d" category="cell">Mantieni le autorizzazioni</block>
+  <block id="eb64b891f63d6ffabf6217004cd05ca9" category="paragraph">Mantiene i permessi originali del file e della directory sorgente sulla destinazione.</block>
+  <block id="94dd63ab1c4b4342bd84fded4655c951" category="list-text">Seleziona *Abilitato* per conservare le autorizzazioni originali, inclusi proprietario, gruppo e diritti di accesso (liste di controllo degli accessi per SMB, bit di modalità per NFS) da un'origine a una destinazione.</block>
+  <block id="2ad8c16e554562f9312bc992dcca9a5e" category="list-text">Seleziona *Disabilitato* per saltare la conservazione delle autorizzazioni. NetApp Data Migrator migra i file con le autorizzazioni di destinazione predefinite, il che è utile quando si migra tra file system incompatibili.</block>
+  <block id="7db97d9c235c5e7fc35da92664b80209" category="cell">Salta i file modificati nell'ultimo</block>
+  <block id="89480adc629ca4e121b5621567f92571" category="paragraph">Specifica i file da escludere dalla migrazione in base a un intervallo di tempo (in minuti, ore o giorni). Questo aiuta a prevenire l'incoerenza dei dati, garantendo che i file in fase di modifica non vengano trasferiti durante l'aggiornamento.</block>
+  <block id="44c7a5e141aad3b574f30358d34467c0" category="cell">Carica la mappatura GID/UID</block>
+  <block id="561bec026aadc20d54b4b375338895e0" category="paragraph">Carica un file di mappatura dell'ID di gruppo (GID) o dell'ID utente (UID) per mantenere la corretta proprietà dei file durante la migrazione. Il file caricato deve rispettare il formato specificato nel modello fornito.</block>
+  <block id="a99220b4486d225ce4c9f923226635e7" category="list-text">Seleziona *Scarica modello* per scaricare un formato di file di esempio.</block>
+  <block id="ac0df8cfc38c9f9ac956f30d62de5456" category="list-text">Seleziona *Scegli un file* per selezionare il file di mappatura dal tuo sistema locale.</block>
+  <block id="4c068d58547c6e11bbd4dba098739bee" category="list-text">Seleziona *Carica* per applicare la mappatura.</block>
+  <block id="c2f492f3c50be90aa564aed90e0fc304" category="cell">Caricamento della mappatura SID</block>
+  <block id="7a190e8decdc07a49c3cf8a1f327c646" category="paragraph">Carica un file di mappatura dell'identificativo di sicurezza (SID). La mappatura SID garantisce che le autorizzazioni di utenti e gruppi vengano mantenute correttamente durante la migrazione o la sincronizzazione dei file tra sistemi. Il file caricato deve rispettare il formato specificato nel modello fornito per il download.</block>
+  <block id="2319db93ba7524fc1d897cb3ec220082" category="paragraph">Dopo aver selezionato le opzioni, seleziona *Procedi* per aprire la pagina *Rivedi e invia*.</block>
+  <block id="f16f4869607de3851167be91bdf17cf4" category="section-title">Passaggio 4: Rivedi e invia</block>
+  <block id="11c09fc0c5afb12435057761dfaf1043" category="paragraph">Verifica le impostazioni, quindi procedi con un'operazione di migrazione in blocco.</block>
+  <block id="8a9fa295f8f3c420e542fbdb2be67f26" category="list-text">Visualizza lo *stato di pre-verifica* del tuo lavoro. Assicurati che il percorso di origine contenga i dati corretti e conferma che il percorso di destinazione disponga di spazio di archiviazione e autorizzazioni di accesso sufficienti.</block>
+  <block id="3a5d4f769154afbab4499cd26cd677c2" category="list-text">Seleziona *Invia* per creare un nuovo processo di migrazione.</block>
+  <block id="c0320bc343dcb3dfc953df326f85a1f1" category="paragraph">Viene visualizzato il messaggio di conferma *È stato creato il processo Bulk Migrate*.</block>
+  <block id="61fcf75e406c2f8580d9cfe1134092cd" category="list-text">Seleziona il link *Visualizza offerta di lavoro* accanto al messaggio di notifica per aprire la pagina *Elenco configurazioni lavoro* dove è elencato il tuo nuovo job.</block>
+  <block id="4ea5d203fbdeb59d3aba88b36b0fb49b" category="summary">Accedi come App Admin (amministratore) utilizzando le credenziali predefinite e aggiorna il tuo nome utente e password.</block>
+  <block id="b9eb0db38a633459a1a4f1573806598c" category="doc">Configura NetApp Data Migrator</block>
+  <block id="a60613f02f079190f3f23ed86b85a746" category="paragraph">Dopo aver installato NetApp Data Migrator, è necessario accedere come App Admin (amministratore) utilizzando il nome utente e la password predefiniti.</block>
+  <block id="4e4712cd21c2a03063a755ec11a55d4b" category="section-title">Accedi a NetApp Data Migrator</block>
+  <block id="79ead709a7d2a7a52f8890bc2ccbd4de" category="paragraph">Accedi a NetApp Data Migrator, quindi modifica le tue credenziali di accesso e crea il tuo primo progetto.</block>
+  <block id="3fc11e04b07d8e866f2add31278093d2" category="list-text">Apri un browser web e vai a NetApp Data Migrator:</block>
+  <block id="3fdcf5257adfc8dc72531d88d87c137f" category="paragraph"><block ref="8424895e08f1a08bf32a5ebd95eb9b25" prefix="" category="inline-code"></block></block>
+  <block id="6d5531ea9180071396710683fda13899" category="list-text">Nella pagina *Welcome*, inserisci il nome utente predefinito in *Username/Email*.</block>
+  <block id="329c0bba0a702627545256b34f866dae" category="list-text">Inserisci la password predefinita in *Password*.</block>
+  <block id="c73579d39b5f5df8c4a2d6a8604926e6" category="list-text">Seleziona *Accedi*.</block>
+  <block id="1faff00a18996a3019ce89a226bc5839" category="paragraph">Si apre la pagina *Reimposta password*.</block>
+  <block id="4bca89a1f516cc233ef01f0d0beba886" category="list-text">Inserisci una nuova password che soddisfi i seguenti requisiti di sicurezza:</block>
+  <block id="9c5d553ad697089d0c2996bbc3a55765" category="list-text">Include almeno 8 caratteri</block>
+  <block id="ee7df51a7f3a94f61fc6c94b6fe82f66" category="list-text">Include almeno una lettera maiuscola</block>
+  <block id="4033d9d6a973cbb2eeee793c2526040f" category="list-text">Include almeno una lettera minuscola</block>
+  <block id="74374e5ff978c98b8089211e9d1e2b05" category="list-text">Include almeno un numero</block>
+  <block id="c29be0b7ea49d6d9d0b6bcccb58eaf76" category="list-text">Include almeno un carattere speciale</block>
+  <block id="a6e4856c624ae244e6c8abd1550d7872" category="list-text">Seleziona *Reimposta password*. Si apre la pagina *I tuoi dati*.</block>
+  <block id="65440c4a393217bbcbac2a08da44ada3" category="list-text">Inserisci il tuo *Nome*, *Cognome* e *Indirizzo email*.</block>
+  <block id="8ae3a65ab5dbbaec436dff36af47c72f" category="list-text">Seleziona *Procedi*. Si apre la pagina *Crea un nuovo progetto*.</block>
+  <block id="a7769139ddefa30ec753d34c7dcf1530" category="list-text">Seleziona *Crea progetto*, quindi inserisci i seguenti dettagli:</block>
+  <block id="e588eec0749c107e3a35a2239ab97ab6" category="list-text">*Nome del progetto*: Inserisci un nome descrittivo per il tuo progetto.</block>
+  <block id="5bd649e944ca70a8104746e5471b5344" category="list-text">*Descrizione del progetto (facoltativa)*: Puoi fornire ulteriori dettagli sul tuo progetto.</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleziona *Create*.</block>
+  <block id="7925494af01d80aae3e2f3b865e89284" category="paragraph">Il nuovo progetto viene visualizzato nella barra delle notifiche nella parte superiore del NetApp Data Migrator control plane.</block>
+  <block id="2a7d5edd6c91ee2c533266ad7edd9e99" category="section-title">Disconnettiti da NetApp Data Migrator</block>
+  <block id="703289ac8a82d2e93f145b9913fe5960" category="paragraph">Dopo aver effettuato il logout da NetApp Data Migrator, al successivo accesso dovrai utilizzare le credenziali appena create (indirizzo email e password).</block>
+  <block id="2b63a14e00dfaa13460d382f1dae6d76" category="list-text">Seleziona l'icona *Utente* (accanto a *Impostazioni*).</block>
+  <block id="6d01d818bda218e1f5383a41fcaef8a4" category="list-text">Seleziona *Esci*. Si apre la pagina *Benvenuto*.</block>
+  <block id="5a02a55144e98574da051358293abae7" category="inline-xref">effettuato l'accesso</block>
+  <block id="69bae6def768dd89f908c38a763d6a2a" category="list-text">Nei campi *Email* e *Password*, inserisci l'indirizzo email e la password che hai registrato quando ti sei <block ref="936cc0ab9f7b6af145da805d7de86517" category="inline-xref-macro-rx"></block>.</block>
+  <block id="87857f52bd96407fa85a6f1ba301966d" category="inline-link-macro">usa NetApp Data Migrator</block>
+  <block id="dd30e7d75cc22a941a3c49fb80cec333" category="paragraph">Dopo aver appreso come configurare NetApp Data Migrator, puoi <block ref="ab29639a271409fa761d8431a246879d" category="inline-link-macro-rx"></block>.</block>
+  <block id="e174dd43d02d3758479a35ae78156ebf" category="summary">Configura NetApp Data Migrator per inviare avvisi e-mail in tempo reale sulle modifiche di stato del progetto impostando un server di posta elettronica SMTP.</block>
+  <block id="1a031c746d9668df5197eb3a49217dc3" category="doc">Configura le notifiche in tempo reale per NetApp Data Migrator</block>
+  <block id="fa6b8e03caf292beef06bd1e70db654b" category="paragraph">È possibile configurare NetApp Data Migrator per ricevere notifiche via e-mail in tempo reale relative alle modifiche di stato dei progetti.</block>
+  <block id="3a5d711b26ecaceded81d81f5f55bdf6" category="paragraph">Verifica di aver effettuato l'accesso come utente *App Admin*. Questo livello utente è necessario per configurare i dettagli del server di posta SMTP.</block>
+  <block id="a9a616da981db88decc636038dffd789" category="list-text">Seleziona *Impostazioni* nella barra di navigazione.</block>
+  <block id="0d3e50236390c45edcb134d1e70495fc" category="list-text">Selezionare la scheda *SMTP* e compilare i campi indicati nella tabella seguente.</block>
+  <block id="6f16a5f8ff5d75ab84c018adacdfcbb7" category="cell">Campo</block>
+  <block id="5b8c99dad1893a85076709b2d3c2d2d0" category="cell">Indirizzo IP</block>
+  <block id="c6bc689d6f8659853400bfdf8bb5815e" category="paragraph">indirizzo del server SMTP</block>
+  <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">Porta</block>
+  <block id="824c1fa95c0a8bdccaa8d674c9297a46" category="paragraph">porta SMTP</block>
+  <block id="f6039d44b29456b20f8f373155ae4973" category="cell">Nome utente</block>
+  <block id="bd5dd02af0fecf457250c2306554fd75" category="paragraph">Nome utente per l'autenticazione del server</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="cell">Password</block>
+  <block id="1f11c34b0cb70fd75dd51cf580c1d760" category="paragraph">Password di autenticazione del server</block>
+  <block id="4ca679a383343ab3d4ca1cd7c91b43f7" category="cell">Da Email</block>
+  <block id="e3ff2cd6c1009c2f5c182b8f7d0a879f" category="paragraph">Indirizzo del mittente per tutte le notifiche</block>
+  <block id="879de5fd02e10c3b90201a2d9c9d8a63" category="cell">A e-mail</block>
+  <block id="fa54b1fb674193fb45e642021bea6eea" category="paragraph">Indirizzo/i del destinatario/i degli avvisi</block>
+  <block id="8d42a83580debfe7ef1513ad0211c385" category="admonition">Dopo aver configurato SMTP, gli utenti devono reinserire la password quando modificano le impostazioni SMTP.</block>
+  <block id="f0d42477027388df0e6f14bb5386d338" category="summary">Creare la macchina virtuale (VM) del piano di controllo e le VM worker Linux e Windows per accedere a NetApp Data Migrator.</block>
+  <block id="bfe4a94c6fb8394475bdc0c5cf518a5b" category="doc">Creare il piano di controllo e le macchine virtuali di lavoro per accedere a NetApp Data Migrator</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">Sito di supporto NetApp</block>
+  <block id="4a01e4c225ea2f8676dc37b3e618f358" category="paragraph">Solo per le migrazioni SMB, scarica Windows Worker Installer dal <block ref="79a5efacdd8155d1c0d2f7284cc3f087" category="inline-link-macro-rx"></block>.</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Informazioni su questa attività</block>
+  <block id="c657e93e7fbad14bf1d06ea3c4bd51b0" category="paragraph">È possibile creare la macchina virtuale del piano di controllo e la macchina virtuale worker Linux utilizzando le immagini che hai distribuito tramite AWS, Azure o Google Cloud service oppure i modelli OVA. La macchina virtuale worker Windows viene creata utilizzando il Windows Worker Installer. La macchina virtuale worker Linux supporta le migrazioni NFS e la macchina virtuale worker Windows supporta le migrazioni SMB. È possibile creare più macchine virtuali worker in base alle proprie esigenze.</block>
+  <block id="3d0b39987fd5c9b4656db2fcddd0787d" category="list-text">Utilizzare l'immagine del piano di controllo distribuita per creare una macchina virtuale del piano di controllo con la seguente configurazione consigliata:</block>
+  <block id="c65ddce3c65e864dcd4a5e3efc91388c" category="cell">Impostazione consigliata</block>
+  <block id="17126aef3e415713552604218f448967" category="cell">Configurazione VM</block>
+  <block id="2abe83fe30f387e731f1d55a40079fc7" category="list-text">Immagine: Immagine personalizzata importata per il piano di controllo</block>
+  <block id="429358998441afe97c4c69febb718229" category="list-text">Tipo di scheda di interfaccia di rete: gVNIC</block>
+  <block id="ca2a317a8a02e6eb7778a69821932f85" category="list-text">Dimensioni: 8 vCPU, 64 GB di RAM</block>
+  <block id="dc5a62a67a863dd167b6eb6968f84d86" category="list-text">Storage: 200 GiB</block>
+  <block id="d3bb1b691a86953ed189d1934971df50" category="paragraph">Per la pianificazione dello storage, è consigliabile allocare circa 1,1 GB di spazio su disco per ogni milione di file. È possibile stimare il fabbisogno totale di spazio su disco moltiplicando il numero previsto di file (in milioni) per 1,1. Ad esempio, se si prevedono circa 5 milioni di file, lo spazio su disco stimato necessario per i metadati dei file sarà di 5 × 1,1 GB = 5,5 GB.</block>
+  <block id="8f92f4faf9313e148d5e94928e5b4284" category="paragraph">Inoltre, è necessario allocare il seguente storage:</block>
+  <block id="76d1cafd7382e933616ec9fd2d168972" category="list-text">50 GB aggiuntivi per le immagini Docker, l'archiviazione del sistema operativo e altri componenti a livello di sistema</block>
+  <block id="839e84f24852431ceb092e5f0057cfe0" category="list-text">Prevedere uno spazio buffer aggiuntivo per far fronte alla crescita futura e ai costi operativi</block>
+  <block id="c1b47471a575ac0bf20392ca17ecd880" category="cell">Hyperscaler</block>
+  <block id="23d16bb5d0d5d99dd45983a3744fd24c" category="list-text">AWS: istanza r7i.2xlarge</block>
+  <block id="8a2ba98c67a5ef87934221f46c888255" category="list-text">Dimensioni della macchina virtuale Azure: Standard_E8ds_v5</block>
+  <block id="b8ffe263f5c16cad1d5fd16a4a7e096a" category="list-text">Tipo di macchina Google Cloud: c3-highmem-8</block>
+  <block id="cc15b875f2d3d23a7f90fcb82955dc49" category="list-text">Utilizzare l'immagine worker Linux distribuita per creare la macchina virtuale worker Linux per supportare la migrazione NFS con la seguente configurazione consigliata:</block>
+  <block id="4e907780db7852be1cafea81d4bca8f5" category="list-text">Immagine: Immagine importata personalizzata per il worker Linux</block>
+  <block id="76c11c127079bbc1923f9933dd32f80f" category="list-text">Dimensioni: 4 vCPU, 16 GB di RAM</block>
+  <block id="0bf601825979e6cf394e4e7181583c6f" category="list-text">Spazio di archiviazione: 100 GB</block>
+  <block id="ba6d738a46786dd99e8ec9273c11a205" category="list-text">AWS: r7i.2xlarge</block>
+  <block id="4b5539261d79a205a59aed581fc4867a" category="list-text">Crea una macchina virtuale di lavoro Windows per supportare le migrazioni SMB utilizzando Windows Worker Installer:</block>
+  <block id="0c039100d1f05dc36d6a229715b6e704" category="list-text">Crea una macchina virtuale Windows con le seguenti impostazioni di configurazione consigliate:</block>
+  <block id="63a695f43c2a6265182deb016291c2bc" category="list-text">Immagine: Windows Server 2022 Base</block>
+  <block id="73fb4065cbd0c9f51b1d2d5691a1b978" category="list-text">Architettura: 64bit</block>
+  <block id="d925543b6d03e10596af4b2fd60d6f08" category="list-text">Dimensioni: 16 vCPU, 64 GB di RAM</block>
+  <block id="614ede1f3e88dda36a8c2a9116ac030c" category="list-text">Assicurarsi che il protocollo Desktop remoto (RDP) (3389) sia aperto</block>
+  <block id="51becc6ceebabbe8d6c1294b0dee6fa7" category="list-text">Crea una sessione di lavoro remota utilizzando RDP.</block>
+  <block id="3de40160643c4264dfdb435901f88134" category="inline-link-macro">Connessioni RDP</block>
+  <block id="04e35b02091c127ce30a041090d5ae10" category="paragraph">Scopri di più su <block ref="413636dc63fc70d1de2995e50bbc28db" category="inline-link-macro-rx"></block>.</block>
+  <block id="c8ec5de526848edba89b4cd247a7c82f" category="list-text">Copiare ed eseguire Windows Worker Installer sulla macchina virtuale del piano di controllo.</block>
+  <block id="a9058b2b8149aa6459c22839b8f48e7d" category="paragraph">Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile scegliere una delle seguenti opzioni:</block>
+  <block id="a729f07fe3c69abdf2c50ebfa113d507" category="inline-link-macro">Convalidare la macchina virtuale del piano di controllo</block>
+  <block id="15f42688d57360bf1f9db0b9f31ac5cb" category="list-text">Facoltativamente,<block ref="38876e4285448dda0ef37899ea72b3f7" category="inline-link-macro-rx"></block></block>
+  <block id="359f010480b6cb0e4541e04bb0fcc16b" category="inline-link-macro">Accedere all'interfaccia utente di NetApp Data Migrator e connettersi al piano di controllo e ai worker</block>
+  <block id="ca6ab599cc2e4b0485c935f29da44c3b" category="list-text"><block ref="ca6ab599cc2e4b0485c935f29da44c3b" category="inline-link-macro-rx"></block></block>
+  <block id="a70f927e90b92e5863f95f3d77a75c40" category="summary">Utilizza questa matrice per determinare se utilizzare NetApp Data Migrator o SnapMirror per i tuoi scenari di migrazione dei dati.</block>
+  <block id="8e92e15e5d350cd28fb679db44bc77d8" category="doc">Decidi se utilizzare NetApp Data Migrator</block>
+  <block id="37b72dc4b7827b60200f9714aa7bfaf9" category="paragraph">Utilizza la matrice per determinare se utilizzare NetApp Data Migrator o SnapMirror per le operazioni di migrazione dei dati NFS e SMB da un sistema storage ONTAP on-premises. Ad esempio, se stai migrando file NFS e SMB da un'origine ONTAP on-premises con ONTAP 9.12.1 a una destinazione Google Cloud NetApp Volumes Flex service, dovresti utilizzare NetApp Data Migrator.</block>
+  <block id="c14c876ded3fe2163d3a5d0d31bc0acd" category="cell">Origine del sistema storage locale o storage di terze parti</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="cell">Amazon FSx for NetApp ONTAP</block>
+  <block id="ec5be37dca378e7be66d606e491d27e5" category="cell">Hardware di Azure NetApp Files</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="cell">Cloud Volumes ONTAP</block>
+  <block id="eaae701c3efffbff7da15565f5a664f0" category="cell">Hardware Google Cloud NetApp Volumes</block>
+  <block id="13b13feeb79c410e7ea4bc459d2d8402" category="cell">Google Cloud NetApp Volumes Flex</block>
+  <block id="bc8ed816d898a820d24a579fced737a5" category="cell">Google Cloud NetApp Volumes Flex (basato su VSA)</block>
+  <block id="22f833d182b55e822d49c4653379f9fd" category="cell">ONTAP on-premises a partire da ONTAP 9.10.1</block>
+  <block id="794cb725c5631ad99b5b7c000307f0df" category="cell">SnapMirror</block>
+  <block id="69d3f0557e159c698c32cd983f1ca43e" category="cell">NetApp Data Migrator</block>
+  <block id="4e1d49925714fc3fcf8ddb989185740d" category="cell">ONTAP on-premises Per ONTAP 9.9.1 e versioni precedenti</block>
+  <block id="06930da74633647dc9ffd97e66c59fdf" category="cell">Sistemi e array di storage non-NetApp</block>
+  <block id="c6eda4849238a13e10ad30b61ba38e0c" category="cell">Cloud Volumes ONTAP a partire da ONTAP 9.10.1</block>
+  <block id="1e9e2d61cf256f6b3c097649a62e0fba" category="cell">Cloud Volumes ONTAP per ONTAP 9.9.1 e versioni precedenti</block>
+  <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">Non applicabile</block>
+  <block id="54feccc54fd794221a8e7c7fc4ed0916" category="cell">Migrazione dei dati senza autorizzazioni</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">Informazioni correlate</block>
+  <block id="d384359ca03c8d46191c719c57744679" category="inline-link-macro">Replica di volumi SnapMirror</block>
+  <block id="0e974cc21b70af7eb7830a9dc59aa564" category="paragraph">Scopri di più<block ref="26620ccf6b7fdf51f477f8c8c903c95c" category="inline-link-macro-rx"></block></block>
+  <block id="bb22576f9b122fdf9d78825d5814f73f" category="summary">Scopri come installare il piano di controllo NetApp Data Migrator e le macchine virtuali worker.</block>
+  <block id="021d971a688b59f55f1e01248ea81da6" category="doc">Distribuisci il piano di controllo e le macchine virtuali di lavoro Linux per NetApp Data Migrator</block>
+  <block id="9866e84bbeb7aaf31c785c41e852e87f" category="paragraph">Distribuisci la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux per NetApp Data Migrator utilizzando i servizi AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Il worker Linux supporta le migrazioni di dati NFS.</block>
+  <block id="9c093f14319e8253b8c9b37290597239" category="inline-link-macro">NetApp sito di supporto</block>
+  <block id="5ff33b6501cd191d29481875867dc11b" category="paragraph">Scarica le immagini di NetApp Data Migrator dal <block ref="a806f88fd14897065f93f1191bd5b7da" category="inline-link-macro-rx"></block>:</block>
+  <block id="9b1b30bfc99bb38f9a91517b1b946684" category="list-text">Seleziona *NetApp Data Migrator*.</block>
+  <block id="310e86f89904e335507c6ff6e454da6c" category="list-text">Segui le istruzioni nella pagina di download di NetApp Data Migrator per accedere alle immagini di NetApp Data Migrator.</block>
+  <block id="6820fbb635251b795c3ca1ae5b5a14ba" category="paragraph">Scegli la scheda AWS, Azure, Google Cloud o OVA a seconda dell'opzione di distribuzione.</block>
+  <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="open-title">AWS</block>
+  <block id="f05dd74ad3da01a9f48b2d86f4af7eb5" category="paragraph">Ripetere i seguenti passaggi per il piano di controllo e per le Amazon Machine Images (AMIs) dei worker Linux.</block>
+  <block id="8a7c82213ea8664f9ac9e76f2d387dad" category="list-text">Utilizza gli ID AMI forniti per individuare le AMI nel tuo account AWS in *EC2* &gt; *AMIs* &gt; *Private images*.</block>
+  <block id="4a59adb91b8cbd1ec196267ece562b92" category="list-text">Copia gli AMI nel tuo account:</block>
+  <block id="77b81ba333662cf81c9cffca4a89b540" category="list-text">Seleziona l'AMI, quindi seleziona *Azioni* &gt; *Copia AMI*</block>
+  <block id="5524123b1f421314e42f44a3e9355071" category="list-text">Selezionare la regione di destinazione (se necessario).</block>
+  <block id="df85c361bc998759474a38526dc6cbed" category="list-text">Abilita la crittografia e seleziona la tua chiave KMS.</block>
+  <block id="38afc902108550083704c07a10fbf3c4" category="list-text">Attendi che lo stato dell'AMI mostri *Disponibile*.</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="open-title">Azure</block>
+  <block id="bef67488f76ed50fa89b0374cc4bbe98" category="paragraph">Ripetere i seguenti passaggi per il piano di controllo e per i VHD dei worker Linux.</block>
+  <block id="b5a8ceaee1ddcc3af956fdb72e6625ee" category="list-text">Copia i file VHD in Archiviazione BLOB di Azure:</block>
+  <block id="27ed0419ae22a65be6278fa30e3f3efa" category="list-text">Crea una nuova immagine di Azure dal file VHD copiato:</block>
+  <block id="56ef2682280ac110060b881925a87b80" category="open-title">Google Cloud</block>
+  <block id="b0cd7667098b2a3439c52ba1f9334faa" category="inline-link-macro">Documentazione Google Cloud</block>
+  <block id="ad4b43323f8ef856a64cd26d51392bb5" category="list-text">Verifica che le API di Google Cloud necessarie per importare le immagini e distribuire il piano di controllo e le VM di lavoro siano abilitate. Per ulteriori informazioni, consulta la <block ref="bfa780cd02afd09e0ae67653ce85251d" category="inline-link-macro-rx"></block>.</block>
+  <block id="30707131dbf59729287b7e529822cd05" category="list-text">Crea un bucket di Google Cloud Storage se non ne esiste già uno. Questo bucket viene utilizzato per archiviare gli archivi delle immagini (.tar.gz) durante l'operazione di importazione.</block>
+  <block id="d4eb04c604e1ccd8dbab299acccd9e05" category="inline-link-macro">crea un bucket di Google Cloud Storage</block>
+  <block id="7b17753aef730d74210418828eb10056" category="paragraph">Scopri come <block ref="f7495b27f797bd79dd14cf7bcb9d8554" category="inline-link-macro-rx"></block>.</block>
+  <block id="a37144001748f9dc94b0fb22e656531d" category="list-text">Configura i ruoli e le autorizzazioni IAM. In questo modo, l'API di migrazione delle macchine virtuali disporrà delle autorizzazioni di accesso necessarie e il servizio di migrazione potrà accedere al bucket di Google Cloud Storage e creare le immagini.</block>
+  <block id="e068d5e55435058d8d80b438cbfedc6e" category="list-text">Assegna all'account di servizio objectViewer l'accesso al bucket di destinazione di Cloud Storage:</block>
+  <block id="c813aaa1c28525e28180006c1c7b9550" category="paragraph">L'account di servizio necessita dell'autorizzazione roles/storage.objectViewer per leggere i file immagine delle VM dal bucket di Cloud Storage durante il processo di migrazione.</block>
+  <block id="dc36632e376a444fbc3f974928f6c693" category="paragraph">Quando l'API di migrazione delle macchine virtuali è abilitata, Google Cloud crea automaticamente un account di servizio con il seguente formato:</block>
+  <block id="1e043504778da0aa7bcf3436ddeef0e1" category="paragraph"><block ref="5df0b69b601a351abdf7499d42281325" prefix="" category="inline-code"></block></block>
+  <block id="68dbee6ed219fb61e0a1f2d7c0052a2b" category="list-text"><block ref="0a9fe612dd3aeeb522b085a5dc743836" prefix="" category="inline-code"></block> è l'account di servizio Google Cloud</block>
+  <block id="c286a0934a11b3f2ec2cf08dd231cf8e" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix="" category="inline-code"></block> è l'identificativo del servizio di migrazione delle macchine virtuali</block>
+  <block id="03a45e0dc9af4eead77f83ecbd640307" category="list-text"><block ref="79c170c716ea5fca869039d6a032f2a5" prefix="" category="inline-code"></block> è il dominio standard per gli account di servizio di Google Cloud</block>
+  <block id="f67b849d8be2722918b033f359ddf17d" category="list-text">Crea un account amministratore sul<block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix=" " category="inline-code"></block> servizio:</block>
+  <block id="e2e1100dd49a5c31e3fd0e5fd00eba78" category="paragraph">Questo ti concede le autorizzazioni amministrative per la migrazione delle macchine virtuali a livello di progetto.</block>
+  <block id="89ef81b9ebe20a41b8624f6ea1d76320" category="list-text">Recupera e carica i file immagine:</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">Sito di supporto NetApp</block>
+  <block id="e1389ed07e342a8ff8ddcbc4f7ffe46e" category="list-text">Scarica il file immagine del piano di controllo<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> da <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ba0f284cbf3541ca311f101e602751d" category="list-text">Carica i <block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> file nel tuo bucket di Google Cloud Storage.</block>
+  <block id="b582743a436eee96f743d05a2fa25f16" category="list-text">Dopo aver caricato gli archivi delle immagini su Google Cloud Storage, crea le immagini delle macchine virtuali utilizzando il VM Migration Service eseguendo il seguente comando per ciascuna immagine (control plane e Linux worker).</block>
+  <block id="d2b78890db7dd247ce5f92bfd2ec15ae" category="paragraph">Questo comando crea una nuova immagine di macchina virtuale di Google Cloud Platform dall'archivio fornito nella regione specificata.</block>
+  <block id="b3ab2f208f13f715b7d869c9a6ac16c7" category="list-text">Elenca le operazioni di importazione delle immagini e conferma il completamento:</block>
+  <block id="586ba478b7ebec665f3df120799b6c2e" category="open-title">OVA</block>
+  <block id="48c7c41b72e1d678923ce3571aa65b2d" category="paragraph-title">Passaggio</block>
+  <block id="58402979642aceba3c4d2702ee126f81" category="paragraph">Scarica il file immagine del piano di controllo<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> da <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>.</block>
+  <block id="7c1d6f695f65dc9c5c8094228402786f" category="inline-link-macro">creare il piano di controllo e le macchine virtuali di lavoro</block>
+  <block id="9145b83b060f34d93aca59652a91a807" category="paragraph">Dopo aver appreso come distribuire una macchina virtuale del piano di controllo e una macchina virtuale di lavoro Linux, è possibile <block ref="47786182e0e58028f57398173f17bd15" category="inline-link-macro-rx"></block>.</block>
+  <block id="bcb2ecbda52b8430d09e5b500c31ebaf" category="summary">Trova le risposte alle domande più frequenti su NetApp Data Migrator relative a errori di connessione, errori di autenticazione, problemi di protocollo ed errori di autorizzazione.</block>
+  <block id="e5ed113c1ded1caf2a576bed0e9ba546" category="doc">Domande frequenti (FAQ) per NetApp Data Migrator</block>
+  <block id="f2b5ba066982e7109b5388b3ff7eb1a4" category="paragraph">Se riscontri un problema durante l'utilizzo di NetApp Data Migrator, potresti risolverlo rapidamente consultando le domande frequenti (FAQ) di altri utenti.</block>
+  <block id="de9260bac8b4a0876297b14616b686fc" category="paragraph-title">Quali possono essere le cause degli errori NT_STATUS_IO_TIMEOUT / NT_STATUS_ACCESS_DENIED / NT_STATUS_HOST_UNREACHABLE / NT_STATUS_UNSUCCESSFUL?</block>
+  <block id="e9d95e80289abf082e671d4fa2fb5f2d" category="paragraph">Questo errore può verificarsi se si inseriscono informazioni host errate. Assicurarsi che il nome host o l'indirizzo IP del server siano corretti e che il server sia raggiungibile. Verificare la connettività di rete e che il DNS sia risolvibile, se necessario.</block>
+  <block id="e88e5ad7a31e0b44558421733b15b562" category="paragraph-title">Quali possono essere le cause dell'errore "Credenziali errate - NT_STATUS_LOGON_FAILURE"?</block>
+  <block id="507074f3caa0748776e1f1724a4bd703" category="paragraph">L'inserimento di nome utente o password errati può causare errori di autenticazione e di accesso. Assicurati di aver inserito le credenziali di accesso corrette.</block>
+  <block id="dcbd40a236212d4b7c40f2ebd29accf4" category="paragraph-title">Cosa significa "Versioni di protocollo NFS o SMB non supportate"?</block>
+  <block id="5f9db7e47823b993e74e350b503bc0a7" category="paragraph">Ciò significa che la versione del protocollo utilizzata dal file server non è supportata. Verificare la compatibilità delle versioni del protocollo e aggiornare o configurare il file server se necessario.</block>
+  <block id="04c0fe8373d936550342e615841a94f2" category="paragraph-title">Quali possono essere le cause dell'errore 'Percorso di esportazione non valido'?</block>
+  <block id="660c71ce45b8d06eb462fda8e6b726da" category="paragraph">Assicurarsi che il percorso di esportazione sia inserito correttamente e che esista sul server.</block>
+  <block id="2d3cf36868e8ecba40d8329def6db3b3" category="paragraph-title">Quali possono essere le cause dell'errore "Directory di lavoro non valida"?</block>
+  <block id="cbb858a114f3445ffa109f7630f3128c" category="paragraph">Verifica di aver inserito la directory di lavoro corretta per il percorso di esportazione selezionato.</block>
+  <block id="d3795f5dcf68afb12396dfb622c6c2f9" category="paragraph-title">Perché ricevo un errore di 'permessi di scrittura' sulla directory di lavoro?</block>
+  <block id="d80ce1c87712e8ebb10558acf165c002" category="paragraph">Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallirà e l'utente non sarà in grado di eseguire i job. Verificare che l'utente che riscontra l'errore disponga dei permessi di scrittura necessari.</block>
+  <block id="e5f0109a3dde59ac6cf199ab61c19ca6" category="summary">Genera e scarica un bundle di supporto NetApp Data Migrator contenente log diagnostici, report degli errori e dati di configurazione per la risoluzione dei problemi.</block>
+  <block id="8f1ffc521357732dac238b9425def2a4" category="doc">Genera un pacchetto di supporto NetApp Data Migrator</block>
+  <block id="0a42ec79a244c6ee75a271fa0c580a0e" category="paragraph">NetApp Data Migrator consente di generare un pacchetto di supporto per la risoluzione di eventuali problemi riscontrati. Questo pacchetto contiene informazioni diagnostiche come file di registro, report di errore e dati di configurazione.</block>
+  <block id="524e19d4432374f072a17171bd0ca65a" category="list-text">Seleziona *Aiuto* nella barra di navigazione, quindi seleziona l'opzione Pacchetto di supporto.</block>
+  <block id="03a6f1336ad934049840287e05f10276" category="list-text">Seleziona *Data*. Inserisci l'intervallo di date che desideri includere nel pacchetto di supporto.</block>
+  <block id="33948633d6071c4d0484f351943a6270" category="list-text">Seleziona *Altre metriche*. Inserisci le altre metriche che desideri includere nel pacchetto di supporto.</block>
+  <block id="3bed06e0ce3fbaf775b37b3da5d9e2e9" category="list-text">Seleziona *Genera pacchetto di supporto*. Quando il pacchetto è pronto, *Scarica report* diventa attivo.</block>
+  <block id="469a7bf2f3568f3b68a254686e5b6814" category="list-text">Seleziona *Scarica il report*.</block>
+  <block id="f62d71a1ded699b7fb0c38f8ce0af42c" category="summary">Esamina i problemi noti e le soluzioni alternative per NetApp Data Migrator.</block>
+  <block id="62916486516b8dbc26f0bb701ab57521" category="doc">Problemi noti per NetApp Data Migrator</block>
+  <block id="c1503592c3e849fb2d907f73e4d1afab" category="paragraph">I problemi noti identificano le problematiche che potrebbero impedire il corretto utilizzo di questa versione del prodotto. Leggere attentamente questi problemi noti.</block>
+  <block id="254f642527b45bc260048e30704edb39" category="section-title">Configurazione</block>
+  <block id="4b37e73c31564685029fce3f1a4738be" category="section-title">Mancata corrispondenza delle autorizzazioni di accesso durante l'utilizzo della mappatura SID</block>
+  <block id="6c70e3a7104c035a65c1599364b71d51" category="paragraph">NetApp Data Migrator potrebbe segnalare un<block ref="eb58858952016d39ec11469eac8673b5" prefix=" " category="inline-code"></block> errore durante l'utilizzo della mappatura SID. Questo errore indica una mancata corrispondenza delle autorizzazioni di accesso tra i sistemi di origine e di destinazione, poiché la mappatura SID non è stata eseguita a livello radice.</block>
+  <block id="7aebfa1e2291377e040de92d7f7f335f" category="paragraph-title">Soluzione alternativa</block>
+  <block id="c7986c712421d8df849726dce73cd527" category="paragraph">Fornire la mappatura CSV per l'origine e la destinazione SID come mostrato nei due scenari seguenti:</block>
+  <block id="d42e8fbcf79f7de1303918aafa7d9fa7" category="open-title">Scenario 1</block>
+  <block id="c897209a556eb1f19c2b5b80b1c05813" category="paragraph">Fornire il SID nel foglio di mappatura CSV per gli utenti o i gruppi eliminati o rimossi dall'Active Directory di origine, come mostrato nell'esempio seguente:</block>
+  <block id="dc653ba9bdc8b868470860cba81bbaee" category="cell">sid_source</block>
+  <block id="f7a4e3e3ddae7d9c5ab63f1bbeb306f8" category="cell">sid_target</block>
+  <block id="ecb0cb0505beead739f4fabe35a2e606" category="cell">S-1-5-21-2444020195-1862089444-1769087368-1000</block>
+  <block id="c02cbf8ceed03b1004d2cc4c5cd6075b" category="paragraph">S-1-5-21-3481156262-2863848796-4292454742-512</block>
+  <block id="3d2b891e87f58587dcf56e520915afef" category="open-title">Scenario 2</block>
+  <block id="a4184dbffce276225dbcafdccdd7aa1c" category="paragraph">Per gli utenti o i gruppi attivi in Active Directory, inserire i nomi utente o i nomi dei gruppi nel foglio di mappatura CSV esclusivamente in minuscolo. Includere il prefisso di dominio (domain\nomeutente), come mostrato nel seguente esempio:</block>
+  <block id="dd327b583130801a32a1b129bff3e4d0" category="cell">rootdomain\user1</block>
+  <block id="6c04b4bbf59f5066acee4e6ed09c5dd6" category="paragraph">rootdomain\utente2</block>
+  <block id="6ea0a168e5d3bbf94b8d8fe5cfb247b4" category="section-title">Limitazione della migrazione in blocco per le directory dello stesso livello</block>
+  <block id="20c3b97b71c3684f352d558a861b21d2" category="paragraph">Quando si utilizza la funzionalità di migrazione in blocco, non è possibile creare più processi di migrazione contemporaneamente per directory che si trovano allo stesso livello nella gerarchia delle directory di origine e di destinazione. Ad esempio, cartelle dello stesso livello nella stessa operazione di condivisione per una sorgente e una destinazione. Il tentativo di includere tali directory in un'unica configurazione di migrazione in blocco causa l'errore nella creazione del processo.</block>
+  <block id="a2c333272f46004f3ef1cfc8252173dd" category="paragraph">Create i processi di migrazione uno alla volta per le directory che si trovano allo stesso livello, invece di aggiungerle insieme.</block>
+  <block id="cc8e07243d878faa42f02f7109b06bb7" category="section-title">Migrazione a livello di directory con timbratura delle autorizzazioni ereditate</block>
+  <block id="e4269a3a8e42488cdd191d6d6cf2d67d" category="paragraph">Nelle migrazioni a livello di directory, le autorizzazioni ereditate sulla directory radice selezionata non vengono applicate alla destinazione. Poiché NetApp Data Migrator non applica le autorizzazioni ereditate per la directory radice, anche le sottodirectory e i file che si basano sull'eredità non ricevono le autorizzazioni ereditate.</block>
+  <block id="1729636cbc1eab5530748517eadd4934" category="paragraph">Questo problema riguarda solo la propagazione delle autorizzazioni ereditate dalla directory radice. NetApp Data Migrator applica correttamente le autorizzazioni esplicite impostate direttamente su file e directory (autorizzazioni non ereditate) durante la migrazione.</block>
+  <block id="56da33b90db856267177acb3019846bc" category="paragraph">Al termine della migrazione, riapplicare o reimpostare manualmente le autorizzazioni ereditate sulla directory radice nella destinazione. Ciò consente la corretta propagazione delle autorizzazioni ereditate a tutte le sottodirectory e ai file</block>
+  <block id="daa5744d6f527fe7acd18cfd5528f943" category="section-title">Validazione del caricamento manuale della mappatura UID e GID in NFS</block>
+  <block id="a456a3e26016ded4ebb0591163ab2835" category="paragraph">Durante le migrazioni NFS, se il file CSV di mappatura UID e GID contiene ID utente o ID di gruppo numerici che non esistono nel sistema di destinazione, NetApp Data Migrator applica (contrassegna) tali valori così come sono. NetApp Data Migrator non verifica se l'UID o il GID specificato esiste nella destinazione e non segnala alcun errore o avviso nell'interfaccia utente. Ciò può comportare la migrazione di file con proprietà errate. È necessario fornire la mappatura UID e GID corretta.</block>
+  <block id="2c94902f5356a0ce8b41f5916d00c1b4" category="paragraph">Assicurarsi che tutti i valori UID e GID specificati nel file CSV di mappatura corrispondano a utenti e gruppi validi ed esistenti nel sistema di destinazione prima di avviare la migrazione. Verificare manualmente l'esistenza di utenti e gruppi nella destinazione per evitare che NetApp Data Migrator applichi una proprietà errata durante la migrazione.</block>
+  <block id="bf0b2c984c4d54786aecad82bf097945" category="section-title">Il controllo preliminare della migrazione visualizza un falso avviso di spazio insufficiente</block>
+  <block id="54d6aecd02acff9afca2814e66b08be2" category="paragraph">Durante i controlli preliminari della migrazione, potresti visualizzare il seguente avviso, anche se la destinazione dispone di spazio sufficiente:</block>
+  <block id="515dbddec69ff95926b82bbb6c1645d4" category="paragraph">Questo può accadere se si salta la fase di rilevamento e NetApp Data Migrator utilizza un comando generico che legge l'intera dimensione del dispositivo a blocchi anziché la dimensione effettiva del dataset.</block>
+  <block id="32b4201214ec3341bfbfb21a5c166bc3" category="paragraph">Eseguire Discovery prima di un'esecuzione di migrazione. Ciò garantisce che le informazioni sull'utilizzo del disco siano disponibili per l'operazione di pre-verifica. Se l'avviso è ancora presente:</block>
+  <block id="f26640a35d40fda1bb53a833683f920d" category="list-text">Confermare che il rilevamento è stato completato.</block>
+  <block id="c31db1ba1e7d7f06493231db4bcb5a9e" category="list-text">Verificare manualmente che il volume di destinazione disponga di spazio sufficiente.</block>
+  <block id="80e7b4e8a2f64aba0a835af7bea38382" category="list-text">Se lo spazio disponibile è sufficiente, è possibile procedere in tutta sicurezza con la migrazione dei dati.</block>
+  <block id="c5562ce2e22a86c247849904ecef3dc8" category="section-title">Report</block>
+  <block id="657d83655ccf03c78f0b1e1da7e5e1de" category="section-title">Excel visualizza autorizzazioni errate nel file del report COC</block>
+  <block id="8a4bf032b3bc48536ab98ef05266b337" category="paragraph">Quando si apre il file CSV del report della catena di custodia (CoC) in Microsoft Excel, alcune autorizzazioni di file o cartelle potrebbero apparire come #NAME?, ad esempio -rwxrwxrwx, anziché i valori effettivi.</block>
+  <block id="568b061903521b9a60de817b45d28672" category="paragraph">Questo accade perché Excel interpreta erroneamente alcune stringhe di autorizzazione (che iniziano con - o =) come formule, causando errori di visualizzazione. Il file CSV in sé è corretto, si tratta solo di un problema di visualizzazione.</block>
+  <block id="8662727eb6c935b631672de39ba6b9bd" category="paragraph">Per visualizzare le autorizzazioni corrette di file e cartelle, apri il file CSV utilizzando una delle seguenti applicazioni:</block>
+  <block id="151e01f3003c3e664c667b52d14e68ba" category="list-text">Fogli Google</block>
+  <block id="9bd4720204865dac67eacee4e442252a" category="list-text">Apple Numbers</block>
+  <block id="f050748415c203054a93560cccc808d1" category="list-text">Visualizzatore CSV online</block>
+  <block id="a13a188adc0eaf6d51830b29451165af" category="list-text">Editor di testo, ad esempio Notepad++</block>
+  <block id="54db985f913144c787158f7add91748b" category="section-title">Nessun messaggio di errore quando il processo di rilevamento in blocco fallisce a causa di problemi di rete</block>
+  <block id="6c9d39afa306ace9174ff84fe9b247ab" category="paragraph">Se l'host o il server di destinazione si arresta durante un'operazione di rilevamento in blocco, NetApp Data Migrator potrebbe non visualizzare un messaggio di errore. Ciò può dare l'impressione che l'operazione sia ancora in esecuzione normalmente.</block>
+  <block id="47d7d58d9ad56ca23c4efd68abab5840" category="paragraph">I processi di rilevamento si aggiornano ogni 30 secondi. Se noti che il numero di file, il numero di directory o la dimensione dei dati non si aggiornano, ciò potrebbe indicare un problema di rete.</block>
+  <block id="2eeab39f4c8bccb8799b59448abd4e67" category="list-text">Verifica la connettività di rete:</block>
+  <block id="763b55d6b57ada5f191dbe1d453fb4e9" category="list-text">Apri il terminale della macchina virtuale worker.</block>
+  <block id="0b1ff5526b3ce57f6cdef5a2ca187021" category="list-text">Esegui un ping all'indirizzo IP del server di destinazione.</block>
+  <block id="b4498002ad3a5cc65873420897a3d927" category="paragraph">Se non si riceve risposta, la destinazione potrebbe essere irraggiungibile.</block>
+  <block id="96c062181b6272cc19b038c0dc348ebc" category="list-text">Ripristina l'interfaccia di rete:</block>
+  <block id="00c218cc4fa765576eb8711709c2be7f" category="list-text">Utilizza SSH per connetterti al server di destinazione:</block>
+  <block id="d1cf99a451d22528426c7b9174fe3ec6" category="list-text">Individua il nome dell'interfaccia, ad esempio eth0:</block>
+  <block id="ea6d56b631ec1e7c86f702d930d13f3f" category="list-text">Riporta online l'interfaccia di rete:</block>
+  <block id="1022113d018618f6df153a81c5431b02" category="list-text">Se necessario, ripetere i passaggi 1 e 2 per il server di origine.</block>
+  <block id="6903d6be924852b94479ff4d93e61720" category="section-title">Impossibile cambiare utente su Windows worker</block>
+  <block id="9bbf5ea7158d30ccde501993f371e149" category="paragraph">Il passaggio a un account utente diverso su un computer Windows di lavoro potrebbe non riuscire a causa di connessioni di rete esistenti. Ciò può impedire l'accesso al file server.</block>
+  <block id="679f1af118183388367e1893446337ef" category="list-text">Rimuovere la connessione precedente aprendo il prompt dei comandi sul worker Windows ed eseguendo i seguenti comandi:</block>
+  <block id="fad6c75e7990357649e31d8e64811a5c" category="list-text">Passa al nuovo account utente e accedi al file server.</block>
+  <block id="13148717f8faa9037f37d28971dfc219" category="section-title">Validazione</block>
+  <block id="c65ad157bcef575fc6e77be4bed0671a" category="section-title">Le dimensioni dei file potrebbero differire dopo la migrazione anche se i conteggi corrispondono</block>
+  <block id="41cbb89da6f46df5956f3e4d6f577ea3" category="paragraph">Dopo il completamento della migrazione dei dati, il numero totale di file è corretto, ma alcuni file potrebbero avere dimensioni diverse rispetto alla sorgente originale. Ciò può accadere se la rete viene interrotta o se si verificano problemi con il server durante il trasferimento dei file.</block>
+  <block id="9ff17605d2620785a38e650c22cba077" category="list-text">Esamina il report COC della migrazione per identificare i file contrassegnati come errati.</block>
+  <block id="06fb3b35613c23293fedc2afbf8be0c2" category="list-text">Eseguire nuovamente la migrazione finché gli errori non vengono risolti.</block>
+  <block id="e6b088db24ebe67ed0e9567d309387ec" category="section-title">Flussi di lavoro</block>
+  <block id="a72f133a28599315abd569299ae23a0d" category="section-title">L'operazione è rimasta in pausa o bloccata per più di 20 minuti</block>
+  <block id="56956901d261a8f832a2ce939a5ca220" category="paragraph">Potrebbe essere necessario intervenire quando si osservano problemi di connettività di rete, problemi di stabilità del volume di origine o di destinazione, o entrambi. Il processo potrebbe trovarsi nello stato Paused o Running senza alcun progresso visibile. Ciò potrebbe accadere se i servizi di origine o di destinazione non sono disponibili, o se il servizio worker subisce un'interruzione.</block>
+  <block id="1bb92114e129b650c205357603175f79" category="list-text">Verifica l'origine e la destinazione.</block>
+  <block id="51646b02bfd7b304b553b56b9a9c2a00" category="paragraph">Se risultano offline, riavviateli per ripristinare la connettività.</block>
+  <block id="e2ca3baa3b53e03140b8ab14e48ff5d3" category="list-text">Verifica lo stato del worker.</block>
+  <block id="67da1988b6c6b0e16b8ba0cc9119efe1" category="paragraph">Se il worker è offline, utilizzare SSH per connettersi alla VM ed eseguire il seguente comando:</block>
+  <block id="36030760aa6bb566f66def470d0a61ca" category="list-text">Riavvia la macchina virtuale:</block>
+  <block id="cfef28508469868243046a6959dac427" category="paragraph">Se il problema persiste, riavviare la worker VM.</block>
+  <block id="ef26eabbde6e5c4e3bc5c615c7bd61e0" category="section-title">Lo stato di esecuzione del processo è fuorviante quando si verificano errori</block>
+  <block id="a429bf35127410ec5f4d949442157aa3" category="paragraph">Alcune esecuzioni dei processi di migrazione riscontrano errori e mostrano uno stato Completato o Con errore. Ciò può generare confusione nell'interpretazione dello stato di esecuzione del processo di migrazione.</block>
+  <block id="a3c457a84026992324446fd6583431b1" category="paragraph">Definizioni di stato:</block>
+  <block id="b687695b7aa46cba05850e1055f90ff5" category="list-text">Completato: L'esecuzione di un'attività è terminata, ma potrebbe contenere errori.</block>
+  <block id="77849c06b19d72db99630258ba5abf53" category="list-text">Errore: l'esecuzione del processo non è riuscita a causa di un problema critico.</block>
+  <block id="b0cbd53c2b4c14cf03d03f8a36437a89" category="paragraph">Verifica l'esito dell'esecuzione del processo controllando i dettagli dell'esecuzione per individuare eventuali errori, soprattutto se lo stato è Completato. Non fare affidamento solo sull'etichetta di stato finché non avrai risolto il problema.</block>
+  <block id="6f755f551df327972c1c0586d6dbf96a" category="summary">Comprendere i limiti noti di NetApp Data Migrator può contribuire a rendere più efficienti le attività di migrazione.</block>
+  <block id="b4d33ef2255bd395c7da4f1389260343" category="doc">Limitazioni note per NetApp Data Migrator</block>
+  <block id="31bcefd7b2e407d65b441fdb99e6c50b" category="paragraph">Qui di seguito sono elencate le limitazioni e le funzionalità di migrazione NFS e SMB che non funzionano o non funzionano correttamente con questa versione. Leggete attentamente queste limitazioni.</block>
+  <block id="d68b89dd902e3f97ffcbe45b9253727c" category="section-title">Limitazioni di rilevamento e migrazione di NFS e SMB</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="cell">NFS</block>
+  <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="cell">SMB</block>
+  <block id="86312caa3236e6ae5b9a65f669b1066e" category="cell">Numero di percorsi di esportazione che possono essere eseguiti simultaneamente</block>
+  <block id="a87ff679a2f3e71d9181a67b7542122c" category="cell">4</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="paragraph">2</block>
+  <block id="dcec8cdc08cb7e4cd8fb7a0e71bb395e" category="cell">Numero massimo di file in una directory</block>
+  <block id="2db45ec60dc8fbc6790cd1635c3631c8" category="cell">1 milione</block>
+  <block id="3beef9799317c76997e3617607152343" category="cell">Dimensionamento dei worker</block>
+  <block id="6c32c0a50fee2547d04985b9809ab710" category="cell">CPU quad-core, 16 GB di memoria</block>
+  <block id="088a5810a16bb6c24e3341f2c5fa2d73" category="paragraph">CPU a 16 core, 64 GB di memoria</block>
+  <block id="6e04bfbe41dd9efa03508c62bfbb5289" category="cell">Dimensionamento del piano di controllo</block>
+  <block id="859d60e155b084cc8fec2afaa990d650" category="cell">CPU a 8 core, 64 GB di memoria</block>
+  <block id="ea23cc0f55e0aed279872c97a88f0902" category="cell">Numero massimo di file in un percorso di esportazione</block>
+  <block id="ef1997b6268da0a36b2e83e6ab4d629f" category="cell">20 milioni</block>
+  <block id="2d8de156a2fe58f4bc72def40f6e3367" category="section-title">Limitazioni delle funzionalità</block>
+  <block id="b7a95c6586d57b909e3a9973bf21cccf" category="cell">Limiti</block>
+  <block id="a489743b49b773f34b68d114c2c75fa3" category="cell">Supporto attivo per le destinazioni</block>
+  <block id="bbb7d6c5745e324c58df02d8fe1afbac" category="paragraph">NetApp Data Migrator non supporta una destinazione attiva (quando uno storage di destinazione è attivamente utilizzato o viene scritto prima del cutover).</block>
+  <block id="0a41e976047863adc102a40b90194b6c" category="cell">File sensibili alle maiuscole/minuscole</block>
+  <block id="f32cd4bbb333a061bc4da346b5067769" category="paragraph">Per SMB, NetApp Data Migrator migra solo uno dei file che differiscono per maiuscole/minuscole creati tramite NFS in una cartella e genera un errore per l'altro file. Questo accade perché SMB non può accettare entrambi i file. Puoi eseguire la discovery tramite NFS per identificare questi file case-sensitive.</block>
+  <block id="25ca3b2ba76c0c307a5c119237d049ef" category="cell">Accessibilità alla rete</block>
+  <block id="987372dac6ae2c5a90d8cda91225cbca" category="paragraph">NetApp consiglia di utilizzare NetApp Data Migrator nelle reti private.</block>
+  <block id="2e062cbaa8431af4f347e37d78f2a40a" category="cell">ACL NFSv4</block>
+  <block id="19eb0024de75d5b1255d7cbefe5f45e5" category="paragraph">NetApp Data Migrator non applica i permessi NFSv4 agli elenchi di controllo degli accessi (ACL), ma si limita ad applicare le autorizzazioni di base nella destinazione. Questo comportamento è simile a NFSv3.</block>
+  <block id="32a1afbb4b32dfb91328e638a205fca3" category="cell">Migrazione del protocollo - Tipo</block>
+  <block id="50469d9b587f6abe43789ac222b4504c" category="paragraph">La migrazione tra protocolli diversi non è supportata, ad esempio da NFS a SMB.</block>
+  <block id="5eeb3d7ba5fcdaa21e7fc840025f3d02" category="cell">Migrazione del protocollo - Versione</block>
+  <block id="d2348e46cc37a0c98d5854b788d516b9" category="paragraph">La migrazione tra versioni diverse dello stesso protocollo non è supportata, ad esempio da NFSv3 a NFSv4.</block>
+  <block id="875b1186e66d74049a4f658d9a66050e" category="cell">Autorizzazioni SMB</block>
+  <block id="54e433dcdb78732b33d7a50b9396a035" category="paragraph">NetApp Data Migrator non supporta la migrazione dell'elenco di controllo degli accessi al sistema (SACL) SMB (autorizzazioni di audit).</block>
+  <block id="7ed1d6e1f5c8da01556946a0677197c8" category="cell">File SMB con spazi finali</block>
+  <block id="a84e64c214f3fa59046f95c07160331d" category="paragraph">Durante la migrazione tramite SMB, NetApp Data Migrator genera un errore per i file con nomi che contengono spazi finali, poiché SMB non consente tali nomi di file.</block>
+  <block id="0eaa207812ba22f6f3daff9796f335e4" category="cell">File speciali SMB</block>
+  <block id="ac3066f76b85b1cffabc4e124eab7c5f" category="paragraph">NetApp Data Migrator individua i reindirizzamenti (collegamenti simbolici, collegamenti fisici, punti di giunzione, flussi di dati alternativi (ADS) e punti di montaggio dei volumi) e li segnala dopo la scoperta. La migrazione di ADS, file sparse e reindirizzamenti SMB non è supportata.</block>
+  <block id="2fae32629d4ef4fc6341f1751b405e45" category="cell">Sicurezza</block>
+  <block id="9847e6d484ae3e6e36fdee16b8afe572" category="paragraph">NetApp Data Migrator utilizza certificati autofirmati per crittografare il traffico web con SSL/TLS.</block>
+  <block id="9538c5cf26eaaf40bf9eec9037fd444b" category="cell">File sparsi</block>
+  <block id="a4a70ca82952469ee02c51e291c4944c" category="paragraph">I file sparsi diventano file di dimensioni complete durante la migrazione, NetApp Data Migrator non preserva la sparsità. È necessario spazio di archiviazione aggiuntivo per questi file.</block>
+  <block id="04b527818cf9fecc4774f6c7fe7f2fa2" category="cell">File di sistema</block>
+  <block id="c097c0a9c28aba83d32633abec6f06f0" category="paragraph">NetApp Data Migrator non può migrare i file generati dal sistema di proprietà dell'origine.</block>
+  <block id="214d236fbb08786d43f7158b9d8342db" category="cell">Interfaccia utente</block>
+  <block id="ba51a65395cacae515cfcae7a55ef605" category="paragraph">NetApp Data Migrator è ottimizzato per i browser Google Chrome e Firefox con una risoluzione dello schermo di 1920 x 1080; i display mobili non sono supportati.</block>
+  <block id="0b20f4864ab708844e7bf15ac671f208" category="cell">Distribuzione di Windows worker</block>
+  <block id="cbb41e2de478d3e73506229830402c2d" category="paragraph">Il worker Windows deve far parte dello stesso dominio radice della destinazione.</block>
+  <block id="d153354d6e549f2ce2428ee5e0df75cb" category="summary">NetApp Data Migrator è un'applicazione software di migrazione dei dati di livello enterprise, multicloud, che semplifica la migrazione di file non strutturati da sistemi di storage locali o storage di terze parti a servizi di cloud storage pubblici basati su NetApp.</block>
+  <block id="973a0711d933afa94661190c0a60889c" category="doc">Scopri di più su NetApp Data Migrator</block>
+  <block id="927c9d97c996662556fdb6ba986a768c" category="paragraph">NetApp Data Migrator è un'applicazione software di migrazione dei dati di livello enterprise, multicloud, che semplifica la migrazione di dati di file non strutturati da sistemi di storage on-premises o storage di terze parti a servizi di cloud storage pubblici basati su NetApp. NetApp Data Migrator è un'applicazione indipendente che viene eseguita su macchine virtuali gestite dall'utente ed elimina la necessità di script personalizzati complessi e strumenti separati.</block>
+  <block id="e1e76fe67d707ea981efa366c519c298" category="paragraph">Puoi utilizzare NetApp Data Migrator per individuare i tuoi ambienti di storage esistenti, generare rapidamente un inventario dei file e creare piani per migrare i tuoi dati da un server di storage di origine ai servizi di NetApp cloud storage. Dopo l'inizio della migrazione dei dati, puoi monitorare i job di migrazione tramite l'interfaccia utente. Puoi anche generare report sulla Chain of Custody (CoC) che utilizzano checksum per aiutarti a verificare le operazioni di migrazione dei dati.</block>
+  <block id="ecdeca0570624de17bfe89fecf2ba4a8" category="paragraph">NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB. Distribuisci nodi worker nel tuo ambiente per mantenere controllo e sicurezza durante la migrazione. I worker facilitano trasferimenti di dati in parallelo, migliorando le prestazioni e la scalabilità. NetApp Data Migrator include funzionalità come controlli preliminari e sincronizzazione incrementale per garantire una migrazione fluida ed efficiente con tempi di inattività minimi. Puoi mantenere attivi i sistemi di origine per la maggior parte del processo di migrazione, quindi eseguire un cutover quando sei pronto. NetApp Data Migrator offre anche una solida gestione dei log e degli errori, consentendo di risolvere i problemi e ripristinare senza dover riavviare l'intero processo di migrazione.</block>
+  <block id="e3159b3092b0b21bb84c1cd901f70e91" category="paragraph">Prima di iniziare a lavorare con NetApp Data Migrator, è utile familiarizzare con la terminologia chiave.</block>
+  <block id="650717c72d7a99e6505592f83821e4ed" category="list-text">Piano di controllo</block>
+  <block id="d81c63c3badd6a7dc722b94681ae1cb8" category="list-text">Il piano di controllo consente di accedere alle attività di migrazione. Dal piano di controllo è possibile eseguire le seguenti operazioni:</block>
+  <block id="8a6b346a09a2b1628c7598534f17a06c" category="list-text">Gestisci progetti, utenti, job e file server.</block>
+  <block id="73a27e2a76a1b25cb1ef1dd410206549" category="list-text">Pianifica e assegna le esecuzioni dei job ai lavoratori disponibili.</block>
+  <block id="090340525208390b7ea4c4a450671720" category="list-text">Monitorare l'esecuzione dei processi, raccogliere i log e segnalare lo stato.</block>
+  <block id="c0cd63f6ba3e8e80020e2a91e356948d" category="list-text">Applicare il controllo degli accessi e le autorizzazioni degli utenti.</block>
+  <block id="fd727b180cfda5092d3aa1c2498f35c5" category="list-text">Configura un server di posta elettronica SMTP per notifiche in tempo reale.</block>
+  <block id="4ea2a6c39b10b3e3076f976f58a861d1" category="list-text">Cutover</block>
+  <block id="cd40ac72de344011a1bb18a710d44e12" category="list-text">Il job di cutover è l'ultimo passaggio della migrazione. È necessario per la sincronizzazione finale tra i sistemi di origine e di destinazione. Un job di cutover esegue le seguenti azioni:</block>
+  <block id="1a39c5fc749d14d70869781c34b7e750" category="list-text">Interrompe i processi di migrazione in corso per i percorsi selezionati</block>
+  <block id="51724b17cea9878dcaa14d91edc2c7e1" category="list-text">Esegue una sincronizzazione finale per garantire che i dati siano coerenti</block>
+  <block id="f37c08c2a1b66fad6e41b4684e0373ec" category="list-text">Genera un rapporto sulla catena di custodia (CoC) per la convalida</block>
+  <block id="bb2579f63798da141270558a208e917c" category="list-text">È necessaria la tua approvazione per contrassegnare la migrazione come completa</block>
+  <block id="abfc3a65538a6ec86502b2b498b6b4a6" category="list-text">Scoprire</block>
+  <block id="ae77f53f24e0d7c58f9281e66ef6d07e" category="list-text">Un processo Discover analizza e inventaria i dati su un file server di origine o di destinazione. Crea un report con i dettagli sui file e le directory nei percorsi di esportazione selezionati su un file server di origine o di destinazione, aiutandoti a comprendere la portata e la complessità dei tuoi dati prima di iniziare la migrazione. Un processo Discover esegue le seguenti azioni:</block>
+  <block id="b0ae3e473a496b601593b3600db02c79" category="list-text">Analizza la struttura e il contenuto dei percorsi di esportazione</block>
+  <block id="eac223159fb36915ec9597c50a543152" category="list-text">Raccoglie metadati quali nomi dei file, dimensioni, permessi e timestamp</block>
+  <block id="3abf35c596895c8861a7ab7bb148f4d9" category="list-text">Genera report e istogrammi dettagliati per la pianificazione e la verifica</block>
+  <block id="26bb75685d9cc4fc3ba18a7d475a16ca" category="list-text">Percorso di esportazione</block>
+  <block id="63fcab2c31b90e7a4458dfdd840cd426" category="list-text">Un percorso di esportazione rappresenta la posizione dei dati da includere in un'operazione di Discover, Migrate o Cutover. I percorsi di esportazione sono le unità fondamentali di dati copiate in qualsiasi flusso di lavoro di migrazione e presentano le seguenti caratteristiche:</block>
+  <block id="d98e0647aa731019d0842a0808443ea6" category="list-text">Specifico del protocollo (esportazioni NFS o condivisioni SMB)</block>
+  <block id="72eaa9947ffba75acb9f7deed08a4b5d" category="list-text">Convalidato per accessibilità e autorizzazioni</block>
+  <block id="c12f33a027e7d15b52590848b58fc0b6" category="list-text">Utilizzato come input per la creazione di processi (Discovery, Migrate, Cutover)</block>
+  <block id="cf51066f49e517f274b8173cc265c60b" category="list-text">Lavoro</block>
+  <block id="96682415c21866b279c271dfc7afe212" category="list-text">Un job è una struttura logica di un'attività di migrazione dei dati. Specifica cosa fare, dove farlo e come deve essere eseguito. È possibile riutilizzare i job e pianificarli o avviarli manualmente.</block>
+  <block id="267cce210aba45f9e7f8d181ba9dac87" category="paragraph">Un lavoro comprende due componenti principali:</block>
+  <block id="1bc16d2d6f7b6097c5ec022e06a5b58a" category="list-text">*Definizione del job*: Una sequenza predefinita di passaggi, ad esempio scan, sync o report.</block>
+  <block id="7fc4183a775e9fc2623c555af09b964b" category="list-text">*Configurazione del lavoro*: parametri definiti dall'utente, come percorsi di origine o di destinazione, regole di esclusione e pianificazione.</block>
+  <block id="40cb748aa11d95182311babc8f68a0ee" category="paragraph">NetApp Data Migrator supporta tre principali tipi di processi:</block>
+  <block id="d39b3e43b99a57133feb9f0e3d7984ae" category="list-text">Ruolo di Discovery: inventaria e analizza i dati di origine e di destinazione.</block>
+  <block id="283fcea42629eed5e9a5deb585685d92" category="list-text">Processo di migrazione: trasferisce i dati dalla sorgente alla destinazione.</block>
+  <block id="87416148f4233e11ec53069e45f952b2" category="list-text">Operazione di cutover: finalizza la migrazione e passa al sistema di destinazione.</block>
+  <block id="ccdbfd57aa071d33ef13df58fbbb05de" category="list-text">Esecuzione del lavoro</block>
+  <block id="0ee52cbd8e7ec80300a6b996b252afc1" category="list-text">Un'esecuzione di un job è una singola istanza di esecuzione di un job. Le esecuzioni di un job consentono di monitorare, gestire e risolvere i problemi relativi all'esecuzione delle attività di migrazione in real-time. Un'esecuzione di un job include i seguenti dettagli:</block>
+  <block id="99b2bedd2558a3d27f6af1965a24c2d3" category="list-text">Possiede un timestamp e un ID di esecuzione univoci</block>
+  <block id="72d9676ef084c6962713dbd9ff46ec71" category="list-text">Può trovarsi in uno dei seguenti stati: Pronto, In esecuzione, In pausa, Arrestato, Errore, Bloccato o Completato</block>
+  <block id="b4406e0d94260c53bbb1c2168630f66e" category="list-text">Genera registri, metriche e dettagli a livello di attività</block>
+  <block id="10b5b21ed1ee90eca305b558caf7d03b" category="list-text">Migrare</block>
+  <block id="bf8528fc4573b909958a424bcb883904" category="list-text">Un'operazione di migrazione sposta i dati da un file server di origine a un file server di destinazione in modo sicuro, efficiente e con interruzioni minime. Presenta le seguenti caratteristiche:</block>
+  <block id="f3b478b10567aeb71136b3b052cde6ee" category="list-text">Esegue la migrazione di base (copia completa iniziale)</block>
+  <block id="fba346b65875eb6fe2aed32d4427d33f" category="list-text">Supporta la sincronizzazione incrementale (aggiornamenti in base alle modifiche)</block>
+  <block id="aaa16c227304602626cb8c6e9eaef4fd" category="list-text">Consente di configurare opzioni quali modelli di esclusione, rimappatura delle autorizzazioni e conservazione del tempo di accesso</block>
+  <block id="5f9e38761d5cf254c4837cbc33254c15" category="list-text">Include verifiche preliminari di autorizzazioni, capacità e connettività</block>
+  <block id="9e727fdd3aec8274f46685441900280d" category="list-text">Progetto</block>
+  <block id="c3bbcda9a9e6443cf992359a1c2395e1" category="list-text">Un progetto è uno spazio di lavoro logico che include tutti i componenti e le attività relativi a una specifica attività di migrazione dei dati. Rappresenta l'unità organizzativa di livello superiore all'interno di NetApp Data Migrator. Un progetto presenta le seguenti caratteristiche:</block>
+  <block id="ec0f6ad2acc83eafbeb1ecdb12f9dfa2" category="list-text">Un nome e una descrizione unici</block>
+  <block id="1f80d699b9a5f2a60107136993a938e7" category="list-text">Utenti associati con ruoli definiti (Amministratore di progetto, Visualizzatore di progetto)</block>
+  <block id="d4c048b4e416c3efa72f61aea1c57435" category="list-text">Server di file collegati, processi, worker e configurazioni</block>
+  <block id="1a5942d1cfe9ca5d02626f17f82f7b73" category="paragraph">I progetti consentono di isolare le attività di migrazione, semplificando la gestione simultanea di più migrazioni tra team, reparti o clienti diversi.</block>
+  <block id="e308fa902e5ec44079ec002261dba5a5" category="list-text">Server di archiviazione (file server)</block>
+  <block id="27dd42f0cc80271fa54aca0b1ce3fa0d" category="list-text">Un server di archiviazione (file) è un componente fondamentale nel flusso di lavoro di migrazione. Archivia i dati da migrare o funge da destinazione per i dati migrati.</block>
+  <block id="c179c901e73aa8de6751bb79d800c648" category="list-text">NetApp Data Migrator supporta i file server NFS e SMB</block>
+  <block id="b52d03d507c855b3ee069b4f391c0c35" category="list-text">Ciascun file server è configurato con i seguenti dettagli:</block>
+  <block id="912d3773ff61119391317c91d5d75fd0" category="list-text">Un nome e un tipo di server</block>
+  <block id="42539ddb3cc40a1f37029c8c071bb42b" category="list-text">Credenziali di autenticazione</block>
+  <block id="f6e9b90ee0f13a5ce6fb084244a940ba" category="list-text">Collaboratori associati per l'esecuzione di compiti di migrazione</block>
+  <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="list-text">Utenti</block>
+  <block id="712743ded405b3185eedac19629f791f" category="list-text">Gli utenti gestiscono le attività di migrazione dei dati. Gli utenti App Admin (amministratori) assegnano ruoli ad altri utenti che determinano il loro livello di accesso e controllo.</block>
+  <block id="877d7366f970216e8e3c2473b327292f" category="paragraph">NetApp Data Migrator supporta tre ruoli utente:</block>
+  <block id="199cf513bb9c311565990ce4e9db84b6" category="list-text">*Amministratore dell'app*: Fornisce privilegi amministrativi completi che consentono di gestire altri utenti, progetti e impostazioni di sistema</block>
+  <block id="3d15851b94e3a8ec2c4060b9bbb68752" category="list-text">*Amministratore di progetto*: Fornisce l'autorizzazione per gestire progetti specifici e configurare, creare e monitorare i lavori</block>
+  <block id="9a4be99bb5663d8e664ea156e39e58d5" category="list-text">*Visualizzatore di progetto*: Fornisce accesso in sola lettura per visualizzare i dettagli del progetto, lo stato dei lavori e i report</block>
+  <block id="694dda55d497c6c7a7d25df1dffa732f" category="paragraph">L'autenticazione avviene tramite email e password, e il controllo degli accessi basato sui ruoli (RBAC) gestisce le autorizzazioni. Questo garantisce un accesso sicuro e appropriato al ruolo a dati sensibili e operazioni. NetApp Data Migrator utilizza RBAC per gestire le autorizzazioni e contribuisce a proteggere l'accesso alle risorse.</block>
+  <block id="62efb9ec331e364b96efe68c8b03ca20" category="list-text">Lavoratore</block>
+  <block id="7b8ee8e83cbc30b725856b1b704a937e" category="list-text">Un worker è una macchina virtuale che esegue operazioni concrete sui dati, ad esempio, la copia di dati da source a destination.</block>
+  <block id="790c2d55485f02ae3e5797fa47b2c1cd" category="list-text">I lavoratori sono responsabili dell'esecuzione di attività quali la scansione di directory, la copia di file e la sincronizzazione dei metadati.</block>
+  <block id="2408c06092cdd4422aa91e7aa12f428e" category="list-text">I worker consentono l'elaborazione distribuita, permettendo a NetApp Data Migrator di scalare in modo efficiente su grandi set di dati e ambienti multipli.</block>
+  <block id="0c12f5552633e320ca5d9dc75702a615" category="list-text">Gli operatori trasmettono informazioni statistiche di alto livello sulla migrazione dei dati al piano di controllo.</block>
+  <block id="e967df1b4afbc72731b044aad2ad462d" category="list-text">Si installa e si registra un worker utilizzando NetApp Data Migrator.</block>
+  <block id="b301c2b39947d2e05e52525b699c1669" category="list-text">Ciascun worker possiede le seguenti caratteristiche:</block>
+  <block id="037e6d60574e122c7ed4c6bab4efe2e3" category="list-text">È associato a uno o più file server</block>
+  <block id="937a136871c813f0759a6b0ba2c684fa" category="list-text">Riporta metriche di sistema quali CPU, memoria e stato (online o offline) al piano di controllo</block>
+  <block id="89f91ef6d84571698659ccd06150de6c" category="list-text">Fornisce informazioni statistiche high-level sulla migrazione dei dati al piano di controllo</block>
+  <block id="415b97a9b0a182511672ae3883302822" category="inline-link-macro">decidere se utilizzare il software per le operazioni di migrazione dei dati</block>
+  <block id="38638155b7eb32979bd49efbc4ecd3ea" category="paragraph">Dopo aver appreso informazioni su NetApp Data Migrator, puoi <block ref="32beaf1b333cdebcd418e0f9b4a6d185" category="inline-link-macro-rx"></block>.</block>
+  <block id="362dc8eb929965a4aa87ffed37b3d617" category="doc">Scopri come installare NetApp Data Migrator</block>
+  <block id="155fa94b7bca3977ba7c200909e43cc8" category="paragraph">È necessario installare un control plane e dei worker per eseguire i job di migrazione NFS e SMB utilizzando NetApp Data Migrator.</block>
+  <block id="8c0d588cf4ae3c3963c70ead4a5ca7e3" category="list-text">*Piano di controllo*: Il piano di controllo funge da livello centrale di gestione e controllo. Distribuisci il piano di controllo su una macchina virtuale (VM) Linux, quindi distribuisci i worker.</block>
+  <block id="c037928a4b33f55ae64d96e1796c0cb1" category="list-text">*Workers*: I worker sono macchine virtuali che eseguono la migrazione dei dati. È possibile distribuire più worker in base alla scalabilità e alle proprie esigenze. Il tipo di worker dipende dal protocollo:</block>
+  <block id="dcb958e16173d580dffd4bdeb217206a" category="list-text">Un worker Linux supporta le migrazioni NFS.</block>
+  <block id="d2ac9b54e6beae65495d2457cf8c1f40" category="list-text">Un worker Windows supporta le migrazioni SMB.</block>
+  <block id="76827502fd8d3d0d06e450c23346942e" category="paragraph">Innanzitutto, si distribuiscono la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando i servizi cloud AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal sito di supporto NetApp.</block>
+  <block id="a2b65d24cfdab17e100dd5d9903bafad" category="paragraph">Dopo la distribuzione, si creano le macchine virtuali del piano di controllo e di lavoro per accedere a NetApp Data Migrator. La macchina virtuale del piano di controllo e la macchina virtuale di lavoro Linux vengono create utilizzando le immagini distribuite. La macchina virtuale di lavoro Windows viene creata utilizzando Windows Worker Installer, che si scarica dal sito di supporto NetApp.</block>
+  <block id="0176a7764147384d95bf0b96717c78d3" category="inline-link-macro">registrarsi per un account</block>
+  <block id="35884a7c97792b73e76d939f06c4c52c" category="paragraph">Dopo aver appreso come installare NetApp Data Migrator, puoi <block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block>.</block>
+  <block id="7e56090ee48c15842893dcf89da7a382" category="summary">Note legali, copyright, marchi registrati e informazioni sulla licenza open source di NetApp Data Migrator.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Note legali</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Le note legali forniscono accesso a dichiarazioni di copyright, marchi, brevetti e altro.</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Copyright</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">Marchi</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NETAPP, il logo NETAPP e i marchi elencati nella pagina dei marchi di NetApp sono marchi di NetApp, Inc. Altri nomi di aziende e prodotti possono essere marchi dei rispettivi proprietari.</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">Brevetti</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">Un elenco aggiornato dei brevetti di proprietà di NetApp è disponibile all'indirizzo:</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Informativa sulla privacy</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sui diritti d'autore e sulle licenze di terze parti utilizzati nel software NetApp.</block>
+  <block id="e3eb04459e5968e61173ba53f95bb097" category="inline-link-macro">Avviso per NetApp Data Migrator</block>
+  <block id="85107cda01ac5e8d2ab6e2fb5b79cb6e" category="paragraph"><block ref="85107cda01ac5e8d2ab6e2fb5b79cb6e" category="inline-link-macro-rx"></block></block>
+  <block id="30448d39662748517771a9714d6d41c7" category="summary">Utilizza NetApp Data Migrator per aggiungere, configurare e modificare i file server che utilizzano i protocolli NFS o SMB.</block>
+  <block id="50e1eea5e6dfb404eaad83143adef1b2" category="doc">Aggiungere e gestire i file server</block>
+  <block id="9ab33165725a4ff45da757a30431ab45" category="paragraph">È possibile utilizzare NetApp Data Migrator per aggiungere, configurare e modificare file server che utilizzano i protocolli NFS o SMB.</block>
+  <block id="c866395ca8d6403ba4c16dcfe1cb5bf7" category="section-title">Aggiungi un nuovo file server</block>
+  <block id="1440ea134aebbfbeddcad4b896434f11" category="paragraph">Aggiungi un nuovo file server NFS o SMB e configura le macchine virtuali di lavoro.</block>
+  <block id="f6bb4278fd00bda59d9b22730ebc4ac0" category="paragraph">A seconda della configurazione del sistema, utilizzare l'opzione Altro NAS o Dell Isilon workflow.</block>
+  <block id="061f1cdddd0d16713b25b1f6c0e1ca40" category="open-title">Altri NAS</block>
+  <block id="a313328b40722f10ddcf9cd4c26fe3d7" category="list-text">Nel pannello di navigazione a sinistra, selezionare *Storage Servers*.</block>
+  <block id="7dcb33ad4b606d60559d47ef6e33b0a8" category="list-text">Seleziona *File Servers* &gt; *+Add*.</block>
+  <block id="16d5edd9c5ec17c1d90f4e89745270da" category="paragraph">Si apre la pagina *Server di file*, seguita dalla pagina *Tipo di server*.</block>
+  <block id="b51aa62f83aa8410bb7be5af66b90a55" category="list-text">Inserisci il nome del server, quindi seleziona *Tipo di server* come Altro NAS.</block>
+  <block id="2f85dfe27ff9af179bfe9dc6153f0207" category="paragraph">Si apre la pagina *Credenziali*.</block>
+  <block id="3a9b543b047a34c149d5d4330d09707d" category="list-text">Inserisci il *nome host* (o indirizzo IP) del server NFS o SMB.</block>
+  <block id="2b0cb233806b893646bf5b9b2da12d74" category="list-text">Se si utilizza un file server NFS:</block>
+  <block id="4e8237f0df807eafdaa31107b4e21b6d" category="list-text">Inserisci un *nome utente* per accedere alle condivisioni file NFS.</block>
+  <block id="e18ef375dcc3ab1a6584eb99050fd3d9" category="list-text">Facoltativamente, inserisci una *Password*.</block>
+  <block id="6e07454a6f4eb4754b4205930356fc42" category="list-text">Selezionare una *versione del protocollo* per NFS.</block>
+  <block id="2f93d9bc0543dc153ffb8604c6e54367" category="list-text">Nel pannello *Meccanismo di recupero dei percorsi di esportazione* selezionare *Rilevamento automatico* o *Caricamento manuale*:</block>
+  <block id="83e78e8d2dc52fc82da28cb7a6d2f179" category="paragraph">*Auto Discover* rileva automaticamente i percorsi di esportazione.</block>
+  <block id="fa46aaa4f59f0c110d38ecc0b53002ea" category="inline-xref">è necessario caricare manualmente i percorsi di esportazione</block>
+  <block id="c0530e1ad8f41f48d9b18f2380f94003" category="paragraph">*Caricamento manuale* carica manualmente i percorsi di esportazione, oppure in ambienti in cui *Rilevamento automatico* non è supportato, come il servizio Google Cloud NetApp Volumes (GCNV) Flex. Dopo aver aggiunto un file server, <block ref="1b65c60f8f427559cc3c71263f4d9263" category="inline-xref-macro-rx"></block>.</block>
+  <block id="fb633e9ae6ea78f60185ba5f7673543c" category="list-text">Se si utilizza un file server *SMB*:</block>
+  <block id="a4a98f2a60286dde7e4c629215bdc630" category="list-text">Inserisci un *nome utente* per accedere alle condivisioni file SMB.</block>
+  <block id="555000d937f00fc7af1616933a58be66" category="list-text">Inserisci una *password*.</block>
+  <block id="7719f5ebdd80d795ffb088f6f9a96c3f" category="list-text">Selezionare una *versione del protocollo* per SMB.</block>
+  <block id="d3f151c47d8025982b418167de2e4076" category="list-text">Seleziona la scheda *Workers*.</block>
+  <block id="cefc9fa3d55cd2e93cddd06177bff189" category="list-text">Nella colonna *Associati*, seleziona il pulsante di attivazione/disattivazione accanto a ciascuno dei worker che desideri associare a un server.</block>
+  <block id="a38a6d1da3fe71902166a2267478d600" category="list-text">Seleziona *Procedi* per avviare un'operazione di pre-verifica che controlla se uno o più worker selezionati dispongono di connettività a NetApp Data Migrator.</block>
+  <block id="b6fa9602185f08ac7e72f5c937d068e5" category="list-text">Una volta completata la verifica preliminare, è necessario risolvere eventuali errori segnalati. (Consultare le File Server Frequently Asked Questions (FAQ) per dettagli su come risolvere gli errori).</block>
+  <block id="8356febdfd411149082fd9f5fc6c5fb1" category="paragraph">Se il controllo preliminare viene completato senza errori, selezionare la scheda *Configurazione lavoro*, quindi selezionare *Fine*. Il nome del file server viene visualizzato nell'elenco dei *file server*.</block>
+  <block id="eb0355f26f0fcb3a136cdd63c25a8c2b" category="paragraph">Lo stato di un file server è indicato nella colonna *Stato* della tabella *File Servers*. I tipi di stato includono:</block>
+  <block id="7a04e6e21c09557e46bd39fdb8e2524f" category="list-text">*Attivo*: Non sono presenti errori e tutti i dettagli sono stati convalidati.</block>
+  <block id="4b95ab50254e22736bd44f5fcaaf8e85" category="list-text">*In corso:* La convalida del server è in corso.</block>
+  <block id="74b474dda207ef6b31fa094e154cbcbb" category="list-text">*Bozza*: Nessun lavoratore è stato associato a un file server.</block>
+  <block id="6d1ad994439c6c71c5fa295653fd39b4" category="list-text">*Errore*: Si sono verificati problemi con le autorizzazioni, non sono disponibili percorsi oppure è disponibile solo / come percorso di esportazione. Questi problemi possono verificarsi se si seleziona *Rilevamento automatico* per il percorso di esportazione durante la creazione del file server.</block>
+  <block id="fff4714787fd02da5b8effd425481e60" category="open-title">Dell Isilon</block>
+  <block id="7ede989749b2b83a61ca18e3533f7779" category="list-text">Inserisci un *Nome di configurazione* per il tuo file server Isilon.</block>
+  <block id="5f33dfa03f667c2212c142f035f18f86" category="list-text">Seleziona *Dell Isilon* dal menu a tendina *Tipo di server*.</block>
+  <block id="e26ac623ca109291209c8a8745c8a292" category="paragraph">Si apre la sezione *Console di gestione*:</block>
+  <block id="e62b8ed2a0b779aaa6723a8cfd4a47f3" category="list-text">Inserire l'*Host di gestione* (host name o indirizzo IP della console di gestione Isilon).</block>
+  <block id="4a715ac88096cacf3efad7bdeb2ff046" category="list-text">Inserisci il *nome utente* per accedere all'API di gestione di Isilon.</block>
+  <block id="591b019dd8cad5ead810ed727a6f7884" category="list-text">Inserisci la *password*.</block>
+  <block id="4252ae4fd88320349b3c2c1cd45ce6e2" category="list-text">Seleziona *Procedi* per recuperare il certificato TLS dal cluster Isilon.</block>
+  <block id="b3358fb4cc90b8562534214340f1483f" category="list-text">Esamina i dettagli del *Certificato TLS* visualizzati nella finestra modale:</block>
+  <block id="924932478b247f31fd54eb71772dfa7a" category="list-text">Verificare l'emittente del certificato, le date di validità e l'impronta digitale.</block>
+  <block id="42eb74b406abff7f73fe77af1e141e01" category="list-text">Seleziona *Accetta* per considerare attendibile il certificato e procedere.</block>
+  <block id="199fcebf78b56320fe2257f80ad41c5d" category="list-text">Seleziona *Rifiuta* per annullare se non ti fidi del certificato.</block>
+  <block id="49ddb02773da2521aeb35f68bd283ab0" category="list-text">Si apre la pagina *Credenziali di zona*:</block>
+  <block id="a293365e4bf0499540b02cc73618f7ea" category="list-text">Seleziona una o più *Zone di accesso* tra le zone disponibili rilevate.</block>
+  <block id="b680716c14e7cbf0172e65e23ab2306d" category="list-text">Per ciascuna zona selezionata, configurare le credenziali del protocollo:</block>
+  <block id="3e92e6c57bdcda23ca11d2521e37ddfb" category="list-text">Seleziona l'*indirizzo IP NFS* dal menu a tendina.</block>
+  <block id="cc8c648ffadd97f0a67b9603ed15adb1" category="list-text">Inserisci un *nome utente* per accedere ai percorsi di esportazione NFS.</block>
+  <block id="e975121c3fa61c0861efe13dc728bc76" category="list-text">Inserisci l'indirizzo IP SMB.</block>
+  <block id="4529f88bed086ab3546a25cbb64dff56" category="admonition">Se un SmartConnect Service IP (SSIP) è configurato sul cluster Isilon, puoi selezionare il domain name della zona SmartConnect dall'elenco a discesa Indirizzo IP. Quando si utilizza un domain name abilitato SSIP, l'infrastruttura Isilon SmartConnect gestisce il bilanciamento del carico delle connessioni e lo risolve a livello di storage. NetApp Data Migrator non esegue un bilanciamento del carico aggiuntivo in questa configurazione.</block>
+  <block id="e3ca436a78e69a18e95717ec2f400984" category="list-text">Si apre la scheda *Workers*:</block>
+  <block id="a4914c52fba6dcb7874b1267afb8c90c" category="list-text">Per ogni combinazione di zona e protocollo, assegnare i worker:</block>
+  <block id="749a9275aee7219a017a5d75c5d7eb8b" category="paragraph">Nella colonna *Associati*, seleziona il pulsante di attivazione/disattivazione accanto a ciascuno dei lavoratori che desideri associare.</block>
+  <block id="b3c358ada53be4cdb65195dedf62915e" category="list-text">Seleziona *Procedi* per avviare un'operazione di pre-verifica che controlla se uno o più worker selezionati dispongono di connettività a NetApp Data Migrator e al file server Isilon.</block>
+  <block id="8f7df24644d794e564d2db58c772b2e5" category="list-text">Una volta completata la verifica preliminare, risolvi eventuali errori segnalati.</block>
+  <block id="0fe54530ff7b453c5e0bba3e943a89f3" category="paragraph">Se il controllo preliminare viene completato senza errori, il nome del tuo file server viene visualizzato nell'elenco dei file server. Il menu a tendina dei file server visualizzati mostra le zone configurate.</block>
+  <block id="07cb0967e7293a347fac687a381955a5" category="section-title">Carica manualmente i percorsi di esportazione e directory</block>
+  <block id="1132f2d9d6c8243388bd238a3921aabe" category="paragraph">NetApp Data Migrator consente di caricare manualmente i percorsi di esportazione e i percorsi di directory da utilizzare nelle operazioni di migrazione dei dati per il protocollo NFS. Questa funzionalità è utile in ambienti in cui il rilevamento automatico dei percorsi di esportazione NFS non è disponibile. Ad esempio, per l'utilizzo con il servizio GCNV Flex o quando si migrano i percorsi di directory anziché l'intero percorso di esportazione. Se si seleziona *Caricamento manuale* nel pannello *Meccanismo di recupero dei percorsi di esportazione*, è necessario scaricare e compilare il file modello fornito da NetApp Data Migrator dopo aver terminato la creazione di un file server.</block>
+  <block id="51be508b7111443f67b7d70122772066" category="admonition">Utilizza questa opzione quando devi configurare la migrazione a livello di directory. Nei casi in cui la migrazione riguarda directory specifiche anziché intere esportazioni, inserisci i percorsi delle directory direttamente nel foglio di calcolo Excel. In questo modo, il flusso di lavoro di migrazione elaborerà ogni directory singolarmente, senza richiedere input a livello di esportazione.</block>
+  <block id="cc9db883e6208917ec02b1cc6f122a40" category="list-text">Seleziona *File Servers*.</block>
+  <block id="f90dbedacb122ecf97b6830d76fc2df2" category="list-text">Seleziona *Clicca qui per caricare i percorsi di esportazione*.</block>
+  <block id="f6611b52a69a0749e6dde410ebb9d202" category="list-text">Seleziona *Scarica modello* per scaricare un modello di file CSV.</block>
+  <block id="1909c6f6ba7aa237b4a6322e40d710d7" category="list-text">Salva i percorsi di esportazione e i percorsi delle directory nel file CSV.</block>
+  <block id="e5c5212dc6860279e78a71f2aae11175" category="list-text">Seleziona *Click here to Upload Export Paths*, quindi seleziona il file CSV contenente i percorsi di esportazione e i percorsi delle directory.</block>
+  <block id="a711807ae13ebab3475c8850bd469580" category="paragraph">I percorsi di esportazione e i percorsi delle directory sono visualizzati sotto *Paths*.</block>
+  <block id="7d98b3cc240f80ad12ef8d8b309048c5" category="list-text">Se devi includere altri percorsi di esportazione o percorsi di directory, aggiungili al tuo file, quindi seleziona *Ricarica percorsi di esportazione*.</block>
+  <block id="1725899abdbe44463a53694fdc2de15d" category="paragraph">Al termine del caricamento, i percorsi di esportazione e i percorsi delle directory possono presentare uno dei seguenti stati:</block>
+  <block id="3ad17efd32ab7ef580731eb97a9e0fb0" category="list-text">*Valido*: Il percorso è stato caricato correttamente ed è possibile montare e smontare questo percorso.</block>
+  <block id="96b069a94d9dee2d028eb1e1d1fe5b25" category="list-text">*Non valido*: il percorso non è riuscito a essere caricato.</block>
+  <block id="46c719ec3542636c4581d51316372ba5" category="list-text">*Disabilitato*: Il percorso è disponibile, ma non è presente nel file che hai caricato.</block>
+  <block id="19e9b23283c98b6a6539c6dca9cc4aa4" category="section-title">Modifica i dettagli del file server</block>
+  <block id="7c6a70263b6766a9e16e5586351b97b0" category="paragraph">Se necessario, è possibile apportare modifiche a un file server precedentemente configurato.</block>
+  <block id="e487e639afe7aeec99ca210dcd776398" category="paragraph">Modifica i dettagli del file server utilizzando l'opzione del flusso di lavoro "Altro NAS o Dell Isilon".</block>
+  <block id="429d167516808f8c7d5056c56a4ff30a" category="list-text">Seleziona il menu delle azioni accanto al file server che desideri modificare.</block>
+  <block id="0952ccb1cc436bfc6c1f73fa071c8a46" category="list-text">Seleziona *Modifica file server*. Se hai selezionato l'opzione *Caricamento manuale* per *Recupero percorso di esportazione caricamento*, vengono visualizzati solo i percorsi validi.</block>
+  <block id="0411c429b267479d4162de2f0a7e5b97" category="list-text">Seleziona la scheda *Tipo di server*, apporta le modifiche necessarie, quindi seleziona *Procedi*.</block>
+  <block id="014b4d783a46c7f790a52ba13bc075a7" category="list-text">Seleziona la scheda *Credenziali*, apporta le modifiche necessarie, quindi seleziona *Procedi*.</block>
+  <block id="f420b3ff7e0de967d2596c3f21d6b7d0" category="list-text">Seleziona la scheda *Workers*, apporta le modifiche necessarie, quindi seleziona *Submit*.</block>
+  <block id="634f2613312c50034cab7074eb0fc644" category="list-text">Seleziona il menu delle azioni accanto al Parent File Server che desideri modificare.</block>
+  <block id="c2304f920f0ce42a4d3a45f95cb449fe" category="list-text">Selezionare *Modifica file server*.</block>
+  <block id="c673e863a2bb835bd78defb2019a416f" category="list-text">Seleziona la scheda *Tipo di server*:</block>
+  <block id="4fd7731ec8e10aaa8879c4f56e5a1647" category="list-text">Aggiorna il *Nome della configurazione* se necessario.</block>
+  <block id="624e797c77d3edeaa0c651e9cb4e7a96" category="list-text">Aggiorna *Nome utente* o *Password* se necessario.</block>
+  <block id="8cb15ce6c54092a253bd2c552317ad39" category="list-text">Seleziona *Procedi*.</block>
+  <block id="0f7d7aa78a1549c2dc72ca57c5f84820" category="admonition">Non è possibile modificare il *Tipo di server* (Dell Isilon) e l'*Host di gestione*.</block>
+  <block id="b581066510802cba6f2634fb91bd1ea7" category="list-text">Seleziona la scheda *Credenziali di zona*:</block>
+  <block id="86ceee48e971b9baa262713ab3566f9f" category="list-text">Aggiungi nuove zone selezionando zone aggiuntive dall'elenco disponibile.</block>
+  <block id="b0d3121acd66e57f6bf71d9fd1ab9007" category="list-text">Aggiorna le credenziali del protocollo per ciascuna zona:</block>
+  <block id="62a2d21a8924af81cee064e4a5d2acf3" category="paragraph">Aggiorna l'indirizzo IP NFS, il nome utente o la password secondo necessità.</block>
+  <block id="0900f1414e7784bce9ad7e4f242436d2" category="paragraph">Aggiorna l'indirizzo IP SMB, il nome utente o la password a seconda delle necessità.</block>
+  <block id="f2e1ee0da6aa0320ed2aa2a6648f7aa2" category="list-text">Seleziona la scheda *Workers*:</block>
+  <block id="b6b637036aed9b864f8f9a4467d28788" category="list-text">Aggiorna le assegnazioni dei worker per ogni zona e protocollo attivando o disattivando i worker nella colonna *Associated*.</block>
+  <block id="34ce963f139995c19018586d22ee168d" category="list-text">Seleziona *Procedi* per eseguire la convalida preliminare su tutti i worker appena assegnati.</block>
+  <block id="1164d10996d24fd3288b7937b9ec0530" category="list-text">Selezionare la scheda *Job Config*:</block>
+  <block id="fd6cf1ea66a217ef1c4d0a41152a1277" category="list-text">Aggiorna la *directory di lavoro* se necessario.</block>
+  <block id="560e42e6da9452e07ba03414df4da014" category="list-text">Seleziona *Fine*.</block>
+  <block id="2154189ceab3b15e68c45f609b0ec689" category="summary">Utilizza le funzionalità di gestione dei processi in NetApp Data Migrator per avviare e monitorare i processi di rilevamento, migrazione e cutover, nonché le relative esecuzioni.</block>
+  <block id="96e2d76177d54eadc3a852e22adeaaec" category="doc">Gestisci i processi e le esecuzioni dei processi in NetApp Data Migrator</block>
+  <block id="d3a5c51f4c2d63b6a4ee92f4de5513c8" category="paragraph">Utilizza le funzionalità di gestione dei processi in NetApp Data Migrator per avviare e monitorare i tuoi job *Discovery*, *Migration* e *Cutover* e le esecuzioni dei job.</block>
+  <block id="47ce163a337b400a299b167005e1ff76" category="admonition">Non eseguire contemporaneamente le operazioni di migrazione e di cutover. Assicurati che sia attiva una sola operazione alla volta.</block>
+  <block id="f913cb8eaf501d9d95f4100d1850c243" category="section-title">Visualizza l'elenco delle configurazioni dei job</block>
+  <block id="a80fdfd04f65f93bdbbc91f6f9e100ed" category="paragraph">La pagina *Elenco configurazioni processi* fornisce una panoramica completa di tutti i job relativi alla migrazione. Utilizza questa pagina per monitorare e gestire lo stato e l'avanzamento dei job di *Discovery*, *Migration* e *Cutover*.</block>
+  <block id="205effb87fb92bf5acccba67f732a0f2" category="list-text">Seleziona *Jobs* &gt; *Job Config List*.</block>
+  <block id="a51ba51aea6fd46bd6354129d8dc8da5" category="paragraph">Viene visualizzata la tabella *Jobs Listings*, che include le seguenti informazioni:</block>
+  <block id="712f0bb5849fb5220b239bef32349467" category="list-text">*Fonte*: Posizione del file server di origine.</block>
+  <block id="8c3f852153315e0200b7dd5ccd60097b" category="list-text">*Destinazione*: I dettagli del file server di destinazione e del percorso di esportazione per i processi di migrazione.</block>
+  <block id="eb7c1024ed75720e4618e2f59a0c29a4" category="list-text">*Protocollo*: Il protocollo utilizzato dal processo (NFS o SMB).</block>
+  <block id="d211e5012fe610811b996152df247e6a" category="list-text">*Prossima programmazione*: Il prossimo orario di esecuzione programmato (se applicabile).</block>
+  <block id="f275311b9080a619b83ce5490ae50392" category="list-text">*Esecuzioni*: Il numero di volte in cui il lavoro è stato eseguito.</block>
+  <block id="59a8dd452a829f2516fecf824e882da1" category="list-text">*Tipo*: Il tipo di lavoro (Discovery, Migration o Cutover).</block>
+  <block id="57578fa471857bb13e307e088ca9d179" category="list-text">*Stato*: Lo stato attuale di un lavoro può essere Attivo o Inattivo. I lavori che utilizzano percorsi di esportazione manuali con uno stato non valido o disabilitato diventano automaticamente inattivi. Consultare <block ref="ae773d97768ced1963187e2ee61ebb05" category="inline-link-macro-rx"></block> per maggiori dettagli.</block>
+  <block id="de14b7f5bd8601d16bfb30193a03bf45" category="list-text">*Aggiornato il*: Data e ora di aggiornamento del job.</block>
+  <block id="5509a44201941ec9a71cfef8981f936d" category="paragraph">I processi che utilizzano percorsi di esportazione manuali o il file dei percorsi di esportazione vengono successivamente ricaricati. Tutti i processi eseguiti in precedenza e associati a un percorso ora non valido o disabilitato diventano automaticamente inattivi.</block>
+  <block id="998e5d7021559bae26394870386865fd" category="list-text">Seleziona *Filtri* per ordinare i processi nella tabella Jobs Listings. Puoi scegliere una combinazione di filtri in base alle seguenti opzioni:</block>
+  <block id="f31bbdd1b3e85bccd652680e16935819" category="list-text">Fonte</block>
+  <block id="12007e1d59f4d09c87dbe2c438256244" category="list-text">Destinazione</block>
+  <block id="888a77f5ac0748b6c8001822417df8b6" category="list-text">Protocollo</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="list-text">Tipo</block>
+  <block id="ec53a8c4f07baed5d8825072c89799be" category="list-text">Stato</block>
+  <block id="98aa39a0a9a6d9d1c55c11b38ad87210" category="list-text">Seleziona *Cancella tutto* per rimuovere i filtri già applicati ai tuoi annunci di lavoro.</block>
+  <block id="2dd41f302a47a8149c5161c4aeefc4aa" category="section-title">Attivare o disattivare un lavoro</block>
+  <block id="ce0a276551bf4e1a882ffd3ee9d9a7f9" category="paragraph">Dalla tabella Job Listings, è possibile attivare o disattivare un job.</block>
+  <block id="8f07bd4c7af698058475bbfc2664d860" category="list-text">Attiva un job:</block>
+  <block id="44ec342136c9004af13735656c4940dd" category="list-text">Nella tabella Job Listings, seleziona il menu delle azioni accanto al job che desideri attivare.</block>
+  <block id="485649400ce84e211b02fc75f1b1f188" category="list-text">Seleziona *Attiva*. Lo stato del lavoro cambia in Attivo.</block>
+  <block id="12bc8776b55f177f1ad58658dab8fa43" category="list-text">Disattivare un'attività:</block>
+  <block id="6e7aff1bcdb70833ba4187e058f15b01" category="list-text">Nella tabella Elenco offerte di lavoro, seleziona il menu delle azioni accanto all'offerta di lavoro che desideri disattivare.</block>
+  <block id="b86808629c5c1324556ad4ecbd8b6af4" category="list-text">Seleziona *Disattiva*. Lo stato del processo cambia in Inattivo e l'esecuzione si interrompe finché non lo riattivi.</block>
+  <block id="ae8dcf3ca2ef18f6fe33e4c4328fc599" category="section-title">Modifica le configurazioni dei job</block>
+  <block id="404c654f597e28ba11d197566003a457" category="inline-xref">Apri la pagina Dettagli job</block>
+  <block id="5555a6f5f4aca1505ff1d1848b7ad938" category="list-text"><block ref="6a2946a61080b667da5372186ff3b47a" category="inline-xref-macro-rx"></block> per il lavoro che desideri modificare.</block>
+  <block id="14ffa952adc249e88d00125b89c972ed" category="list-text">Seleziona *Visualizza/Modifica configurazione*.</block>
+  <block id="b45ff17e7dc18dd05d918205c7de7ec2" category="list-text">Modifica la configurazione del lavoro:</block>
+  <block id="cba03cf49470128a249e5865702b7822" category="open-title">Lavoro di scoperta</block>
+  <block id="ccf6288220eaa9d9a99974191e03c8c5" category="list-text">Aggiungi o rimuovi modelli di percorso esclusi</block>
+  <block id="0f8f20d1794986cf0102ed43d162164a" category="list-text">Pianifica un'esecuzione del lavoro</block>
+  <block id="025d7fa93526a3d9816f06ae4ae9ff0f" category="open-title">Lavoro di migrazione</block>
+  <block id="0b5201fb7463eb0191e74b974d36281d" category="list-text">Modifica qualsiasi opzione di lavoro</block>
+  <block id="05246f19c5a8851dd405f2006644a274" category="list-text">Aggiungere o rimuovere mappature</block>
+  <block id="065e4149f2c960a6fd0d116ee9a54b08" category="list-text">Seleziona *Salva*. La nuova configurazione avrà effetto sulle future esecuzioni del processo.</block>
+  <block id="f65f1b468917996b88c7346038ee11d0" category="admonition">Modificare la configurazione, ad esempio disabilitando la conservazione delle autorizzazioni, dopo il completamento della migrazione della baseline potrebbe comportare uno stato incoerente durante le migrazioni successive. Invece di modificare la configurazione, è necessario eliminare il job corrente e avviarne uno nuovo.</block>
+  <block id="6534a65c691c4c1cbbfa3759a0dee99d" category="section-title">Riesegui i file e le directory che hanno generato errori</block>
+  <block id="5269abdae82f8db3eb64603f3ab515b4" category="paragraph">Se l'esecuzione di un processo di migrazione si conclude con errori dovuti a problemi temporanei come timeout di rete o problemi di autorizzazione, è possibile utilizzare la funzione di riprova per rielaborare solo gli elementi non riusciti senza dover eseguire nuovamente l'intera migrazione.</block>
+  <block id="4138f3df411b91cf271a5cbc680395b7" category="list-text">Nella tabella *Elenco lavori*, seleziona il menu delle azioni accanto al lavoro che presenta elementi non riusciti.</block>
+  <block id="c7dc5b2281e34424f9ab4a5db40addce" category="list-text">Seleziona *Dettagli* &gt; *Riprova errori recenti* &gt; *Procedi con riprova* per avviare l'operazione di riprova.</block>
+  <block id="01858923ecef5a9cd865759e77a8da9c" category="section-title">Elimina un lavoro</block>
+  <block id="b81e917b7641062733aef3dc42f84a12" category="list-text">Nella tabella *Elenco offerte di lavoro*, seleziona il menu delle azioni accanto all'offerta di lavoro che desideri eliminare.</block>
+  <block id="c6530dc69a45197349feade40127bf9e" category="list-text">Seleziona *Elimina* &gt; *Elimina*.</block>
+  <block id="a03e225303aed19847ec882e7f96942b" category="admonition">È possibile eliminare un processo solo se non è in esecuzione alcun run attivo.</block>
+  <block id="ab7386fc80b478b3cd494da3d0899567" category="section-title">Visualizza i dettagli dell'offerta di lavoro</block>
+  <block id="1c99e4180f5d9aa00aabccdaf025437b" category="paragraph">Dalla pagina *Elenco configurazioni lavoro*, è possibile accedere alla pagina *Dettagli lavoro* per visualizzare ulteriori dettagli sui singoli lavori, come:</block>
+  <block id="df1a158216da9a5f7abcc98dc35f8a35" category="list-text">Tipo di lavoro (Scoperta, Migrazione o Cutover)</block>
+  <block id="51c996d15f57724f95ca8565526b24cf" category="list-text">Numero di file e directory rilevati</block>
+  <block id="9dbddb48e79793d127f9858cc8b7f53a" category="list-text">Tempo trascorso</block>
+  <block id="22313435ded59e8144be54e10eec2e79" category="list-text">Dati scoperti</block>
+  <block id="217e2a88c8ac49f62ecfc885e1a0830c" category="list-text">Configurazione del lavoro</block>
+  <block id="e1bcd2f1f15f4e88ad9058efc1f8af32" category="list-text">Nella tabella *Offerte di lavoro*, seleziona il menu delle azioni accanto a un job, quindi seleziona *Dettagli*.</block>
+  <block id="541e5713ff6b340d5232e0399e4bd235" category="section-title">Visualizza la cronologia di esecuzione dei processi</block>
+  <block id="a0c259a239887e102dd3de5bffd3c9bb" category="paragraph">Nella pagina *Dettagli lavoro*, la tabella *Cronologia esecuzioni* fornisce le informazioni sulle esecuzioni precedenti del lavoro e sullo stato del lavoro.</block>
+  <block id="4d3681fbd312ed8436e3e7e66ccab275" category="paragraph">Le tipologie di stato dei job di migrazione e scoperta includono:</block>
+  <block id="e4474066ad8d7a943295b43bf3c44d09" category="list-text">*Pronto*: È stata programmata l'esecuzione di un job.</block>
+  <block id="e2ad9fb4361cb316a5abd24e68ff7637" category="list-text">*In esecuzione*: Un processo è in fase di esecuzione.</block>
+  <block id="666df6f166d243bc8f6b95f3b7f1dc98" category="list-text">*In pausa*: Un'esecuzione di un processo è stata messa in pausa manualmente o da NetApp Data Migrator. Ad esempio, un processo può avere lo stato "in pausa" se un worker si arresta mentre il processo è in esecuzione.</block>
+  <block id="b6206c641feb14001bd6f35c2eabd7ac" category="list-text">*Completato*: Un job è completo.</block>
+  <block id="d57d07642a15a951f0a39f42f5ed0e81" category="list-text">*Errored*: L'esecuzione di un processo ha generato un errore irreversibile.</block>
+  <block id="f3ba2db7739a5eed3c8c5f158e665f42" category="list-text">*Errore*: Se un worker va offline mentre un job è in esecuzione, il job potrebbe passare allo stato di errore.</block>
+  <block id="4af757090978bb1837cccd8e6b855f5f" category="paragraph">Le tipologie di stato del job di cutover includono:</block>
+  <block id="77216ccec67e98a1f2f20935225b1cf6" category="list-text">*Bloccato*: Il processo è in attesa di una risposta dall'utente.</block>
+  <block id="ef9bf5af6e6aef5955bed44b0bc3d98d" category="list-text">*Rifiutato*: Il job è stato esaminato e rifiutato da un utente.</block>
+  <block id="60bb34077de28c008aacceef19e2cd9f" category="list-text">*Approvato*: Il job è stato esaminato e approvato da un utente.</block>
+  <block id="8b801c7723cbb89b1bedf5b1fff9eaa2" category="list-text">*Interrotto*: Il processo ha smesso di funzionare.</block>
+  <block id="a334d1fa23df3c8e0c3e054c3bcd2151" category="section-title">Gestire le operazioni di esecuzione dei job</block>
+  <block id="9fd05e30d8e60695261f8bda97ec8679" category="paragraph">Dalla pagina *Dettagli lavoro*, è possibile gestire le operazioni *Avvia*, *Arresta*, *Pausa* e *Riprendi* di un lavoro. La funzione *Pausa* consente di interrompere temporaneamente un lavoro in esecuzione, senza annullarlo. Successivamente, è possibile riprendere il lavoro dal punto in cui è stato interrotto. Questa funzione è utile in situazioni in cui è necessario liberare risorse di sistema o risolvere problemi senza perdere i progressi.</block>
+  <block id="033c34f89029a741f4b7eedbd0b7f6b3" category="list-text">Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, seleziona il menu delle azioni accanto a un lavoro in esecuzione.</block>
+  <block id="6d2a4423a605589c4c52f375063111bf" category="list-text">Mettere in pausa o riprendere l'esecuzione di un processo:</block>
+  <block id="549087ff6c78cd133e60eae091dcb474" category="list-text">Seleziona *Pausa*.</block>
+  <block id="8dfafb7fdcc2e7100bb2fff576bd4950" category="list-text">Per riprendere l'esecuzione del processo, selezionare *Riprendi*.</block>
+  <block id="b5c64d21f4fc1c55112eca1b81a21870" category="paragraph">Lo stato del processo cambia in *In esecuzione* e il processo riprende l'esecuzione dal punto in cui era stato messo in pausa.</block>
+  <block id="45a97dad2a0cfbd9c4cb1c1038ab3dbf" category="list-text">Interrompere o avviare l'esecuzione di un processo:</block>
+  <block id="5cac5305a454aadc875c8ef5267815c3" category="paragraph">È possibile utilizzare l'opzione "Interrompi" per terminare definitivamente un'esecuzione di un job in corso. Questa azione è utile quando un'esecuzione di job non è più necessaria. Non è possibile riprendere un'esecuzione di job interrotta, ma è possibile avviare una nuova esecuzione di job dall'inizio.</block>
+  <block id="41ec3e9db7129b498fd1766a3be57b1d" category="list-text">Seleziona *Stop*.</block>
+  <block id="267e953dc65e3be15dba6fcddc04753a" category="paragraph">Lo stato di esecuzione del processo cambia in *Stopped*.</block>
+  <block id="69d47dade61c818baa831f37c527299e" category="list-text">Per avviare una nuova esecuzione del processo, selezionare *Adhoc Run*.</block>
+  <block id="925e35e75855bc45582e31fd64f6c648" category="paragraph">Lo stato di esecuzione del processo cambia in *In esecuzione*.</block>
+  <block id="e1b7dc9d96984cfec96bda0a314c4877" category="section-title">Accedi ai dettagli dell'esecuzione del lavoro</block>
+  <block id="9140e7de3992891cae0f9151d7a59966" category="paragraph">Dalla tabella *Cronologia esecuzioni*, accedi alla pagina *Dettagli esecuzione processo* dove puoi visualizzare ulteriori dettagli sulle tue esecuzioni di processo.</block>
+  <block id="65b75d688d5649ea6c984ecb72f23aaa" category="list-text">Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, selezionare il menu delle azioni accanto a un job run.</block>
+  <block id="1a4175bd61e76b171f3ce25c259e9a6e" category="list-text">Seleziona *Dettagli* per visualizzare la pagina *Dettagli esecuzione processo*, che include le seguenti informazioni:</block>
+  <block id="20a65bd60e1be339c198475a1f403898" category="list-text">*Rilevamento/Migrazione*: Il tipo di esecuzione e lo stato del processo.</block>
+  <block id="3ab8c86d2d67e41891e4ba9e2d4a6c97" category="list-text">*File*: Il numero di file trovati durante il processo di rilevamento.</block>
+  <block id="e45ddb684019ab3673b0abd2eec135b6" category="list-text">*Directory*: Il numero di directory trovate durante il processo di rilevamento.</block>
+  <block id="f6b320e5c8b8991e218ac80aa02952f8" category="list-text">*Tempo trascorso*: Quanto tempo è durato il processo di scoperta.</block>
+  <block id="78a8155415c0cc8fc6dba8bc25cdad69" category="list-text">*Dati rilevati*: Dimensione totale dei file rilevati.</block>
+  <block id="9cd0c86c045159394bdec4f11bf5ab92" category="list-text">*Workers*: Il numero di worker assegnati al job.</block>
+  <block id="4282beca24b6cd8dc9f26a914545d7c1" category="list-text">*Attività*: Il numero di attività in esecuzione.</block>
+  <block id="627ffb473a1ba153efdddf4a1d9c7725" category="list-text">*Indicatori di stato dell'attività*:</block>
+  <block id="33d518c5f1e12f7612cfe43eaff10266" category="list-text">*In sospeso*: il numero di attività in attesa di essere eseguite.</block>
+  <block id="eb922cc8784bb18bbe64d773f203e011" category="list-text">*In esecuzione*: Il numero di Tasks attualmente in corso.</block>
+  <block id="aafeb85852b1a0709a1c9cd2db22d721" category="list-text">*Completati*: Il numero di attività che sono state completate con successo.</block>
+  <block id="72112f6b81b43281052c630630964215" category="list-text">*Errored*: Il numero di attività che hanno riscontrato problemi durante l'esecuzione.</block>
+  <block id="f1b6e0a3410272cf98a95c6f9b468e0b" category="list-text">*Nome del job*: Il nome assegnato al job.</block>
+  <block id="73c0d1f0d57b45d29afb9883aab3f404" category="list-text">*Percorso di origine*: Il percorso del file utilizzato per la data discovery.</block>
+  <block id="5a38cf20be01022658577fb7e875ca62" category="list-text">*Protocollo*: Il protocollo utilizzato per il rilevamento (NFS o SMB).</block>
+  <block id="45e1f81450b527f60d13ceac489731eb" category="paragraph">Il riquadro in basso a destra nella pagina *Dettagli esecuzione processo* elenca il numero di errori che si sono verificati durante la migrazione (se presenti). Seleziona *Visualizza tutto* per accedere alla pagina *Errori*, dove puoi trovare informazioni più dettagliate su questi errori.</block>
+  <block id="a4fa7fb1718892ffb244695136c023eb" category="list-text">Genera report dettagliati che ti forniscono informazioni approfondite sulle metriche di esecuzione dei job, inclusi il numero di file, lo stato, gli errori e il tempo di esecuzione. Puoi utilizzare questi report a scopo di revisione o verifica.</block>
+  <block id="d9ce67afe8e6b7ab92c26f3c439e0036" category="list-text">Seleziona *Discovery Report* &gt; *Anteprima* per visualizzare un istogramma dei dati del report di lavoro.</block>
+  <block id="d14ffbc2c337f58f1b30581b1bc352f0" category="list-text">Seleziona *Scarica come CSV* per esportare un report in formato CSV, che puoi analizzare utilizzando un'applicazione per fogli di calcolo.</block>
+  <block id="e5f2eae53ea7e10f32cc02e6573a770e" category="list-text">Seleziona *Scarica come PDF*. Questa opzione è ideale per la condivisione di documenti.</block>
+  <block id="d32bb76799fd7706709b46488f8ec310" category="list-text">Seleziona *Visualizza registri* per visualizzare o scaricare i file di registro utilizzando Grafana.</block>
+  <block id="029216502476b4f943aba394a6edc484" category="section-title">Visualizza l'attività di migrazione</block>
+  <block id="a939cd7a0172dd7e2b0ea10c28fd28fb" category="paragraph">La pagina Attività di migrazione mostra i dieci file più vecchi attualmente in fase di migrazione. Mostra anche il numero totale di file in corso e offre la possibilità di scaricare un file CSV contenente un elenco completo di questi file.</block>
+  <block id="87cf8c517abf58b119aa4a2538fb5787" category="list-text">Dalla tabella *Cronologia esecuzioni*, selezionare *Dettagli esecuzione processo* per un processo in esecuzione.</block>
+  <block id="8a06b7008bed1925e88b6e0c34eebf81" category="list-text">Seleziona *Attività di migrazione*.</block>
+  <block id="ac44d6d0b1105a6a9fe50a35ee88c5f1" category="section-title">Genera un rapporto di errore del lavoro</block>
+  <block id="38a53f3622c396951fc61e42cc05fea8" category="paragraph">È possibile generare un rapporto di errore per i processi con stato *Errored* o per un'esecuzione precedente. Un rapporto di errore può aiutarti a capire perché si è verificato un errore.</block>
+  <block id="49ace83a8cfc3a8d7a01785f4b3db9f9" category="list-text">Genera un report degli errori per i processi con stato *Errored*:</block>
+  <block id="796d0ad977aafb8ed49902677507dd65" category="list-text">Nella pagina *Dettagli lavoro*, nel riquadro Errori, selezionare *Visualizza tutto*.</block>
+  <block id="a9ca1cb0bb50a37841b5560367196c20" category="list-text">Seleziona *Genera rapporto errori* per scaricare i dettagli sugli errori nell'ultima esecuzione del processo.</block>
+  <block id="06c5b9f3a44a55aac89df0194019df52" category="list-text">Genera un rapporto di errore per un'esecuzione precedente del lavoro:</block>
+  <block id="1fb2f609fbdc947e6fbb85c3477c71b9" category="list-text">Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, seleziona il menu delle azioni accanto all'esecuzione del lavoro per la quale desideri generare un rapporto di errore.</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">Seleziona *Dettagli*.</block>
+  <block id="5bf3f51ad0b247db20c059cc3f279839" category="list-text">Nella pagina *Dettagli lavoro*, nel pannello *Errori*, selezionare *Visualizza tutto*.</block>
+  <block id="9d418074d0953bed63f88da1f4be14c1" category="list-text">Seleziona *Genera rapporto errori* per scaricare i dettagli relativi agli errori nell'esecuzione del processo selezionato.</block>
+  <block id="80ce2938ca2937b11bc52b5527c178f1" category="summary">Utilizza la scheda Progetti nel NetApp Data Migrator pannello di controllo per creare, modificare o passare da un progetto all'altro.</block>
+  <block id="53b124f1313dc46b158fbc2056cf3fff" category="doc">Creare e gestire progetti in NetApp Data Migrator</block>
+  <block id="0ae471ea6c5379bf2db089c8721b6289" category="paragraph">È possibile utilizzare la scheda Progetti nel piano di controllo di NetApp Data Migrator per creare, modificare o passare da un progetto all'altro.</block>
+  <block id="b2a1727d96eeb50bd9543486e0a34973" category="paragraph">Gli utenti amministratori dell'app possono creare un nuovo progetto in NetApp Data Migrator e assegnare a tale progetto utenti con ruoli definiti.</block>
+  <block id="6a6235e26cbae4e7bc5a888e95ad5626" category="list-text">Seleziona *Impostazioni* &gt; *Progetti* per visualizzare un elenco dei progetti esistenti.</block>
+  <block id="cf8b76f0f51b9afc7c33b3917ceed6e2" category="list-text">Seleziona *Aggiungi progetto* e si apre una nuova finestra.</block>
+  <block id="ecd282d0b7d7115b80f78b486d3c9a70" category="list-text">Inserisci il *Nome del progetto* e la *Descrizione del progetto (facoltativa)*.</block>
+  <block id="0e62f4bf3970597bbe61bdbc23c4143d" category="list-text">Aggiungi utenti al tuo progetto:</block>
+  <block id="a162c0719a4705494d45765a402543cb" category="list-text">Seleziona un *Utente* dall'elenco a discesa.</block>
+  <block id="bdcf956d77ad9f0e32e4248bec6dd7f4" category="list-text">Assegna un *ruolo* all'utente (*App Admin*, *Project Admin* o *Project Viewer*).</block>
+  <block id="6525cb7efe51d7936793356117826c43" category="list-text">Seleziona *+Aggiungi*.</block>
+  <block id="0b07e96722e5fc41e66e0c37ed512dcc" category="list-text">Seleziona *Salva e conferma*.</block>
+  <block id="03e701daac8d82b67d29127111db0419" category="list-text">Seleziona *Invia* e appare un messaggio di conferma che indica che il progetto è stato creato correttamente.</block>
+  <block id="83879b61fc6dcf133f90392c69f25d38" category="section-title">Modifica un progetto</block>
+  <block id="ad286effb217ad2bc61c8b02e3923f27" category="paragraph">Puoi modificare rapidamente i dettagli del tuo progetto, se necessitano di aggiornamenti.</block>
+  <block id="10cd70236841320dcfe4792268945964" category="list-text">Seleziona *Impostazioni* nella barra di navigazione in alto.</block>
+  <block id="2dbdae1b30b7ad025949ced667ce9906" category="list-text">Seleziona la scheda *Progetti* per visualizzare un elenco dei progetti esistenti.</block>
+  <block id="fa23ef17aae42b82ca311335fd9059a4" category="list-text">Seleziona *(⋮)* accanto ai dettagli del progetto che desideri modificare, quindi seleziona *Modifica progetto* dal menu a tendina.</block>
+  <block id="1a186f5c2b6dab4af1aca77b3e50ed9e" category="list-text">Aggiorna il nome del progetto, la descrizione del progetto o aggiungi nuovi utenti come richiesto.</block>
+  <block id="90356872f7dbf03852aac44afd841d89" category="list-text">Seleziona *Invia* per salvare le modifiche.</block>
+  <block id="94b85a1c5a643296b6d5ecd3976a9159" category="section-title">Passa da un progetto all'altro</block>
+  <block id="a2fc5daa14d7c4022c060f00a90c9d5c" category="paragraph">Se stai monitorando più progetti contemporaneamente, puoi passare rapidamente da uno all'altro.</block>
+  <block id="5d98ed6215494e4aa14fb285ce1169de" category="list-text">Seleziona il menu a tendina *Progetto* dalla barra di navigazione superiore,</block>
+  <block id="082933186fc992406ed182d4c98643ba" category="list-text">Seleziona il nome del progetto corrente per aprire il menu *Selezione progetto* e viene visualizzato un elenco dei progetti disponibili.</block>
+  <block id="3eae8ae7857d0643bc1fe6183b0fa970" category="list-text">Utilizza la barra *Cerca progetti* per trovare rapidamente il progetto a cui desideri passare.</block>
+  <block id="265577e48e5be8f0a8166a0aed077dee" category="list-text">Seleziona la casella di controllo accanto al nome del progetto a cui desideri passare.</block>
+  <block id="592c2b6d50736a27b740318f57914f62" category="list-text">Seleziona *Switch* per caricare il progetto selezionato.</block>
+  <block id="f5a8277c0645fc0b5fd63ec70af2aed7" category="summary">Aggiungi e gestisci gli utenti di NetApp Data Migrator con controllo degli accessi in base al ruolo, inclusa la creazione di account, l'assegnazione di ruoli e l'abilitazione o la disabilitazione dell'accesso.</block>
+  <block id="67a2d18f754e8a27ae430afd0b60f614" category="doc">Aggiungere e gestire gli utenti in NetApp Data Migrator</block>
+  <block id="721796b1cb3468f0daf819180184d460" category="inline-link-macro">Controllo degli accessi in base al ruolo (RBAC)</block>
+  <block id="be3481b001dfc961f9b6dc2ea7bd48b0" category="paragraph">NetApp Data Migrator utilizza <block ref="8e624225acfcd6a8ecfa1725f2c4fb0d" category="inline-link-macro-rx"></block> per fornire una gestione sicura ed efficiente delle attività di migrazione dei dati. Dopo aver configurato le macchine virtuali (VM) di controllo e di lavoro, gli utenti App Admin possono creare e assegnare ruoli ai nuovi utenti. Ciò consente ai nuovi utenti di accedere, visualizzare o gestire progetti ed eseguire altre attività di migrazione, a seconda delle loro autorizzazioni.</block>
+  <block id="2d702c4fb4e2ee857b27bfaf6afb6c6a" category="paragraph">È necessario aver effettuato l'accesso come App Admin per aggiungere un nuovo utente, abilitare o disabilitare un utente esistente o reimpostare la password di un utente.</block>
+  <block id="08ec0f7654cccad69821337b3c47af67" category="section-title">Aggiungi un nuovo utente</block>
+  <block id="f99b3afc4544204da080503be14bac58" category="paragraph">Crea un nuovo utente e condividi la password temporanea.</block>
+  <block id="a17989ec1a730c3e46947a170da354db" category="list-text">Seleziona *Impostazioni* &gt; *Utenti* per visualizzare l'elenco degli utenti registrati.</block>
+  <block id="676095a409ad8766387c886d7d991fc4" category="list-text">Seleziona *Aggiungi utente*.</block>
+  <block id="228d4916befec775c2876ce6bf2a864f" category="list-text">Inserisci il *Nome*, il *Cognome* e l'indirizzo *Email* del nuovo utente.</block>
+  <block id="f2e2dda1ecf6756e927187c510824aae" category="list-text">Se il nuovo utente necessita di autorizzazioni di amministratore, selezionare la casella di controllo *App Admin*.</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">Seleziona *Invia*.</block>
+  <block id="f1edf93a4d5a29b75ec1774129ecd7fc" category="list-text">Seleziona il link *Copia* (accanto al campo della password) per copiare la password temporanea, che viene visualizzata in formato mascherato.</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">Seleziona *Chiudi*.</block>
+  <block id="d78b694533f39c65b66b65c35a10bf0b" category="list-text">Condividi la password temporanea copiata con il nuovo utente, che potrà quindi utilizzarla per accedere. Al primo accesso, gli verrà richiesto di cambiare la password.</block>
+  <block id="dd213906dd3536a2f53f6d1d90ad7f00" category="section-title">Disabilitare un utente esistente</block>
+  <block id="a31ad814959eb6b2bf59b6d8053df005" category="paragraph">Disabilita l'accesso a NetApp Data Migrator per gli altri utenti. In questo modo si impedisce agli utenti di accedere, ma non vengono eliminati i dati dell'utente, i processi di migrazione precedenti o i log associati a tale utente.</block>
+  <block id="e90d90ae21434579022ce1f486fb9f8e" category="list-text">Seleziona l'icona *Impostazioni* nella barra di navigazione.</block>
+  <block id="04af43c52e17eb6751c04be11b2d5693" category="list-text">Seleziona la scheda *Utenti* per visualizzare l'elenco degli utenti registrati.</block>
+  <block id="77de8217dc441c66b5718dd9171f1c5f" category="list-text">Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente che stai disabilitando, quindi seleziona *Disabilita accesso* dal menu a tendina.</block>
+  <block id="a349e082f32200581489c69af967aba9" category="paragraph">Lo stato dell'utente cambia da *Attivo* a *Inattivo* e l'utente non riesce ad accedere a NetApp Data Migrator.</block>
+  <block id="dca65931ea86e9cd516608586fce163e" category="section-title">Abilitare un utente</block>
+  <block id="f379b00b4de3672400873c2c797ff493" category="paragraph">Ripristina l'accesso a NetApp Data Migrator per un utente disabilitato, consentendogli di accedere ed eseguire azioni in base alle autorizzazioni assegnate.</block>
+  <block id="a6633641751edf7097f20ad998a976e5" category="list-text">Seleziona l'icona *Impostazioni* nella barra di navigazione.</block>
+  <block id="1dff5b5a4611449501cf6bfc4f5e3f0d" category="list-text">Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente che stai abilitando, quindi seleziona *Abilita accesso* dal menu a discesa.</block>
+  <block id="89f1d8bb92b2ab28b6be940b81b7ce20" category="paragraph">Lo stato dell'utente cambia da *Inattivo* a *Attivo*. L'utente può ora accedere a NetApp Data Migrator.</block>
+  <block id="e65bf26548c66193bfe805a327f0fc24" category="section-title">Reimposta la password di un utente</block>
+  <block id="081c98b18eac7f88302b50e7c895e5f0" category="paragraph">Reimposta la password per un utente esistente.</block>
+  <block id="bc5300321d2483155f30679b9490dc16" category="admonition">Per reimpostare la password di un utente App Admin quando non è disponibile nessun altro App Admin, contattare ng-ndm-downloads@netapp.com per ottenere lo script di reimpostazione della password.</block>
+  <block id="c764172de6677224d540853d024c0982" category="list-text">Seleziona l'icona *(⋮)* accanto ai dettagli dell'utente di cui devi reimpostare la password, quindi seleziona *Reimposta password* dal menu a tendina.</block>
+  <block id="d287b6a0007284d3b673633024331b58" category="paragraph">Viene visualizzato un messaggio che conferma che la reimpostazione della password è avvenuta con successo.</block>
+  <block id="8c80aa6f5c4a56ba63ac80facdf87e21" category="list-text">Seleziona il link *Copia* (accanto al campo della password) per copiare la password temporanea visualizzata in formato mascherato.</block>
+  <block id="cf5ac14c923e217f8621f7578c85d0fe" category="list-text">Condividi la password temporanea copiata con l'utente.</block>
+  <block id="63a9b59d9eeaa83e38c4e663bd9e7900" category="summary">Requisiti di rete per NetApp Data Migrator, incluse le porte TCP e UDP necessarie per la comunicazione tra il piano di controllo e i worker.</block>
+  <block id="b310edaf82f204e9718085669d590c51" category="doc">Verifica l'accesso di rete NFS e SMB in NetApp Data Migrator</block>
+  <block id="83dd90d354af338509d82491d3562ce5" category="paragraph">È necessario assicurarsi che l'indirizzo IP e la subnet sia per il piano di controllo che per i worker siano consentiti nella policy di esportazione sul sistema storage. Ciò è necessario per supportare le migrazioni NFS e SMB tramite NetApp Data Migrator.</block>
+  <block id="d42785ca0c7a8353fd3af0404f7f76ec" category="section-title">Verifica l'accesso NFS</block>
+  <block id="a4a5f9d92ece1da457590abead01c800" category="paragraph">Per NFS, il piano di controllo e i nodi worker necessitano dell'autorizzazione per accedere al sistema storage come client root.</block>
+  <block id="dc1b12a3f0273d08d2bef65121eb1dc9" category="list-text">Eseguire un montaggio manuale da un nodo di lavoro per verificare l'accessibilità del volume:</block>
+  <block id="e444418f6335877aa994afd33d95f14c" category="list-text">Assicurarsi che access root sia abilitato verificando che la policy di esportazione consenta l'accesso di superutente. Se necessario, abilitare access root (no root squash) modificando la policy di esportazione.</block>
+  <block id="7c743f89091b4b8112d5fee57902a619" category="section-title">Verifica l'accesso SMB</block>
+  <block id="8b6f62968f51d6a991260460c4a46be8" category="paragraph">Per l'accesso SMB, il piano di controllo e i nodi worker necessitano dell'autorizzazione per accedere al sistema storage utilizzando le credenziali SMB. L'utente SMB deve appartenere ai gruppi Backup operators e Administrators.</block>
+  <block id="6d45427fa10981ce1f7403d67b49a7fc" category="summary">Requisiti delle porte per NetApp Data Migrator, incluse le porte TCP e UDP necessarie per la comunicazione tra il piano di controllo e i worker.</block>
+  <block id="73a306c3efc59e9f206073a424a7e4e9" category="doc">Requisiti delle porte per NetApp Data Migrator</block>
+  <block id="02a023a8374ed334497bb8bc31550f9b" category="paragraph">È necessario assicurarsi che determinate porte TCP siano aperte per consentire la comunicazione tra le macchine virtuali (VM) del piano di controllo e le VM di lavoro in NetApp Data Migrator.</block>
+  <block id="a674202c1ad83cdb3fdcdb1b115c4b25" category="section-title">Porte del piano di controllo</block>
+  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="cell">Servizio</block>
+  <block id="a93bcb5a82072c389a3b8a73489512f7" category="cell">porta TCP</block>
+  <block id="5da618e8e4b89c66fe86e32cdafde142" category="cell">Da</block>
+  <block id="e12167aa0a7698e6ebc92b4ce3909b53" category="cell">A</block>
+  <block id="5da09289c454b8fb0d2ae81efe01e26a" category="cell">Temporal Server</block>
+  <block id="90f59abb89fa736f0be80a63a864f030" category="cell">7233 o 7234</block>
+  <block id="060428837aa1bdeae6e1204f55df044b" category="cell">Lavoratori e clienti</block>
+  <block id="7e1251b01a19502493e461f843d6e284" category="cell">Interfaccia utente temporale</block>
+  <block id="d4a973e303ec37692cc8923e3148eef7" category="cell">8080</block>
+  <block id="34ee8ff3f2c16d8758d1a9c1424014ac" category="cell">Porta predefinita, se abilitata</block>
+  <block id="1110484ce835edb1d96d44f5d094aa8a" category="cell">PostgreSQL (database temporale)</block>
+  <block id="2e92962c0b6996add9517e4242ea9bdc" category="cell">5432</block>
+  <block id="dbacec538ed33a36fc4f901a63177337" category="cell">Servizi temporali (dal piano di controllo)</block>
+  <block id="e111446745a1825b862f8727ae63bce4" category="cell">Redis</block>
+  <block id="92c3b916311a5517d9290576e3ea37ad" category="cell">6379</block>
+  <block id="6dffc2d6b8f8f54efdc637e4c8e124da" category="cell">Servizi del piano di lavoro o del piano di controllo</block>
+  <block id="c06025dd19f6e0cb028d8bc3b98e26bc" category="cell">API o ingresso UI (la tua applicazione)</block>
+  <block id="8f30ebd9cc2f99b7d91400cf19955f28" category="cell">80 o 443</block>
+  <block id="6881c17f4cf6149a0519a4ae1f3d4d4d" category="cell">Browser o qualsiasi client esterno</block>
+  <block id="13d976ec915aee59afabcef6291764b8" category="cell">Grafana</block>
+  <block id="e93028bdc1aacdfb3687181f2031765d" category="cell">3000</block>
+  <block id="ef15fd2f45e6bb5ce57587895ba64f93" category="cell">Browser</block>
+  <block id="6ce0c3ae03134ce5b0f181ee6fbb6d8a" category="section-title">Porte dei worker</block>
+  <block id="cf2f8733eabc17ed9298656b087af7f1" category="cell">Uscita verso il piano di controllo</block>
+  <block id="012a91467f210472fab4e11359bbfef6" category="cell">7233</block>
+  <block id="bb3f41988e376dcfc782af81bfb2e750" category="cell">Servizi nel piano di controllo</block>
+  <block id="72f374619a9bb397e4c8584ebc6f9cb2" category="paragraph">Frontend temporale</block>
+  <block id="a11ba87073e84d545fc147559305fa76" category="paragraph">API o interfaccia utente (se la chiami)</block>
+  <block id="4ca3ac99649e5fe5a93b2d985a709990" category="cell">In uscita verso lo storage</block>
+  <block id="06b1338ba02add2b5d2da67663b19ebe" category="cell">2049</block>
+  <block id="8a568ad9efb130b5a037e35e698344d5" category="paragraph">Server NFS</block>
+  <block id="19960e9df5971a6ec983f726863d8693" category="paragraph">*Nota*: includi la porta TCP o UDP 111 se hai bisogno del servizio portmapper per le chiamate di procedura remota.</block>
+  <block id="67f7fb873eaf29526a11a9b7ac33bfac" category="cell">445</block>
+  <block id="b3157537e23e2a5955e1291ccb55cb09" category="paragraph">Server SMB</block>
+  <block id="d15d1086c5b0bbcbbce6297b5276b710" category="summary">Per iniziare a utilizzare NetApp Data Migrator, è necessario configurare le macchine virtuali di controllo e di lavoro utilizzando i modelli AWS, Azure, Google Cloud o Open Virtual Appliance (OVA).</block>
+  <block id="dfd0a398806c78aac4a5783a3e801847" category="doc">Guida rapida per NetApp Data Migrator</block>
+  <block id="a7c368425f45c98265b1d2e8d029fddc" category="paragraph">Per iniziare a utilizzare NetApp Data Migrator sono necessari alcuni passaggi.</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Uno</block>
+  <block id="c5d849ac7dae713c474e6d10dc6cc2a2" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>Scopri di più su NetApp Data Migrator</block>
+  <block id="1aad8b9362e4b8c3885d8db9a88d18f0" category="paragraph">NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB. Verifica che NetApp Data Migrator supporti le tue esigenze di migrazione dei dati e scegli l'opzione di implementazione più adatta al tuo ambiente:</block>
+  <block id="21979bfea7dd1751a92060597b2ec017" category="list-text">Servizi Google Cloud</block>
+  <block id="0862233707b48de2f150ca8e726c6abd" category="list-text">Modelli di Open Virtual Appliance (OVA)</block>
+  <block id="9251700e586dc1a410f2e755a8643751" category="inline-link-macro">Requisiti di rete</block>
+  <block id="2bf577e3ba4de34a09af5c8868044c19" category="paragraph">Esamina <block ref="132a4252d8dab891f29e77b7b5f68e5e" category="inline-link-macro-rx"></block> e il <block ref="238a191c4340745369e9fea191c6bd8b" category="inline-link-macro-rx"></block>.</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Due</block>
+  <block id="5fde5220f592469d6ce84d6ec33efd29" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>Installazione e configurazione</block>
+  <block id="63394b5dac0402e2937e6cf6472579c9" category="paragraph">NetApp Data Migrator utilizza un piano di controllo e nodi worker. Per prima cosa, si distribuiscono la VM del piano di controllo e le VM worker in base alle proprie esigenze di migrazione. Per NFS, si distribuisce un worker Linux e per SMB, si distribuisce un worker Windows. È possibile utilizzare NFS o SMB, o entrambi i protocolli. Dopo la distribuzione, si creano la VM del piano di controllo e le VM worker e si accede all'interfaccia utente di NetApp Data Migrator.</block>
+  <block id="fdf38dbedd6ef008d823cad4e13b85c0" category="paragraph"><block ref="fdf38dbedd6ef008d823cad4e13b85c0" category="inline-link-macro-rx"></block></block>
+  <block id="f2f0a9701c56855f618d101c11bc4ab7" category="paragraph">Impara come:</block>
+  <block id="d118c036240df442039d6ae9fea3b2ae" category="inline-link-macro">Distribuisci la macchina virtuale del piano di controllo e la macchina virtuale worker Linux</block>
+  <block id="01a0e48108b30daf070e2b81d02113da" category="list-text"><block ref="01a0e48108b30daf070e2b81d02113da" category="inline-link-macro-rx"></block></block>
+  <block id="b20a042da068838dad65bb1c10123862" category="inline-link-macro">Creare la macchina virtuale del piano di controllo e le macchine virtuali di lavoro</block>
+  <block id="ea13f3986a07d09af3093352c0b03a5b" category="list-text"><block ref="ea13f3986a07d09af3093352c0b03a5b" category="inline-link-macro-rx"></block></block>
+  <block id="299852c7a036ff00ace6cbde94137abf" category="list-text"><block ref="299852c7a036ff00ace6cbde94137abf" category="inline-link-macro-rx"></block></block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Tre</block>
+  <block id="23cb61fc78e3feaec6eb9f95ae5a433e" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>Configura e gestisci</block>
+  <block id="bbe5469d33ce93c2f28586f9a9debf56" category="paragraph">Innanzitutto, accedi come amministratore utilizzando le credenziali predefinite e aggiorna nome utente e password. Dopodiché, puoi creare il tuo primo progetto e aggiungere i file server per avviare i workflow di migrazione.</block>
+  <block id="83b9a73283224c028b35f767e10e1a03" category="list-text"><block ref="83b9a73283224c028b35f767e10e1a03" category="inline-link-macro-rx"></block></block>
+  <block id="2dc5f7f7f6c5786ed5b37141589adae2" category="list-text"><block ref="2dc5f7f7f6c5786ed5b37141589adae2" category="inline-link-macro-rx"></block></block>
+  <block id="5b46d94ae861e93c8d77f043ac734952" category="summary">Se sei un nuovo cliente NetApp, devi creare un account NetApp e completare la procedura di registrazione.</block>
+  <block id="512ce7e8c3858266467efa17d62d0051" category="doc">Registrati per un account NetApp Data Migrator</block>
+  <block id="4daa456be51251ffd988f63c8657d64c" category="paragraph">Se sei un nuovo cliente NetApp, devi creare un account NetApp e completare la procedura di registrazione. Se hai già un account NetApp, puoi procedere a <block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>.</block>
+  <block id="5f4293a5c5c507db807ae703a9d9c3dc" category="admonition">Potrebbe essere necessario fino a un giorno lavorativo affinché il tuo nuovo account del sito di supporto NetApp venga aggiornato da *Guest access* a *Full access*.</block>
+  <block id="d27c2a770a38edcade142626ac440af3" category="list-text">Registrati per un account sul <block ref="5a9b9821ca062d5154356de0071c8b9f" category="inline-link-macro-rx"></block> utilizzando la tua email aziendale.</block>
+  <block id="8fd3c7eb5b3f94dd265f8f05e2041a61" category="list-text">Autentica l'avvio della registrazione inserendo la password monouso inviata al tuo indirizzo email.</block>
+  <block id="3c1b2d3eff4d0d793fec12d931950535" category="list-text">Nella pagina di completamento della registrazione, inserisci i dati richiesti:</block>
+  <block id="7791648a4ad04186aa19998453ada0e5" category="list-text">Per il livello di accesso utente, selezionare *NetApp Customer/End User*.</block>
+  <block id="02c1d36603e1a99049c8f634aafa2740" category="list-text">Nel campo Numero di serie, inserire<block ref="287425a09a304fc331acddbb00301457" prefix=" " category="inline-code"></block>.</block>
+  <block id="d19ae8a05482c09ceb57bd6646f47a20" category="list-text">Seleziona *Invia*. Apparirà una finestra di conferma che indica che la registrazione dell'utente è stata inviata correttamente.</block>
+  <block id="ad37dc3c075bf7b317966de5f62bcccd" category="inline-link-macro">aprire un ticket di supporto</block>
+  <block id="84a47c359421f223a73e00cd39c636e9" category="paragraph">Se riscontri problemi durante la registrazione o desideri verificare lo stato della tua registrazione, <block ref="46c9f6df8da0e8a4589d015c1fa7570a" category="inline-link-macro-rx"></block>.</block>
+  <block id="280ee01b354c1393d16006a43f7470fa" category="inline-link-macro">distribuire il piano di controllo e le macchine virtuali worker Linux</block>
+  <block id="af3d7c589d0f8ea600cddada47479d8c" category="paragraph">Dopo aver appreso come registrarsi per un account, puoi <block ref="738ec4cd3729066a364fa774c0622676" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ccd754a002a22ea169145da97be9cad" category="summary">Registra il tuo prodotto NetApp Data Migrator per accedere all'assistenza NetApp.</block>
+  <block id="80cf6b37f816fb470815854897483562" category="doc">Registrati per il supporto di NetApp Data Migrator</block>
+  <block id="db729189c53fa99bdc9f58f33fd77194" category="list-text">Nella home page di NetApp Data Migrator, selezionare *Aiuto (?)* &gt; *Informazioni* &gt; *Numero di serie*</block>
+  <block id="4cb56db1a789c4f4e932d664ca1879ce" category="list-text">Nella finestra di dialogo *Informazioni su NDM*, annotare l'ID dell'istanza di NetApp Data Migrator.</block>
+  <block id="c0fc849d32dbbc779b1e95ec1196b32b" category="paragraph">Si tratta di un numero di 20 cifre, che inizia con 975.</block>
+  <block id="0bfc0e9653a7195acce2223fb3187822" category="inline-link-macro">NetApp pagina di registrazione del sito di supporto</block>
+  <block id="205ebb64be7cdbdfb8dad6344e5095aa" category="list-text">Vai al <block ref="583d19e36ff27be52d23b0b9a7306b4f" category="inline-link-macro-rx"></block>.</block>
+  <block id="0786589eb7392bc413e898e8782cef99" category="list-text">Seleziona *Non sono un cliente registrato NetApp*.</block>
+  <block id="9421d4188db409ce16d73b19394af0f7" category="list-text">Inserisci i dati richiesti per la registrazione del prodotto:</block>
+  <block id="0baa9b69ccf61d4c2f40815008c37583" category="list-text">Lascia vuoto il campo *NetApp Reference SN*.</block>
+  <block id="df3bada97110c620f3c47190892439c5" category="list-text">Dal menu a tendina Product Line, selezionare *NDM*.</block>
+  <block id="213959876c5ef7b5193259742db93245" category="list-text">Dal menu a tendina Fornitore di fatturazione, selezionare *NetApp*.</block>
+  <block id="23cbb51cbd945ba966e1923c7241feb1" category="admonition">Per questo prodotto non è prevista alcuna fatturazione.</block>
+  <block id="d46416825d782adfabd5a23836d6a4f8" category="list-text">Inserisci l'ID dell'istanza di NetApp Data Migrator, composto da 20 cifre, nel campo *NDM Serial #*.</block>
+  <block id="b90e1b78fc3c96f7eb9205766af1bcc6" category="list-text">Completa i campi obbligatori rimanenti, quindi seleziona *Invia*.</block>
+  <block id="5c2b6a41071a32807a21286bcfab52d2" category="list-text">Dopo l'invio, riceverai un'e-mail di conferma della registrazione. Segui le istruzioni contenute nell'e-mail per confermare la registrazione.</block>
+  <block id="f36e76abe5ae0248baefe53af0f8beed" category="summary">Scopri il supporto di NetApp Data Migrator per funzionalità, file server e protocolli.</block>
+  <block id="a9d476a7219bdadc2d30cfe1e6a35b93" category="doc">NetApp Data Migrator supporto per funzionalità, file server e protocolli</block>
+  <block id="f53b749f25c6f2b7750f2d05c7619660" category="paragraph">NetApp Data Migrator supporta determinate funzionalità, file server e protocolli.</block>
+  <block id="7bbf5ab918d58918d0e368104edfbb6c" category="section-title">Funzionalità supportate e non supportate</block>
+  <block id="33db9dbce1d1546e2de49685c7fb0d9a" category="paragraph">NetApp Data Migrator supporta una serie di funzionalità per le migrazioni NFS e SMB. Alcune funzionalità non sono supportate.</block>
+  <block id="f6d7a1a39c7e76b0a2ad7044af130caf" category="section-title">Funzionalità supportate</block>
+  <block id="21298d143668090cafcc05c986edb03b" category="cell">Funzionalità supportata</block>
+  <block id="cd854b7cdf41fe438b47e8c88f23478c" category="cell">Gestione delle autorizzazioni e degli audit</block>
+  <block id="9d4d27d23ccb602f59058f1d14e69577" category="list-text">Segnalazione della catena di custodia</block>
+  <block id="b88578ec13cd22bdb1db4f08a2ee40f1" category="list-text">Elenco di controllo degli accessi discrezionale (DACL)</block>
+  <block id="696fd58d4cc5a9b51aac0396db67542b" category="list-text">Conservare l'elenco di controllo degli accessi (ACL)</block>
+  <block id="249895594993c7cf4ec8ae3b41e6e745" category="list-text">Rimappatura dell'identificativo utente (UID) e dell'identificativo di sicurezza (SID)</block>
+  <block id="b5335ac0bcef831d052c4177adf2c1af" category="cell">Oggetti e collegamenti del file system</block>
+  <block id="ef01000bd712ee471329380c356ac9fb" category="list-text">Gestione dei collegamenti rigidi</block>
+  <block id="25ed30a72c238cd22082f5faeadac1b9" category="paragraph">NetApp Data Migrator migra oggetti e collegamenti come file separati.</block>
+  <block id="2d359cd78cebe7cbc5bc2bc9ba5387a5" category="list-text">Collegamenti simbolici</block>
+  <block id="768fd13457c0f45708ef9e3ee33e3d5b" category="paragraph">*Nota*: Supportato per le migrazioni NFS</block>
+  <block id="6aee8d4153c452fa801a440427df5c0c" category="cell">Conservazione dei metadati dei file</block>
+  <block id="9f9682f86756c391472e1d7c3c454e18" category="list-text">Conservare il tempo di accesso</block>
+  <block id="e9523618bc75e9f8bb8897f8c554a179" category="list-text">Preservare l'ora di creazione</block>
+  <block id="be6d2d88d8c4ef54c483dab9e4c8de45" category="list-text">Conservare il tempo modificato</block>
+  <block id="7464fe14fb40250ffa16fa93d37a7fa0" category="cell">Comportamento di migrazione e coerenza dei dati</block>
+  <block id="d040607ebc5067103928874a30ad758f" category="list-text">Propagazione dell'eliminazione</block>
+  <block id="290a79bbb71aaece535e1c983c60ad44" category="list-text">migrazione incrementale</block>
+  <block id="c389cf88403679eea843d652f8d0d63f" category="list-text">Supporto per file aperti</block>
+  <block id="563f44302dc418a5c399a7644f611963" category="list-text">Supporto al passaggio</block>
+  <block id="5f706fa208d539e8e3e10661b051999a" category="cell">Controllo ed esecuzione della migrazione</block>
+  <block id="6c242d21822c600c9ea6b4520ae159cc" category="list-text">Esclusioni di pattern di file</block>
+  <block id="40deb43407eb053b72103696ca87a6a7" category="list-text">Pianificazione della migrazione</block>
+  <block id="c40f016d6141c65a8e7a7ea0b5573496" category="section-title">Funzionalità non supportate</block>
+  <block id="e3e175437a8dc81e2ccdee969b153919" category="cell">Funzionalità non supportata</block>
+  <block id="65142ee7648d38689e0a89c4b020dda9" category="paragraph">Elenco di controllo degli accessi al sistema (SACL)</block>
+  <block id="563a21e2715a0261d01e7ebb65dac9bd" category="paragraph">*Nota*: Non supportato per le migrazioni SMB</block>
+  <block id="53374836b447770c1c71cf5f2f9e9cab" category="list-text">Segui le giunzioni NTFS</block>
+  <block id="9a543d3e60f7c017a776cb917f8ac114" category="list-text">Flussi di dati alternativi</block>
+  <block id="b080519fa506e5b7fdcc497d91c25eab" category="paragraph">NetApp Data Migrator è in grado di individuare ma non di migrare flussi di dati alternativi.</block>
+  <block id="cbef3ea78406a33eba3fba99fa7b5f90" category="paragraph">Attributi di file selettivi</block>
+  <block id="3a5b45c6454117314695c78fc44c416e" category="paragraph">Migrazione di snapshot</block>
+  <block id="d2c5bc381aeab330b1f9cbe415b2a659" category="section-title">Server di file supportati</block>
+  <block id="6940dd2377e852433e526254bac2f100" category="paragraph">NetApp Data Migrator supporta determinati file server come origine e destinazione per la migrazione dei dati.</block>
+  <block id="5a5b71fa1c966e808f9e26c4c6757658" category="cell">File server supportato</block>
+  <block id="ab4edc0dddb3d87260b3734f2e87bddb" category="paragraph">Qualsiasi server NAS, ad esempio Dell Isilon, ONTAP, Vanilla Linux, Windows, Cloud Volumes ONTAP</block>
+  <block id="216385e83be486e7f450fcf05b70160b" category="paragraph">Tutti i livelli di servizio di Azure NetApp Files (ANF), Google Cloud NetApp Volumes (GCNV), Amazon FSx for NetApp ONTAP (FSxN), Cloud Volumes ONTAP</block>
+  <block id="142d4a6df8e2204dd38fcc92e455f53f" category="section-title">Protocolli di migrazione NFS e SMB supportati</block>
+  <block id="773bd0262710a528f1c192a207cdfffe" category="paragraph">NetApp Data Migrator supporta determinate versioni dei protocolli NFS e SMB per la migrazione dei dati.</block>
+  <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">Versioni supportate</block>
+  <block id="f03a982fafc6cf0a4c953010016538a8" category="paragraph">4.1, 3.0</block>
+  <block id="9ec5fc688b825fea64e64fc6e921cec4" category="paragraph">3.1, 3.0, 2.0</block>
+  <block id="9afb2e3de0846b56ea0de72d7a82cac0" category="summary">Utilizzare le procedure di risoluzione dei problemi e i comandi di riferimento per risolvere i problemi relativi a NetApp Data Migrator.</block>
+  <block id="ce11a54bbdfbf7b696417fedfed1fb5e" category="doc">Risoluzione dei problemi di NetApp Data Migrator</block>
+  <block id="bf7fec096c0ab262e5995f83dc935f0b" category="paragraph">Se riscontri problemi durante l'utilizzo di NetApp Data Migrator, questi passaggi per la risoluzione dei problemi e i comandi di riferimento potrebbero esserti utili.</block>
+  <block id="eb3aa33f8815aaa1e260636b0d4dd179" category="section-title">Errore di montaggio SMB quando si utilizza host name</block>
+  <block id="d4be5cabf4a67f06067eeff5ddb3d1dc" category="paragraph">Durante la configurazione di una migrazione a livello di directory, il montaggio SMB potrebbe non riuscire se il file server host name viene fornito come URL. Ciò può verificarsi quando la macchina virtuale (VM) del piano di controllo non dispone della configurazione DNS corretta per risolvere il file server host name. L'errore di montaggio potrebbe essere visualizzato con un messaggio di errore simile a <block ref="7156bd8ef0fe01d50739ef7593758cc0" prefix=" " category="inline-code"></block>.</block>
+  <block id="af56d196beb1f0a7fa9144e09566b381" category="paragraph">È possibile ovviare a questo problema utilizzando l'indirizzo IP del file server anziché l'host name nella configurazione della migrazione.</block>
+  <block id="58759ab3b2c6a56acf6c6ef84809a555" category="list-text">Risolvere il nome host in un indirizzo IP:</block>
+  <block id="a0c6ee9fb7b27d8c995a3ea1e4fa28f5" category="list-text">Configura il campo host name del file server SMB utilizzando l'indirizzo IP risolto.</block>
+  <block id="cc266ba70a475f43229a49eb374998d0" category="list-text">Riprova la configurazione della migrazione a livello di directory.</block>
+  <block id="fe5466fefec39dc0429c43aed73d0031" category="paragraph">Dopo aver effettuato il passaggio all'indirizzo IP, l'operazione di montaggio dovrebbe avere esito positivo.</block>
+  <block id="5c1bec19c06844c3ebc3cd30178ba64a" category="section-title">Risoluzione dei problemi di accesso all'applicazione</block>
+  <block id="89878006f1bf7425969bf3ac0d2e04d9" category="paragraph">Tutte le credenziali sono gestite in OpenBao.</block>
+  <block id="e61ebe92a25b4e567291874fefddb3e9" category="paragraph">Nei passaggi successivi, sostituire <block ref="cb6cc98d922bd655bd126e22843182b7" prefix=" " category="inline-code"></block> con l'indirizzo IP della propria macchina virtuale (VM).</block>
+  <block id="3e4b761721c609fc299a36e4f8f917ec" category="list-text">Recupera il token root di OpenBao. Usa SSH per connetterti al server del piano di controllo da Bastion Connect dal portale di Azure:</block>
+  <block id="e91645aa74bee9c696ade11f7145c742" category="list-text">Accedi all'interfaccia utente di OpenBao: utilizza <block ref="8774d4e7cde57d2bd28971c1676ffe76" prefix=" " category="inline-code"></block> e inserisci il token root per effettuare il login.</block>
+  <block id="59e92182b9c9d55715bdfcb4ffc6ddd4" category="list-text">Accedi ai segreti.</block>
+  <block id="804cc9d77c1684dbb2d090c7b22c3cf9" category="list-text">Interfaccia utente di Keycloak:<block ref="3eead5968c067668e4c00693b9dd2f0e" prefix=" " category="inline-code"></block></block>
+  <block id="84921077c0b44dd46b207a701d11f6e9" category="list-text">UI di NetApp Data Migrator:<block ref="b7587bde8ae301555c122d1f37d5f4fe" prefix=" " category="inline-code"></block></block>
+  <block id="dce953468a78c8093727e6d2d5805316" category="paragraph">Accedi all'interfaccia utente di NetApp Data Migrator utilizzando il nome utente e la password predefiniti.</block>
+  <block id="70f945aacc8ce8ec8e08324fcc188e25" category="list-text">Interfaccia utente temporale:<block ref="628585291ec481d413f681d7f0db5e1c" prefix=" " category="inline-code"></block></block>
+  <block id="426062de96319e4b09d9181f6cfae680" category="list-text">Connessione a Postgres: utilizzare l'indirizzo IP multipass per connettersi al database Postgres. Ottenere nome utente e password da OpenBao.</block>
+  <block id="6edfc4416544409f7802ae44212df10c" category="paragraph">Chiavi: POSTGRES_DMADMIN_USER e POSTGRES_DMADMIN_PASSWORD</block>
+  <block id="c85d5480a419bba83b3bdf33017c6d25" category="section-title">Utilizzare i comandi di riferimento "kubectl"</block>
+  <block id="37d4e253277646318c09c82c1d8f3294" category="list-text">Per ottenere i pod nello spazio dei nomi datamigrator:</block>
+  <block id="77a88ce3c322c1e1a70a09edf8dd16e6" category="list-text">Per ottenere i log di un pod nel namespace datamigrator:</block>
+  <block id="68c53c46b938439cce5e1a5d67624fed" category="list-text">Per descrivere un pod nel namespace datamigrator:</block>
+  <block id="b7ee5c05647a856bb20d6374a13be6c4" category="list-text">Per ottenere tutti i namespace:</block>
+  <block id="7efdcf29117d08315ba30ea319ed6310" category="list-text">Per ottenere i pod in qualsiasi namespace:</block>
+  <block id="1d2f9c6c98d406c897ef9722de76a559" category="section-title">Rimuovere il sigillo OpenBao</block>
+  <block id="3cbe7534b7126d0502077e2bbea49bd4" category="paragraph">Se riscontri un problema in cui OpenBao è sigillato, segui questi passaggi per sbloccarlo.</block>
+  <block id="4b3853e7a075277a771c61db1da66734" category="list-text">Utilizzare SSH per connettersi al server del piano di controllo tramite Bastion connect.</block>
+  <block id="51cb11ec18cc254ea1b2852707109628" category="list-text">Sostituisci OPENBAO_UNSEAL_KEY con la tua chiave:</block>
+  <block id="0ea2c4190760406be10d7a92dfd53891" category="section-title">Risoluzione dei problemi di accesso alle macchine virtuali di Azure</block>
+  <block id="2d01bf47f59d8ac13267b22cf4d406a0" category="paragraph">Dovresti essere in grado di creare e connetterti correttamente alla tua macchina virtuale Azure. Tuttavia, se riscontri problemi, prova a riavviare la tua macchina virtuale o a reimpostare la configurazione SSH.</block>
+  <block id="88f024551eacf610d1c1eb40672f4ee4" category="list-text">Riavvia la tua macchina virtuale</block>
+  <block id="abefa2dc49ec0b0d5efdd872ea60f194" category="list-text">Accedi al tuo portale di Azure.</block>
+  <block id="750248f8a2ad02d68bb5b7d5cf8356c8" category="list-text">Accedi alla tua VM e seleziona *Riavvia*.</block>
+  <block id="519d1fcaee8d396737178a5b40fe3bb5" category="list-text">Reimposta la configurazione SSH</block>
+  <block id="a7f74982d7f21457d3daf83b9de2973b" category="inline-link-macro">Guida di riferimento alla risoluzione dei problemi di Microsoft</block>
+  <block id="9086e47c07c59091e3cca7792a2519c6" category="paragraph">Innanzitutto, fai riferimento alle istruzioni fornite in questo <block ref="047967f12364f0e06b1490fed639050d" category="inline-link-macro-rx"></block>. Tuttavia, a volte possono verificarsi problemi durante l'apertura del portale SSH Bastion, che potresti essere in grado di risolvere nel modo seguente.</block>
+  <block id="6d5a19e9950fa1679c6315481c5e6420" category="list-text">Accedi al piano di controllo della tua macchina virtuale di Azure.</block>
+  <block id="b1479d009bd58d01f48a9d23d88a9040" category="list-text">Seleziona *Aiuto*.</block>
+  <block id="3930015dcc2810869591e35a2b5d714b" category="list-text">Seleziona *Reimposta password*.</block>
+  <block id="b7e728f9349754993c1b677897dc087c" category="list-text">Da Mode, selezionare *Add SSH Public Key*.</block>
+  <block id="547183eaf9ddd9ea03c16b370e296825" category="list-text">Come nome utente, inserisci ubuntu.</block>
+  <block id="696c3cc8a575adf6caf5f61250686600" category="list-text">Per l'origine della chiave pubblica, scegli *Usa chiave esistente archiviata in Azure*.</block>
+  <block id="a78efe158d6c39e1c0378dc35ab36c58" category="list-text">Per la chiave memorizzata, scegli *Seleziona la chiave creata esistente*.</block>
+  <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">Seleziona *Aggiorna*.</block>
+  <block id="e7a7492c34643ab2b6a3b1498a928aa4" category="section-title">Windows worker non riesce a cambiare utente sul file server SMB</block>
+  <block id="6353b96662dc78fdb911fb1862bffc65" category="paragraph">Quando un computer Windows tenta di connettersi a un file server SMB utilizzando credenziali diverse da quelle utilizzate in precedenza per lo stesso file server, potrebbe comparire il seguente messaggio di errore:</block>
+  <block id="78fdbb539d1614030d8251a0dd33a894" category="paragraph"><block ref="7a19aaf85ff30d38cadb89aa9fa575cc" prefix="" category="inline-code"></block></block>
+  <block id="f7d88e838adcdd3b28c8cd215932791e" category="paragraph">Questo accade perché Windows non consente più connessioni simultanee alla stessa risorsa di rete utilizzando credenziali diverse. Anche se la connessione precedente è inattiva, potrebbe comunque essere memorizzata nella cache o mantenuta dal sistema.</block>
+  <block id="80baf28031b5267805fff0b32ea02823" category="paragraph">Segui questi passaggi per risolvere il problema:</block>
+  <block id="fedbf51251a26c9f789dd8ad59afe5d2" category="list-text">Elenca le connessioni SMB esistenti:</block>
+  <block id="36a7a47ab64bdea2de3fa77dfaf3b521" category="list-text">Elimina qualsiasi connessione esistente al server di destinazione:</block>
+  <block id="7442ab758764daa3ef1c3c077c1be35e" category="list-text">Riavvia per eliminare eventuali credenziali o sessioni memorizzate nella cache.</block>
+  <block id="e6f55308c76691b59cf3cc71a22c3393" category="list-text">Riconnettiti utilizzando le credenziali desiderate.</block>
+  <block id="f3f87dab644cb196071699648b46cdf9" category="summary">Aggiornare un piano di controllo, un worker Linux o un worker Windows in NetApp Data Migrator.</block>
+  <block id="49fd6656cc4103be93b9ce19d203aa22" category="doc">Aggiorna il piano di controllo e i worker in NetApp Data Migrator</block>
+  <block id="5bf1af3b7a01852a25170ff5fc4c2fc2" category="paragraph">È possibile aggiornare un piano di controllo, un worker Linux o un worker Windows in NetApp Data Migrator.</block>
+  <block id="dbb52fade9198a014f77e1044c6c5d08" category="list-text">Interrompi tutte le esecuzioni dei processi e rendi tutti i processi inattivi.</block>
+  <block id="141c047fc7b2738f238db2239959a6f2" category="list-text">Scarica il pacchetto di aggiornamento (file tar.gz) dal NetApp Support Site e salvalo nella tua directory locale.</block>
+  <block id="dd810f7c3d223a3304c4d08bceac8d41" category="list-text">Verificate che i worker in uso siano online. I worker che risultano offline durante un aggiornamento non vengono aggiornati.</block>
+  <block id="8c07dca9bafbe8b17426c9f1b62653dc" category="section-title">Passaggio 1: Carica il pacchetto di aggiornamento</block>
+  <block id="c67542965f357b9f02fb1bdc77a17fd7" category="paragraph">Carica il pacchetto di aggiornamento dalla tua directory locale.</block>
+  <block id="48355db077d6060bb3bb66d6fc7c622e" category="list-text">Accedi all'interfaccia utente di NetApp Data Migrator, quindi vai alla pagina iniziale.</block>
+  <block id="7cfd11173a1aae56cb9a7516ec43af20" category="list-text">Seleziona l'icona di aiuto nell'angolo in alto a destra.</block>
+  <block id="72c04be85d293b7c73a491d3afb7d01d" category="list-text">Seleziona la scheda *Aggiorna*.</block>
+  <block id="28443e13d8671460f09de9b1d4d7ad52" category="list-text">Seleziona *Seleziona file*, quindi seleziona il file tar.gz del pacchetto di upgrade.</block>
+  <block id="9d06999c07ddf6da8aa9b935c1a49040" category="list-text">Seleziona *Carica* dopo aver selezionato il file.</block>
+  <block id="ceb1569e1ec88726ff976a638f13abfd" category="paragraph">Attendi che venga visualizzato il messaggio che conferma che il caricamento e la convalida sono completi.</block>
+  <block id="da8d447e6d96522a8119a0abc43045e6" category="list-text">Facoltativamente, è possibile riavviare il processo selezionando *Start Over* per caricare un file diverso.</block>
+  <block id="7e369fdc4341c17ed675a99a57fbf563" category="section-title">Fase 2: Aggiornare il piano di controllo e i worker</block>
+  <block id="b909660301eb1c9a652b64eedc8c469b" category="paragraph">Aggiornare il piano di controllo seguito dal worker Linux o dal worker Windows.</block>
+  <block id="f37e21ff91a6c2d6d96634176a100c77" category="list-text">Selezionare *Aggiorna*. Il sistema avvia l'aggiornamento del control plane. Questo richiede circa cinque-dieci minuti.</block>
+  <block id="e7d0b6f442cb81685a2dac783531538d" category="paragraph">Durante l'aggiornamento, l'interfaccia utente potrebbe risultare temporaneamente non disponibile poiché l'applicazione si sta riavviando con la nuova versione. Accedi nuovamente all'interfaccia utente non appena sarà di nuovo accessibile.</block>
+  <block id="ef76cf2ac7637f392f77c5730eaafb14" category="list-text">Al termine dell'aggiornamento, tornare alla pagina *Upgrade*.</block>
+  <block id="858d36f04caea869353055c5e61e18df" category="list-text">Verificare che lo stato dell'aggiornamento sia *Success*.</block>
+  <block id="4dc72547f86664ecaab4d3ef8cf7ad78" category="list-text">Dopo un aggiornamento del piano di controllo riuscito, l'aggiornamento dei worker si avvia automaticamente per tutti i worker online.</block>
+  <block id="97efc0d0fa5955efec56be8c32acbe6f" category="admonition">I worker online installano e riavviano automaticamente la nuova versione. I worker offline non vengono aggiornati.</block>
+  <block id="1e43fad7b5c0b6dbcb40f50b94e0c7bf" category="list-text">Se l'aggiornamento di un worker non si avvia automaticamente, utilizzare SSH per connettersi al worker e avviare l'aggiornamento:</block>
+  <block id="151009baa5be292e15005b9abf127581" category="open-title">Worker Linux</block>
+  <block id="7baba0eeaf44fee5eb63fd36b4955831" category="open-title">Worker Windows</block>
+  <block id="79ad013bb393036c81c8989a1fa3f296" category="section-title">Passaggio 3: Visualizzare i registri e risolvere i problemi</block>
+  <block id="3e7427947c4804b1a62f9bcea238d4f4" category="paragraph">Consulta i log della macchina virtuale per supportare la risoluzione dei problemi che si verificano durante l'aggiornamento.</block>
+  <block id="0f3e71f3ec5d62354e5da1ab0dcc94d6" category="list-text">Connettiti alla macchina virtuale del piano di controllo tramite SSH ed esegui il seguente comando per visualizzare i log:</block>
+  <block id="1ecb42527b56fbfe0b680658687c4c61" category="list-text">Connettiti alla macchina virtuale Linux worker o Windows worker tramite SSH e visualizza i log utilizzando il seguente percorso:</block>
+  <block id="77f9e995a0fc8365d6925b92fccb9e35" category="list-text">Se l'aggiornamento non riesce, il sistema ripristina automaticamente la versione precedente e l'interfaccia utente visualizza lo stato dell'aggiornamento come *Failed*.</block>
+  <block id="2278e2cc17d70372f4c96b75c5e965fb" category="paragraph">Esamina i log di Ansible, quindi contatta il supporto NetApp e allega i log di Ansible alla tua comunicazione.</block>
+  <block id="51709d52335098615f6504e2daf27594" category="summary">Facoltativamente, è possibile convalidare la distribuzione della VM del piano di controllo su Google Cloud verificando lo stato del servizio, i log e l'integrità del pod.</block>
+  <block id="7bc002d3a69fd18563cd5eaa25020fa1" category="doc">Facoltativamente, convalidare la distribuzione della VM del piano di controllo per NetApp Data Migrator</block>
+  <block id="a3ef8d550203154b5a288b2f0303fb14" category="paragraph">Facoltativamente, convalida la distribuzione della macchina virtuale del piano di controllo per NetApp Data Migrator.</block>
+  <block id="eb9cae3a6ab37870fcaa1116612194a9" category="list-text">Utilizza SSH per connetterti al server del piano di controllo:</block>
+  <block id="11eb787b328a77491d92a2ce4497cf32" category="list-text">Verifica lo stato del servizio di avvio e i relativi log:</block>
+  <block id="1f831c5878a762ec0963fd7b96127bc9" category="paragraph">Facoltativamente, controlla i registri del servizio di avvio:</block>
+  <block id="8689268a435101ff0211b2d1734523b7" category="paragraph">Se la configurazione è completa, vedrai <block ref="7d9465f9a64b1f922a55bc11a51fcb14" prefix=" " category="inline-code"></block> nei log.</block>
+  <block id="432d212d797d16c62fa96e0ec1e3c736" category="list-text">Verifica che tutti i pod siano attivi e funzionanti:</block>
+  <block id="1e9dd46f61a201cc2b86879d26a9c48c" category="inline-link-macro">accedere all'interfaccia utente di NetApp Data Migrator</block>
+  <block id="5615f0657330552866b623eca261abdf" category="paragraph">Dopo aver appreso come convalidare la VM del piano di controllo, è possibile <block ref="be3bcec36ca8095627c0973264f63ac3" category="inline-link-macro-rx"></block>.</block>
+  <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">Scopri le novità di questo sito di documentazione.</block>
+  <block id="2755dc4f192cb17cab8eba8e536ab485" category="doc">Novità di NetApp Data Migrator</block>
+  <block id="3a9821361199b11d3443525a500ce59c" category="paragraph">Scopri le novità di NetApp Data Migrator.</block>
+  <block id="a959999504dd5e5c5e9317184218dd6d" category="section-title">22 aprile 2026</block>
+  <block id="419999866af355dbf15c6d0b0d7487e9" category="paragraph">NetApp Data Migrator 2026.04.0 offre una nuova soluzione per la migrazione dei file di dati. Puoi utilizzare NetApp Data Migrator per migrare i dati da sistemi di storage locali o di terze parti ai servizi di NetApp cloud storage. NetApp Data Migrator supporta i protocolli di trasferimento file NFS e SMB.</block>
+  <block id="01269e6b8e933b0912b14ef3b796a52c" category="inline-link-macro">Scopri di più su NetApp Data Migrator</block>
+  <block id="9952b3c384f35ba7e05205c71ded5556" category="paragraph"><block ref="9952b3c384f35ba7e05205c71ded5556" category="inline-link-macro-rx"></block></block>
+  <block id="0c48a4cb50024b2bd18d3e1141bc7269" category="sidebar">NetApp Data Migrator documentazione</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Inizia</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Note di rilascio</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">Avvio rapido</block>
+  <block id="4bb0d52dd99e9abe73777d970f78ba6a" category="sidebar">Installare e utilizzare NetApp Data Migrator</block>
+  <block id="b177fa56a4007d4890780071cd15e376" category="sidebar">Installa NetApp Data Migrator</block>
+  <block id="6549bde9a228face8486f23231bfa15b" category="sidebar">Aggiorna il piano di controllo e i worker</block>
+  <block id="fed0c8b9858a6a8d6e52d9710ba68e43" category="sidebar">Creare e gestire progetti</block>
+  <block id="2897453bd8211b947d356171a22ba0ff" category="sidebar">Utilizzare NetApp Data Migrator</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">Altre risorse</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="sidebar">Ottieni aiuto</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">Domande frequenti</block>
+  <block id="617944a2b75183d164245750577ed1de" category="sidebar">Documentazione di NetApp Data Migrator</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Novità</block>
+  <block id="097269d68dda9a5a6965173c16acef55" category="sidebar">matrice di supporto</block>
+  <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="sidebar">Problemi noti</block>
+  <block id="482723983a4f2af954e36ff41e567451" category="sidebar">Limitazioni note</block>
+  <block id="6dd5c811b278e22ffab2e2908a5119ba" category="sidebar">Verificare l'accesso alla rete</block>
+  <block id="76841410d8f9a6881e0b96f150e9cedf" category="sidebar">Requisiti delle porte</block>
+  <block id="20d4d7b9936154505ade9240689b5770" category="sidebar">Installare, configurare e aggiornare</block>
+  <block id="d45294caa04dc2a59a6a9779ecb261e1" category="sidebar">Registrati per un account</block>
+  <block id="6123c876fc64f935493949f2d38cb132" category="sidebar">Distribuisci il piano di controllo e i worker Linux</block>
+  <block id="bb9446a722eaef2a4bb375ba6944269a" category="sidebar">Crea le macchine virtuali del piano di controllo e dei worker</block>
+  <block id="bbb1fe796625a1fdac44293c0ddcd410" category="sidebar">Convalidare il piano di controllo e la distribuzione dei worker</block>
+  <block id="a880f6626bb1bd248b4ec73a32a7e581" category="sidebar">Accedi all'interfaccia utente di NetApp Data Migrator</block>
+  <block id="1b4fcfaacbd0ae3e24bc82f8d7a82211" category="sidebar">Gestisci utenti</block>
+  <block id="350a0b3f3d7d2ed49156ce7626fcfbcb" category="sidebar">Aggiungi e gestisci gli utenti</block>
+  <block id="bfd01df950913d32f23067f9a2ddafa8" category="sidebar">Gestire il controllo degli accessi</block>
+  <block id="48b558d1320127761431a66158b427c2" category="sidebar">Configura le notifiche in tempo reale</block>
+  <block id="b32f4338f541df01e94b1e873cd1578e" category="sidebar">Gestire le opzioni di migrazione</block>
+  <block id="26bddf6d4b393b265322f78d679e9266" category="sidebar">Pianifica la migrazione dei dati</block>
+  <block id="c9bcd1a558d4f57c98e7d5dfd28b21d2" category="sidebar">Configura la migrazione in blocco</block>
+  <block id="0d06f54a8c8e8ffe21d3f3d60ee20e32" category="sidebar">Configurare il passaggio in blocco</block>
+  <block id="8c7ec871b4b79058adc1095fa346bf62" category="sidebar">Gestire i job e le esecuzioni dei job</block>
+  <block id="d8d50c12bd11a2109a7a384f43b0930a" category="sidebar">Genera pacchetto di supporto</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="sidebar">Registrati per ricevere supporto</block>
+  <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">Risoluzione dei problemi</block>
+</blocks>

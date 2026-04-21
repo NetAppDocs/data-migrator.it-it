@@ -1,0 +1,291 @@
+---
+sidebar: sidebar 
+permalink: manage-jobs.html 
+keywords: job management, discovery jobs, migration jobs, cutover jobs, job runs 
+summary: Utilizza le funzionalità di gestione dei processi in NetApp Data Migrator per avviare e monitorare i processi di rilevamento, migrazione e cutover, nonché le relative esecuzioni. 
+---
+= Gestisci i processi e le esecuzioni dei processi in NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza le funzionalità di gestione dei processi in NetApp Data Migrator per avviare e monitorare i tuoi job *Discovery*, *Migration* e *Cutover* e le esecuzioni dei job.
+
+
+NOTE: Non eseguire contemporaneamente le operazioni di migrazione e di cutover. Assicurati che sia attiva una sola operazione alla volta.
+
+
+
+== Visualizza l'elenco delle configurazioni dei job
+
+La pagina *Elenco configurazioni processi* fornisce una panoramica completa di tutti i job relativi alla migrazione. Utilizza questa pagina per monitorare e gestire lo stato e l'avanzamento dei job di *Discovery*, *Migration* e *Cutover*.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Jobs* > *Job Config List*.
++
+Viene visualizzata la tabella *Jobs Listings*, che include le seguenti informazioni:
+
++
+** *Fonte*: Posizione del file server di origine.
+** *Destinazione*: I dettagli del file server di destinazione e del percorso di esportazione per i processi di migrazione.
+** *Protocollo*: Il protocollo utilizzato dal processo (NFS o SMB).
+** *Prossima programmazione*: Il prossimo orario di esecuzione programmato (se applicabile).
+** *Esecuzioni*: Il numero di volte in cui il lavoro è stato eseguito.
+** *Tipo*: Il tipo di lavoro (Discovery, Migration o Cutover).
+** *Stato*: Lo stato attuale di un lavoro può essere Attivo o Inattivo. I lavori che utilizzano percorsi di esportazione manuali con uno stato non valido o disabilitato diventano automaticamente inattivi. Consultare link:manage-file-servers.html["Aggiungere e gestire i file server"] per maggiori dettagli.
+** *Aggiornato il*: Data e ora di aggiornamento del job.
++
+I processi che utilizzano percorsi di esportazione manuali o il file dei percorsi di esportazione vengono successivamente ricaricati. Tutti i processi eseguiti in precedenza e associati a un percorso ora non valido o disabilitato diventano automaticamente inattivi.
+
+
+
+. Seleziona *Filtri* per ordinare i processi nella tabella Jobs Listings. Puoi scegliere una combinazione di filtri in base alle seguenti opzioni:
++
+** Fonte
+** Destinazione
+** Protocollo
+** Tipo
+** Stato
+
+
+. Seleziona *Cancella tutto* per rimuovere i filtri già applicati ai tuoi annunci di lavoro.
+
+
+
+
+== Attivare o disattivare un lavoro
+
+Dalla tabella Job Listings, è possibile attivare o disattivare un job.
+
+.Passaggi
+. Attiva un job:
++
+.. Seleziona *Jobs* > *Job Config List*.
+.. Nella tabella Job Listings, seleziona il menu delle azioni accanto al job che desideri attivare.
+.. Seleziona *Attiva*. Lo stato del lavoro cambia in Attivo.
+
+
+. Disattivare un'attività:
++
+.. Seleziona *Jobs* > *Job Config List*.
+.. Nella tabella Elenco offerte di lavoro, seleziona il menu delle azioni accanto all'offerta di lavoro che desideri disattivare.
+.. Seleziona *Disattiva*. Lo stato del processo cambia in Inattivo e l'esecuzione si interrompe finché non lo riattivi.
+
+
+
+
+
+
+== Modifica le configurazioni dei job
+
+.Passaggi
+. Seleziona *Jobs* > *Job Config List*.
+. <<view-job-details,Apri la pagina Dettagli job>> per il lavoro che desideri modificare.
+. Seleziona *Visualizza/Modifica configurazione*.
+. Modifica la configurazione del lavoro:
++
+[role="tabbed-block"]
+====
+.Lavoro di scoperta
+--
+** Aggiungi o rimuovi modelli di percorso esclusi
+** Pianifica un'esecuzione del lavoro
+
+
+--
+.Lavoro di migrazione
+--
+** Modifica qualsiasi opzione di lavoro
+** Aggiungere o rimuovere mappature
+** Pianifica un'esecuzione del lavoro
+
+
+--
+====
+. Seleziona *Salva*. La nuova configurazione avrà effetto sulle future esecuzioni del processo.
+
+
+
+NOTE: Modificare la configurazione, ad esempio disabilitando la conservazione delle autorizzazioni, dopo il completamento della migrazione della baseline potrebbe comportare uno stato incoerente durante le migrazioni successive. Invece di modificare la configurazione, è necessario eliminare il job corrente e avviarne uno nuovo.
+
+
+
+== Riesegui i file e le directory che hanno generato errori
+
+Se l'esecuzione di un processo di migrazione si conclude con errori dovuti a problemi temporanei come timeout di rete o problemi di autorizzazione, è possibile utilizzare la funzione di riprova per rielaborare solo gli elementi non riusciti senza dover eseguire nuovamente l'intera migrazione.
+
+.Passaggi
+. Seleziona *Jobs* > *Job Config List*.
+. Nella tabella *Elenco lavori*, seleziona il menu delle azioni accanto al lavoro che presenta elementi non riusciti.
+. Seleziona *Dettagli* > *Riprova errori recenti* > *Procedi con riprova* per avviare l'operazione di riprova.
+
+
+
+
+== Elimina un lavoro
+
+.Passaggi
+. Seleziona *Jobs* > *Job Config List*.
+. Nella tabella *Elenco offerte di lavoro*, seleziona il menu delle azioni accanto all'offerta di lavoro che desideri eliminare.
+. Seleziona *Elimina* > *Elimina*.
++
+
+NOTE: È possibile eliminare un processo solo se non è in esecuzione alcun run attivo.
+
+
+
+
+
+== Visualizza i dettagli dell'offerta di lavoro
+
+Dalla pagina *Elenco configurazioni lavoro*, è possibile accedere alla pagina *Dettagli lavoro* per visualizzare ulteriori dettagli sui singoli lavori, come:
+
+* Tipo di lavoro (Scoperta, Migrazione o Cutover)
+* Numero di file e directory rilevati
+* Tempo trascorso
+* Dati scoperti
+* Configurazione del lavoro
+
+
+.Passaggi
+. Seleziona *Jobs* > *Job Config List*.
+. Nella tabella *Offerte di lavoro*, seleziona il menu delle azioni accanto a un job, quindi seleziona *Dettagli*.
+
+
+
+
+== Visualizza la cronologia di esecuzione dei processi
+
+Nella pagina *Dettagli lavoro*, la tabella *Cronologia esecuzioni* fornisce le informazioni sulle esecuzioni precedenti del lavoro e sullo stato del lavoro.
+
+Le tipologie di stato dei job di migrazione e scoperta includono:
+
+* *Pronto*: È stata programmata l'esecuzione di un job.
+* *In esecuzione*: Un processo è in fase di esecuzione.
+* *In pausa*: Un'esecuzione di un processo è stata messa in pausa manualmente o da NetApp Data Migrator. Ad esempio, un processo può avere lo stato "in pausa" se un worker si arresta mentre il processo è in esecuzione.
+* *Completato*: Un job è completo.
+* *Errored*: L'esecuzione di un processo ha generato un errore irreversibile.
+* *Errore*: Se un worker va offline mentre un job è in esecuzione, il job potrebbe passare allo stato di errore.
+
+
+Le tipologie di stato del job di cutover includono:
+
+* *Bloccato*: Il processo è in attesa di una risposta dall'utente.
+* *Rifiutato*: Il job è stato esaminato e rifiutato da un utente.
+* *Approvato*: Il job è stato esaminato e approvato da un utente.
+* *Interrotto*: Il processo ha smesso di funzionare.
+
+
+
+
+== Gestire le operazioni di esecuzione dei job
+
+Dalla pagina *Dettagli lavoro*, è possibile gestire le operazioni *Avvia*, *Arresta*, *Pausa* e *Riprendi* di un lavoro. La funzione *Pausa* consente di interrompere temporaneamente un lavoro in esecuzione, senza annullarlo. Successivamente, è possibile riprendere il lavoro dal punto in cui è stato interrotto. Questa funzione è utile in situazioni in cui è necessario liberare risorse di sistema o risolvere problemi senza perdere i progressi.
+
+.Passaggi
+. Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, seleziona il menu delle azioni accanto a un lavoro in esecuzione.
+. Mettere in pausa o riprendere l'esecuzione di un processo:
++
+.. Seleziona *Pausa*.
+.. Per riprendere l'esecuzione del processo, selezionare *Riprendi*.
++
+Lo stato del processo cambia in *In esecuzione* e il processo riprende l'esecuzione dal punto in cui era stato messo in pausa.
+
+
+
+. Interrompere o avviare l'esecuzione di un processo:
++
+È possibile utilizzare l'opzione "Interrompi" per terminare definitivamente un'esecuzione di un job in corso. Questa azione è utile quando un'esecuzione di job non è più necessaria. Non è possibile riprendere un'esecuzione di job interrotta, ma è possibile avviare una nuova esecuzione di job dall'inizio.
+
++
+.. Seleziona *Stop*.
++
+Lo stato di esecuzione del processo cambia in *Stopped*.
+
+.. Per avviare una nuova esecuzione del processo, selezionare *Adhoc Run*.
++
+Lo stato di esecuzione del processo cambia in *In esecuzione*.
+
+
+
+
+
+
+
+== Accedi ai dettagli dell'esecuzione del lavoro
+
+Dalla tabella *Cronologia esecuzioni*, accedi alla pagina *Dettagli esecuzione processo* dove puoi visualizzare ulteriori dettagli sulle tue esecuzioni di processo.
+
+.Passaggi
+. Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, selezionare il menu delle azioni accanto a un job run.
+. Seleziona *Dettagli* per visualizzare la pagina *Dettagli esecuzione processo*, che include le seguenti informazioni:
++
+** *Rilevamento/Migrazione*: Il tipo di esecuzione e lo stato del processo.
+** *File*: Il numero di file trovati durante il processo di rilevamento.
+** *Directory*: Il numero di directory trovate durante il processo di rilevamento.
+** *Tempo trascorso*: Quanto tempo è durato il processo di scoperta.
+** *Dati rilevati*: Dimensione totale dei file rilevati.
+** *Workers*: Il numero di worker assegnati al job.
+** *Attività*: Il numero di attività in esecuzione.
+** *Indicatori di stato dell'attività*:
++
+*** *In sospeso*: il numero di attività in attesa di essere eseguite.
+*** *In esecuzione*: Il numero di Tasks attualmente in corso.
+*** *Completati*: Il numero di attività che sono state completate con successo.
+*** *Errored*: Il numero di attività che hanno riscontrato problemi durante l'esecuzione.
+
+
+** *Nome del job*: Il nome assegnato al job.
+** *Percorso di origine*: Il percorso del file utilizzato per la data discovery.
+** *Protocollo*: Il protocollo utilizzato per il rilevamento (NFS o SMB).
++
+Il riquadro in basso a destra nella pagina *Dettagli esecuzione processo* elenca il numero di errori che si sono verificati durante la migrazione (se presenti). Seleziona *Visualizza tutto* per accedere alla pagina *Errori*, dove puoi trovare informazioni più dettagliate su questi errori.
+
+
+
+. Genera report dettagliati che ti forniscono informazioni approfondite sulle metriche di esecuzione dei job, inclusi il numero di file, lo stato, gli errori e il tempo di esecuzione. Puoi utilizzare questi report a scopo di revisione o verifica.
++
+** Seleziona *Discovery Report* > *Anteprima* per visualizzare un istogramma dei dati del report di lavoro.
+** Seleziona *Scarica come CSV* per esportare un report in formato CSV, che puoi analizzare utilizzando un'applicazione per fogli di calcolo.
+** Seleziona *Scarica come PDF*. Questa opzione è ideale per la condivisione di documenti.
+** Seleziona *Visualizza registri* per visualizzare o scaricare i file di registro utilizzando Grafana.
+
+
+
+
+
+
+== Visualizza l'attività di migrazione
+
+La pagina Attività di migrazione mostra i dieci file più vecchi attualmente in fase di migrazione. Mostra anche il numero totale di file in corso e offre la possibilità di scaricare un file CSV contenente un elenco completo di questi file.
+
+.Passaggi
+. Dalla tabella *Cronologia esecuzioni*, selezionare *Dettagli esecuzione processo* per un processo in esecuzione.
+. Seleziona *Attività di migrazione*.
+
+
+
+
+== Genera un rapporto di errore del lavoro
+
+È possibile generare un rapporto di errore per i processi con stato *Errored* o per un'esecuzione precedente. Un rapporto di errore può aiutarti a capire perché si è verificato un errore.
+
+.Passaggi
+. Genera un report degli errori per i processi con stato *Errored*:
++
+.. Nella pagina *Dettagli lavoro*, nel riquadro Errori, selezionare *Visualizza tutto*.
+.. Seleziona *Genera rapporto errori* per scaricare i dettagli sugli errori nell'ultima esecuzione del processo.
+
+
+. Genera un rapporto di errore per un'esecuzione precedente del lavoro:
++
+.. Nella pagina *Dettagli lavoro*, nella tabella *Cronologia esecuzioni*, seleziona il menu delle azioni accanto all'esecuzione del lavoro per la quale desideri generare un rapporto di errore.
+.. Seleziona *Dettagli*.
+.. Nella pagina *Dettagli lavoro*, nel pannello *Errori*, selezionare *Visualizza tutto*.
+.. Seleziona *Genera rapporto errori* per scaricare i dettagli relativi agli errori nell'esecuzione del processo selezionato.
+
+
+

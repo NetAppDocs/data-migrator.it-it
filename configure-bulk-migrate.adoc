@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: configure-bulk-migrate.html 
+keywords: bulk migrate, data migration, source mapping, destination mapping, export paths 
+summary: Utilizza la funzione Bulk Migrate in NetApp Data Migrator per trasferire grandi volumi di dati da una posizione di origine a una di destinazione. 
+---
+= Eseguire la migrazione dei dati utilizzando NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza le funzionalità di migrazione in blocco di NetApp Data Migrator per trasferire grandi volumi di dati da una posizione di origine a una di destinazione.
+
+
+
+== Passaggio 1: Configurare la migrazione in blocco in NetApp Data Migrator
+
+È necessario definire i server per Bulk Migrate prima di poter utilizzare le funzionalità di Bulk Migrate.
+
+.Passaggi
+. Accedi a NetApp Data Migrator.
+. Seleziona *Storage Servers* > *File Servers*.
+. Seleziona il *File Server Name* per il quale desideri creare il job.
+. Seleziona *Migrazione in blocco*.
+
+
+
+
+== Passaggio 2: Aggiungi le mappature di origine e destinazione
+
+Aggiungi le mappature di origine e di destinazione per specificare i percorsi di esportazione di origine e di destinazione per la tua migrazione.
+
+.Passaggi
+. Seleziona il percorso di esportazione nell'origine che desideri migrare.
+. Facoltativamente, seleziona *Aggiungi directory di origine* se desideri eseguire una migrazione a livello di directory.
++
+Dopo aver selezionato *Aggiungi directory di origine*, viene visualizzata la vista Esplora directory. Questa vista mostra l'elenco delle directory a livello radice. È possibile navigare fino alla directory desiderata oppure copiare e incollare direttamente il percorso della directory desiderata nella barra di ricerca della finestra Esplora directory per accedere a quella cartella.
+
+. Dopo aver selezionato la directory di origine, selezionare il file server di destinazione e il percorso di esportazione di destinazione.
+. Facoltativamente, selezionare la directory nel percorso di esportazione di destinazione.
++
+Se non si seleziona una directory nel percorso di esportazione di destinazione, la migrazione avviene a livello principale del percorso di esportazione selezionato.
+
+. Dopo aver selezionato i percorsi di origine e di destinazione, seleziona *Aggiungi mappatura* per aggiungere la mappatura selezionata. Puoi creare più mappature per percorsi e directory di esportazione differenti.
++
+NetApp Data Migrator impedisce di selezionare una mappatura che abbia una connessione padre o figlio con una mappatura esistente. Ciò evita conflitti durante la migrazione.
+
+. Facoltativamente, è possibile eliminare o modificare una mappatura selezionando l'opzione *Modifica* o *Elimina*.
+. Dopo aver aggiunto le mappature, selezionare *Procedi*.
+
+
+
+
+== Passaggio 3: Personalizza il processo di migrazione in blocco
+
+Dalla pagina *Opzioni* è possibile selezionare diverse impostazioni per personalizzare il processo di Bulk Migrate in base alle proprie esigenze.
+
+[cols="1,2a"]
+|===
+| Opzione | Descrizione 
+
+
+| Modelli di percorso esclusi  a| 
+Definisce i percorsi o le directory specifici da escludere dall'elaborazione. Ciò contribuisce a ottimizzare lo storage e le prestazioni saltando i file non necessari.
+
+* È possibile inserire più modelli di percorso, uno per riga.
+* È possibile inserire un carattere jolly (`*` per selezionare più file o cartelle.
+* Esempi di esclusioni:
++
+** `*/snapshots/*`: Esclude tutti i file e le cartelle all'interno di qualsiasi directory di snapshot
+** `*/logs/*`: Esclude i file di registro
+** `*/tmp/*`: Esclude i file temporanei
+
+
+
+
+
+
+| Programma di sincronizzazione incrementale  a| 
+Configura la frequenza con cui i dati vengono sincronizzati in modo incrementale. In questo modo vengono aggiornate solo le modifiche apportate dall'ultima sincronizzazione, migliorando l'efficienza della migrazione e riducendo i tempi di elaborazione.
+
+* Seleziona *Disattivato* per disattivare la sincronizzazione incrementale.
+* Seleziona *Imposta pianificazione* per specificare una pianificazione di sincronizzazione. Puoi scegliere di sincronizzare i dati ogni ora, ogni giorno o ogni settimana.
+* Seleziona *Espressione Cron* se sei un utente esperto e desideri definire una pianificazione di sincronizzazione personalizzata utilizzando un'espressione cron, per un controllo più granulare sui tempi di sincronizzazione.
+
+
+
+
+| Migra file  a| 
+Seleziona i file da migrare in base alla data dell'ultima modifica.
+
+* Seleziona *Tutti* per migrare tutti i file, indipendentemente dalla data di modifica.
+* Seleziona *Escludi file precedenti a (UTC)* per escludere i file precedenti a una data specificata.
+
+
+
+
+| Preserva a-time (Access Time)  a| 
+Mantiene il timestamp di accesso originale al file, invece di aggiornarlo con l'ora della migrazione.
+
+
+
+| Mantieni le autorizzazioni  a| 
+Mantiene i permessi originali del file e della directory sorgente sulla destinazione.
+
+* Seleziona *Abilitato* per conservare le autorizzazioni originali, inclusi proprietario, gruppo e diritti di accesso (liste di controllo degli accessi per SMB, bit di modalità per NFS) da un'origine a una destinazione.
+* Seleziona *Disabilitato* per saltare la conservazione delle autorizzazioni. NetApp Data Migrator migra i file con le autorizzazioni di destinazione predefinite, il che è utile quando si migra tra file system incompatibili.
+
+
+
+
+| Salta i file modificati nell'ultimo  a| 
+Specifica i file da escludere dalla migrazione in base a un intervallo di tempo (in minuti, ore o giorni). Questo aiuta a prevenire l'incoerenza dei dati, garantendo che i file in fase di modifica non vengano trasferiti durante l'aggiornamento.
+
+
+
+| Carica la mappatura GID/UID  a| 
+Carica un file di mappatura dell'ID di gruppo (GID) o dell'ID utente (UID) per mantenere la corretta proprietà dei file durante la migrazione. Il file caricato deve rispettare il formato specificato nel modello fornito.
+
+. Seleziona *Scarica modello* per scaricare un formato di file di esempio.
+. Seleziona *Scegli un file* per selezionare il file di mappatura dal tuo sistema locale.
+. Seleziona *Carica* per applicare la mappatura.
+
+
+
+
+| Caricamento della mappatura SID  a| 
+Carica un file di mappatura dell'identificativo di sicurezza (SID). La mappatura SID garantisce che le autorizzazioni di utenti e gruppi vengano mantenute correttamente durante la migrazione o la sincronizzazione dei file tra sistemi. Il file caricato deve rispettare il formato specificato nel modello fornito per il download.
+
+. Seleziona *Scarica modello* per scaricare un formato di file di esempio.
+. Seleziona *Scegli un file* per selezionare il file di mappatura dal tuo sistema locale.
+. Seleziona *Carica* per applicare la mappatura.
+
+
+|===
+Dopo aver selezionato le opzioni, seleziona *Procedi* per aprire la pagina *Rivedi e invia*.
+
+
+
+== Passaggio 4: Rivedi e invia
+
+Verifica le impostazioni, quindi procedi con un'operazione di migrazione in blocco.
+
+.Passaggi
+. Visualizza lo *stato di pre-verifica* del tuo lavoro. Assicurati che il percorso di origine contenga i dati corretti e conferma che il percorso di destinazione disponga di spazio di archiviazione e autorizzazioni di accesso sufficienti.
+. Seleziona *Invia* per creare un nuovo processo di migrazione.
++
+Viene visualizzato il messaggio di conferma *È stato creato il processo Bulk Migrate*.
+
+. Seleziona il link *Visualizza offerta di lavoro* accanto al messaggio di notifica per aprire la pagina *Elenco configurazioni lavoro* dove è elencato il tuo nuovo job.
+

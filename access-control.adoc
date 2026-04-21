@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: access-control.html 
+keywords: role-based access control, rbac, user permissions, app admin, project admin 
+summary: 'NetApp Data Migrator utilizza il controllo degli accessi in base al ruolo (RBAC) per gestire le autorizzazioni degli utenti, consentendo agli App Admin di assegnare ruoli ad altri utenti.' 
+---
+= Gestisci il controllo degli accessi per NetApp Data Migrator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Migrator utilizza il controllo degli accessi in base al ruolo (RBAC) per gestire le autorizzazioni degli utenti. RBAC consente agli utenti App Admin (amministratori) di assegnare uno qualsiasi dei seguenti tre ruoli ad altri utenti, garantendo un controllo degli accessi sicuro e operazioni efficienti. Gli utenti App Admin concedono le autorizzazioni ad altri utenti in base alle loro responsabilità e ai requisiti di accesso.
+
+* *Amministratore dell'app*: Questo livello di accesso consente agli utenti di gestire le impostazioni generali del sistema, i ruoli utente e le autorizzazioni di accesso.
+* *Amministratore di progetto*: Questo livello di accesso consente agli utenti di gestire specifici progetti di migrazione, inclusa la configurazione e l'esecuzione dei job.
+* *Visualizzatore di progetto*: Questo livello di accesso fornisce agli utenti l'accesso in sola lettura per monitorare l'avanzamento della migrazione, i log e i report. Questo ruolo è pensato per gli utenti che necessitano di monitorare e osservare l'avanzamento dei progetti di migrazione dei dati, ma non sono tenuti a eseguire azioni che potrebbero alterare o interferire con un progetto.
+
+
+La tabella seguente fornisce un riepilogo delle azioni e delle autorizzazioni dei ruoli utente.
+
+[cols="1,2,1,1,1a"]
+|===
+| Azione | Descrizione | Amministratore dell'app | Amministratore del progetto | Visualizzatore di progetto 
+
+
+| Distribuzione degli agenti | L'utente può accedere a *Visualizza le istruzioni per la configurazione del worker* | Sì | Sì  a| 
+No
+
+
+
+| Crea un utente | L'utente può creare nuovi account utente | Sì | No  a| 
+No
+
+
+
+| Elenca utenti | L'utente può visualizzare un elenco di utenti | Sì | Sì  a| 
+Sì
+
+
+
+| Gestisci la configurazione | L'utente può gestire le impostazioni di configurazione | Sì | Sì  a| 
+No
+
+
+
+| Gestisci lavoro | L'utente può gestire i processi di migrazione | Sì | Sì  a| 
+No
+
+
+
+| Rapporti | L'utente può accedere alle opzioni per scaricare i report | Sì | Sì  a| 
+Sì
+
+
+
+| Aggiorna progetto | L'utente può modificare un progetto | Sì | Sì  a| 
+No
+
+
+
+| Visualizza un progetto | L'utente può accedere alla pagina dell'elenco dei progetti | Sì | Sì  a| 
+Sì
+
+
+
+| Crea un progetto | L'utente può creare un progetto | Sì | No  a| 
+No
+
+
+
+| Salva SMTP | L'utente può aggiungere o modificare i dettagli SMTP | Sì | No  a| 
+No
+
+|===

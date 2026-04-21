@@ -1,0 +1,41 @@
+---
+indexpage:
+  title: NetApp Data Migrator documentazione
+  summary: NetApp Data Migrator è un'applicazione software di migrazione dei dati
+    di livello enterprise, multicloud, che semplifica la migrazione di dati di file
+    non strutturati da sistemi di storage on-premises o storage di terze parti a servizi
+    di cloud storage pubblici basati su NetApp. NetApp Data Migrator è un'applicazione
+    indipendente che viene eseguita su macchine virtuali gestite dall'utente ed elimina
+    la necessità di script personalizzati complessi e strumenti separati.
+  keywords: netapp, data, migrator, documentation
+  lead: NetApp Data Migrator è un'applicazione software di migrazione dei dati di
+    livello enterprise, multicloud, che semplifica la migrazione di dati di file non
+    strutturati da sistemi di storage on-premises o storage di terze parti a servizi
+    di cloud storage pubblici basati su NetApp. NetApp Data Migrator è un'applicazione
+    indipendente che viene eseguita su macchine virtuali gestite dall'utente ed elimina
+    la necessità di script personalizzati complessi e strumenti separati.
+  tiles:
+  - title: Inizia
+    links:
+    - title: Note di rilascio
+      url: "/whats-new.html"
+    - title: Scopri di più su NetApp Data Migrator
+      url: "/learn-about-data-migrator.html"
+    - title: Avvio rapido
+      url: "/quick-start.html"
+  - title: Installare e utilizzare NetApp Data Migrator
+    links:
+    - title: Installa NetApp Data Migrator
+      url: "/learn-about-install.html"
+    - title: Aggiorna il piano di controllo e i worker
+      url: "/upgrade.html"
+    - title: Creare e gestire progetti
+      url: "/manage-projects.html"
+    - title: Utilizzare NetApp Data Migrator
+      url: "/manage-users.html"
+  - title: Altre risorse
+    links:
+    - title: Ottieni aiuto
+      url: "/register-for-support.html"
+    - title: Domande frequenti
+      url: "/faq.html"
