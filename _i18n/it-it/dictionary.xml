@@ -80,8 +80,6 @@
   <block id="531330f2326fb3283c827799b9c4dec0" category="paragraph">Viene visualizzata la finestra di dialogo *Cutover Confirmation*.</block>
   <block id="ffc9534ab431605bc11f516d99c43ba5" category="list-text">Seleziona il link *Scarica il report CoC*.</block>
   <block id="cc5fcd3fba3014c23240ac1c1497d8b7" category="paragraph">Esamina il report per verificare se il cutover è andato a buon fine e se tutti i dati sono stati migrati correttamente dalla sorgente alla destinazione.</block>
-  <block id="67116d320a2bb4f66b0bb10629a28264" category="list-text">Selezionare la casella di controllo accanto a *Ho esaminato e verificato il documento COC e tutte le altre informazioni essenziali*.</block>
-  <block id="228159fcd8ad29c01efe569a236253d2" category="list-text">Se le informazioni contenute nel report COC ti soddisfano, seleziona *Conferma* per approvare il *Bulk Cutover*.</block>
   <block id="e15884a19074f86e7c09ab35a649f46a" category="paragraph">Lo stato cambia in *Complete.*</block>
   <block id="c7c7190135e9f9b9ece90813a338db20" category="summary">Configura la funzione Bulk Discover in NetApp Data Migrator per generare una panoramica dell'intera capacità di archiviazione esistente prima di iniziare la migrazione dei dati.</block>
   <block id="237c9334ef000476a7394e5432d15caa" category="doc">Pianifica la migrazione dei dati in NetApp Data Migrator utilizzando Bulk Discover</block>
@@ -248,11 +246,6 @@
   <block id="3de40160643c4264dfdb435901f88134" category="inline-link-macro">Connessioni RDP</block>
   <block id="04e35b02091c127ce30a041090d5ae10" category="paragraph">Scopri di più su <block ref="413636dc63fc70d1de2995e50bbc28db" category="inline-link-macro-rx"></block>.</block>
   <block id="c8ec5de526848edba89b4cd247a7c82f" category="list-text">Copiare ed eseguire Windows Worker Installer sulla macchina virtuale del piano di controllo.</block>
-  <block id="a9058b2b8149aa6459c22839b8f48e7d" category="paragraph">Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile scegliere una delle seguenti opzioni:</block>
-  <block id="a729f07fe3c69abdf2c50ebfa113d507" category="inline-link-macro">Convalidare la macchina virtuale del piano di controllo</block>
-  <block id="15f42688d57360bf1f9db0b9f31ac5cb" category="list-text">Facoltativamente,<block ref="38876e4285448dda0ef37899ea72b3f7" category="inline-link-macro-rx"></block></block>
-  <block id="359f010480b6cb0e4541e04bb0fcc16b" category="inline-link-macro">Accedere all'interfaccia utente di NetApp Data Migrator e connettersi al piano di controllo e ai worker</block>
-  <block id="ca6ab599cc2e4b0485c935f29da44c3b" category="list-text"><block ref="ca6ab599cc2e4b0485c935f29da44c3b" category="inline-link-macro-rx"></block></block>
   <block id="a70f927e90b92e5863f95f3d77a75c40" category="summary">Utilizza questa matrice per determinare se utilizzare NetApp Data Migrator o SnapMirror per i tuoi scenari di migrazione dei dati.</block>
   <block id="8e92e15e5d350cd28fb679db44bc77d8" category="doc">Decidi se utilizzare NetApp Data Migrator</block>
   <block id="37b72dc4b7827b60200f9714aa7bfaf9" category="paragraph">Utilizza la matrice per determinare se utilizzare NetApp Data Migrator o SnapMirror per le operazioni di migrazione dei dati NFS e SMB da un sistema storage ONTAP on-premises. Ad esempio, se stai migrando file NFS e SMB da un'origine ONTAP on-premises con ONTAP 9.12.1 a una destinazione Google Cloud NetApp Volumes Flex service, dovresti utilizzare NetApp Data Migrator.</block>
@@ -278,8 +271,6 @@
   <block id="bb22576f9b122fdf9d78825d5814f73f" category="summary">Scopri come installare il piano di controllo NetApp Data Migrator e le macchine virtuali worker.</block>
   <block id="021d971a688b59f55f1e01248ea81da6" category="doc">Distribuisci il piano di controllo e le macchine virtuali di lavoro Linux per NetApp Data Migrator</block>
   <block id="9866e84bbeb7aaf31c785c41e852e87f" category="paragraph">Distribuisci la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux per NetApp Data Migrator utilizzando i servizi AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Il worker Linux supporta le migrazioni di dati NFS.</block>
-  <block id="9c093f14319e8253b8c9b37290597239" category="inline-link-macro">NetApp sito di supporto</block>
-  <block id="5ff33b6501cd191d29481875867dc11b" category="paragraph">Scarica le immagini di NetApp Data Migrator dal <block ref="a806f88fd14897065f93f1191bd5b7da" category="inline-link-macro-rx"></block>:</block>
   <block id="9b1b30bfc99bb38f9a91517b1b946684" category="list-text">Seleziona *NetApp Data Migrator*.</block>
   <block id="310e86f89904e335507c6ff6e454da6c" category="list-text">Segui le istruzioni nella pagina di download di NetApp Data Migrator per accedere alle immagini di NetApp Data Migrator.</block>
   <block id="6820fbb635251b795c3ca1ae5b5a14ba" category="paragraph">Scegli la scheda AWS, Azure, Google Cloud o OVA a seconda dell'opzione di distribuzione.</block>
@@ -305,22 +296,18 @@
   <block id="e068d5e55435058d8d80b438cbfedc6e" category="list-text">Assegna all'account di servizio objectViewer l'accesso al bucket di destinazione di Cloud Storage:</block>
   <block id="c813aaa1c28525e28180006c1c7b9550" category="paragraph">L'account di servizio necessita dell'autorizzazione roles/storage.objectViewer per leggere i file immagine delle VM dal bucket di Cloud Storage durante il processo di migrazione.</block>
   <block id="dc36632e376a444fbc3f974928f6c693" category="paragraph">Quando l'API di migrazione delle macchine virtuali è abilitata, Google Cloud crea automaticamente un account di servizio con il seguente formato:</block>
-  <block id="1e043504778da0aa7bcf3436ddeef0e1" category="paragraph"><block ref="5df0b69b601a351abdf7499d42281325" prefix="" category="inline-code"></block></block>
   <block id="68dbee6ed219fb61e0a1f2d7c0052a2b" category="list-text"><block ref="0a9fe612dd3aeeb522b085a5dc743836" prefix="" category="inline-code"></block> è l'account di servizio Google Cloud</block>
   <block id="c286a0934a11b3f2ec2cf08dd231cf8e" category="list-text"><block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix="" category="inline-code"></block> è l'identificativo del servizio di migrazione delle macchine virtuali</block>
   <block id="03a45e0dc9af4eead77f83ecbd640307" category="list-text"><block ref="79c170c716ea5fca869039d6a032f2a5" prefix="" category="inline-code"></block> è il dominio standard per gli account di servizio di Google Cloud</block>
   <block id="f67b849d8be2722918b033f359ddf17d" category="list-text">Crea un account amministratore sul<block ref="3e3a9b04a7e76246f14a93ea417e1a4b" prefix=" " category="inline-code"></block> servizio:</block>
   <block id="e2e1100dd49a5c31e3fd0e5fd00eba78" category="paragraph">Questo ti concede le autorizzazioni amministrative per la migrazione delle macchine virtuali a livello di progetto.</block>
   <block id="89ef81b9ebe20a41b8624f6ea1d76320" category="list-text">Recupera e carica i file immagine:</block>
-  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">Sito di supporto NetApp</block>
-  <block id="e1389ed07e342a8ff8ddcbc4f7ffe46e" category="list-text">Scarica il file immagine del piano di controllo<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> da <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>.</block>
   <block id="8ba0f284cbf3541ca311f101e602751d" category="list-text">Carica i <block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> file nel tuo bucket di Google Cloud Storage.</block>
   <block id="b582743a436eee96f743d05a2fa25f16" category="list-text">Dopo aver caricato gli archivi delle immagini su Google Cloud Storage, crea le immagini delle macchine virtuali utilizzando il VM Migration Service eseguendo il seguente comando per ciascuna immagine (control plane e Linux worker).</block>
   <block id="d2b78890db7dd247ce5f92bfd2ec15ae" category="paragraph">Questo comando crea una nuova immagine di macchina virtuale di Google Cloud Platform dall'archivio fornito nella regione specificata.</block>
   <block id="b3ab2f208f13f715b7d869c9a6ac16c7" category="list-text">Elenca le operazioni di importazione delle immagini e conferma il completamento:</block>
   <block id="586ba478b7ebec665f3df120799b6c2e" category="open-title">OVA</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="paragraph-title">Passaggio</block>
-  <block id="58402979642aceba3c4d2702ee126f81" category="paragraph">Scarica il file immagine del piano di controllo<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> da <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>.</block>
   <block id="7c1d6f695f65dc9c5c8094228402786f" category="inline-link-macro">creare il piano di controllo e le macchine virtuali di lavoro</block>
   <block id="9145b83b060f34d93aca59652a91a807" category="paragraph">Dopo aver appreso come distribuire una macchina virtuale del piano di controllo e una macchina virtuale di lavoro Linux, è possibile <block ref="47786182e0e58028f57398173f17bd15" category="inline-link-macro-rx"></block>.</block>
   <block id="bcb2ecbda52b8430d09e5b500c31ebaf" category="summary">Trova le risposte alle domande più frequenti su NetApp Data Migrator relative a errori di connessione, errori di autenticazione, problemi di protocollo ed errori di autorizzazione.</block>
@@ -556,15 +543,11 @@
   <block id="415b97a9b0a182511672ae3883302822" category="inline-link-macro">decidere se utilizzare il software per le operazioni di migrazione dei dati</block>
   <block id="38638155b7eb32979bd49efbc4ecd3ea" category="paragraph">Dopo aver appreso informazioni su NetApp Data Migrator, puoi <block ref="32beaf1b333cdebcd418e0f9b4a6d185" category="inline-link-macro-rx"></block>.</block>
   <block id="362dc8eb929965a4aa87ffed37b3d617" category="doc">Scopri come installare NetApp Data Migrator</block>
-  <block id="155fa94b7bca3977ba7c200909e43cc8" category="paragraph">È necessario installare un control plane e dei worker per eseguire i job di migrazione NFS e SMB utilizzando NetApp Data Migrator.</block>
   <block id="8c0d588cf4ae3c3963c70ead4a5ca7e3" category="list-text">*Piano di controllo*: Il piano di controllo funge da livello centrale di gestione e controllo. Distribuisci il piano di controllo su una macchina virtuale (VM) Linux, quindi distribuisci i worker.</block>
   <block id="c037928a4b33f55ae64d96e1796c0cb1" category="list-text">*Workers*: I worker sono macchine virtuali che eseguono la migrazione dei dati. È possibile distribuire più worker in base alla scalabilità e alle proprie esigenze. Il tipo di worker dipende dal protocollo:</block>
   <block id="dcb958e16173d580dffd4bdeb217206a" category="list-text">Un worker Linux supporta le migrazioni NFS.</block>
   <block id="d2ac9b54e6beae65495d2457cf8c1f40" category="list-text">Un worker Windows supporta le migrazioni SMB.</block>
-  <block id="76827502fd8d3d0d06e450c23346942e" category="paragraph">Innanzitutto, si distribuiscono la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando i servizi cloud AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal sito di supporto NetApp.</block>
-  <block id="a2b65d24cfdab17e100dd5d9903bafad" category="paragraph">Dopo la distribuzione, si creano le macchine virtuali del piano di controllo e di lavoro per accedere a NetApp Data Migrator. La macchina virtuale del piano di controllo e la macchina virtuale di lavoro Linux vengono create utilizzando le immagini distribuite. La macchina virtuale di lavoro Windows viene creata utilizzando Windows Worker Installer, che si scarica dal sito di supporto NetApp.</block>
   <block id="0176a7764147384d95bf0b96717c78d3" category="inline-link-macro">registrarsi per un account</block>
-  <block id="35884a7c97792b73e76d939f06c4c52c" category="paragraph">Dopo aver appreso come installare NetApp Data Migrator, puoi <block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block>.</block>
   <block id="7e56090ee48c15842893dcf89da7a382" category="summary">Note legali, copyright, marchi registrati e informazioni sulla licenza open source di NetApp Data Migrator.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Note legali</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Le note legali forniscono accesso a dichiarazioni di copyright, marchi, brevetti e altro.</block>
@@ -945,10 +928,6 @@
   <block id="bbe5469d33ce93c2f28586f9a9debf56" category="paragraph">Innanzitutto, accedi come amministratore utilizzando le credenziali predefinite e aggiorna nome utente e password. Dopodiché, puoi creare il tuo primo progetto e aggiungere i file server per avviare i workflow di migrazione.</block>
   <block id="83b9a73283224c028b35f767e10e1a03" category="list-text"><block ref="83b9a73283224c028b35f767e10e1a03" category="inline-link-macro-rx"></block></block>
   <block id="2dc5f7f7f6c5786ed5b37141589adae2" category="list-text"><block ref="2dc5f7f7f6c5786ed5b37141589adae2" category="inline-link-macro-rx"></block></block>
-  <block id="5b46d94ae861e93c8d77f043ac734952" category="summary">Se sei un nuovo cliente NetApp, devi creare un account NetApp e completare la procedura di registrazione.</block>
-  <block id="512ce7e8c3858266467efa17d62d0051" category="doc">Registrati per un account NetApp Data Migrator</block>
-  <block id="4daa456be51251ffd988f63c8657d64c" category="paragraph">Se sei un nuovo cliente NetApp, devi creare un account NetApp e completare la procedura di registrazione. Se hai già un account NetApp, puoi procedere a <block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>.</block>
-  <block id="5f4293a5c5c507db807ae703a9d9c3dc" category="admonition">Potrebbe essere necessario fino a un giorno lavorativo affinché il tuo nuovo account del sito di supporto NetApp venga aggiornato da *Guest access* a *Full access*.</block>
   <block id="d27c2a770a38edcade142626ac440af3" category="list-text">Registrati per un account sul <block ref="5a9b9821ca062d5154356de0071c8b9f" category="inline-link-macro-rx"></block> utilizzando la tua email aziendale.</block>
   <block id="8fd3c7eb5b3f94dd265f8f05e2041a61" category="list-text">Autentica l'avvio della registrazione inserendo la password monouso inviata al tuo indirizzo email.</block>
   <block id="3c1b2d3eff4d0d793fec12d931950535" category="list-text">Nella pagina di completamento della registrazione, inserisci i dati richiesti:</block>
@@ -964,8 +943,6 @@
   <block id="db729189c53fa99bdc9f58f33fd77194" category="list-text">Nella home page di NetApp Data Migrator, selezionare *Aiuto (?)* &gt; *Informazioni* &gt; *Numero di serie*</block>
   <block id="4cb56db1a789c4f4e932d664ca1879ce" category="list-text">Nella finestra di dialogo *Informazioni su NDM*, annotare l'ID dell'istanza di NetApp Data Migrator.</block>
   <block id="c0fc849d32dbbc779b1e95ec1196b32b" category="paragraph">Si tratta di un numero di 20 cifre, che inizia con 975.</block>
-  <block id="0bfc0e9653a7195acce2223fb3187822" category="inline-link-macro">NetApp pagina di registrazione del sito di supporto</block>
-  <block id="205ebb64be7cdbdfb8dad6344e5095aa" category="list-text">Vai al <block ref="583d19e36ff27be52d23b0b9a7306b4f" category="inline-link-macro-rx"></block>.</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">Seleziona *Non sono un cliente registrato NetApp*.</block>
   <block id="9421d4188db409ce16d73b19394af0f7" category="list-text">Inserisci i dati richiesti per la registrazione del prodotto:</block>
   <block id="0baa9b69ccf61d4c2f40815008c37583" category="list-text">Lascia vuoto il campo *NetApp Reference SN*.</block>
@@ -1166,4 +1143,35 @@
   <block id="d8d50c12bd11a2109a7a384f43b0930a" category="sidebar">Genera pacchetto di supporto</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="sidebar">Registrati per ricevere supporto</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">Risoluzione dei problemi</block>
+  <block id="a557e68a0918586226f7db744ff53cf4" category="list-text">Seleziona la casella di controllo accanto a *Ho esaminato e verificato il documento della catena di custodia (CoC) e tutte le altre informazioni essenziali*.</block>
+  <block id="e8640163df245e7e098847cd29d94a52" category="list-text">Se le informazioni contenute nel rapporto sulla catena di custodia (CoC) sono corrette, seleziona *Conferma* per approvare il *Bulk Cutover*.</block>
+  <block id="0165aaffb5b86064565d400bb51c02e6" category="section-title">Risolvere i conflitti di aggiornamento dei metadati</block>
+  <block id="e2ca9d6562f61ef76278696bf21b9166" category="paragraph">Potrebbero verificarsi conflitti di aggiornamento dei metadati durante il processo di conferma del cutover per le migrazioni SMB. Per risolvere i conflitti di aggiornamento dei metadati, eseguire lo script di sincronizzazione dei metadati per i file interessati.</block>
+  <block id="39bb66223d591f4512a45497c8bc3184" category="list-text">Scarica la cartella ZIP del report CoC che è stata generata come parte del processo di cutover.</block>
+  <block id="a15d55d0f23df66bb7893733f386297a" category="list-text">Estrai la cartella ZIP sul computer di lavoro Windows coinvolto nel cutover per la coppia di percorsi.</block>
+  <block id="8b65e02d40ee826b175b02e4bc45bef5" category="admonition">Le lettere di unità <block ref="5dbc98dcc983a70728bd082d1a47546e" prefix=" " category="inline-code"></block> e <block ref="b9ece18c950afbfa6b0fdbfa4ff731d3" prefix=" " category="inline-code"></block> sono utilizzate per mappare i volumi di origine e di destinazione sul worker Windows. Non utilizzare queste lettere di unità per altri punti di montaggio durante l'esecuzione di questo script.</block>
+  <block id="d8e4a0239dd5fc0a5c6e9d217763eaaf" category="list-text">Copia il file <block ref="019ac6e58d9c4a7e1d127b0e02d8be9e" prefix=" " category="inline-code"></block> richiesto.</block>
+  <block id="3d9cebc93ee1e287479e1c608d677b8f" category="list-text">Aprire PowerShell come amministratore sul computer di lavoro Windows.</block>
+  <block id="03faee47bc7a3f4f5bd70644ba940075" category="list-text">Accedere alla directory degli script:</block>
+  <block id="bb1867b35f788cdb601c39a8ac4b42fa" category="list-text">Eseguire lo script di aggiunta dei metadati utilizzando i segnaposto per tutti i parametri:</block>
+  <block id="561861cf3c5b804405bbe956b25dfa07" category="paragraph">La mappatura SID e i parametri relativi al dominio (SidMapFile e Domain) sono opzionali e possono essere inclusi a seconda delle necessità.</block>
+  <block id="971e1a6fb808ebf9b49a8e5292af7a67" category="paragraph">Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile eseguire le seguenti operazioni:</block>
+  <block id="1251f1d578f1d6119b3c18fedfdb3ff9" category="inline-link-macro">convalidare la macchina virtuale del piano di controllo</block>
+  <block id="1bc0cd7367326350e27456afb38f6c4a" category="list-text">Facoltativamente <block ref="4d97b867bb9f75267c66c77f4694e105" category="inline-link-macro-rx"></block></block>
+  <block id="84c99c15058d4e5c618312936435ab0f" category="inline-link-macro">Accedere all'interfaccia utente di NetApp Data Migrator e connettersi al piano di controllo e ai worker</block>
+  <block id="b3cd170ee2bfc309cc7cb338f10a3904" category="list-text"><block ref="b3cd170ee2bfc309cc7cb338f10a3904" category="inline-link-macro-rx"></block></block>
+  <block id="efe7275bf81b553b7f1c1571b6fded79" category="paragraph">Scarica le immagini di NetApp Data Migrator dal <block ref="79a5efacdd8155d1c0d2f7284cc3f087" category="inline-link-macro-rx"></block>:</block>
+  <block id="953b1faf3afe7942fa40444c40dcdd9d" category="paragraph"><block ref="3713b6efd29a2574d01586436235bfc4" prefix="" category="inline-code"></block></block>
+  <block id="c54aeafac3fb6ac981207fb56c38dab6" category="list-text">Scarica il file immagine del piano di controllo<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> da <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>.</block>
+  <block id="ca710100283059cfe72da6c355e9d26d" category="paragraph">Scarica il file immagine del piano di controllo<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> e il file immagine del worker Linux<block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix=" " category="inline-code"></block> da <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>.</block>
+  <block id="dff020d49284a25f4cadf7a01e536f15" category="paragraph">NetApp Data Migrator è costituito da un piano di controllo e da uno o più worker che collaborano per eseguire lavori di migrazione dei dati utilizzando i protocolli di trasporto NFS e SMB.</block>
+  <block id="7192084ed2fd41f0dbb21341fcfd063c" category="paragraph">Innanzitutto, si distribuisce la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando il servizio AWS, Azure o Google Cloud oppure tramite modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal NetApp Support Site.</block>
+  <block id="f4336a028056eb40e55adc55f67993f9" category="paragraph">Dopo la distribuzione, crea la VM del piano di controllo e le VM worker per accedere a NetApp Data Migrator. Crea la VM del piano di controllo e la VM worker Linux utilizzando le immagini distribuite. Crea la VM worker Windows utilizzando il Windows Worker Installer, che puoi scaricare dal NetApp Support Site. Puoi quindi, facoltativamente, convalidare la VM del piano di controllo oppure accedere all'interfaccia utente di NetApp Data Migrator e connetterti al piano di controllo e alle VM worker.</block>
+  <block id="04117208e09395666e5e0c060ae2aaa3" category="paragraph">Dopo aver appreso come installare NetApp Data Migrator, puoi <block ref="d2c5c3692974708954412d809af17919" category="inline-link-macro-rx"></block> sul NetApp Support Site se sei un nuovo cliente oppure procedere a <block ref="738ec4cd3729066a364fa774c0622676" category="inline-link-macro-rx"></block> se hai già un account.</block>
+  <block id="e0998a4bed9547e9c34bdc4f48ce4d2a" category="summary">Se sei un nuovo cliente NetApp, devi creare un account NetApp e completare la procedura di registrazione prima di poter accedere a NetApp Data Migrator.</block>
+  <block id="eca545c10a175a8aed24f0eaf7cda74f" category="doc">Registrati per creare un account per accedere a NetApp Data Migrator</block>
+  <block id="5b0d7601c743963c464a12b037ae045c" category="paragraph">Se sei un nuovo cliente NetApp, devi registrarti per un account sul sito di supporto NetApp prima di poter scaricare NetApp Data Migrator. Se hai già un account, puoi procedere a <block ref="2e1fdd8a20f38dacfbef503dc81b8d7d" category="inline-link-macro-rx"></block>.</block>
+  <block id="034b07d5c19791bdc29e619054083834" category="admonition">Potrebbe essere necessario fino a un giorno lavorativo per l'aggiornamento del tuo nuovo account da *Guest access* a *Full access*.</block>
+  <block id="173529d8b3d8c0ff4ea8f40dbf7aabe9" category="inline-link-macro">NetApp Support Site pagina di registrazione</block>
+  <block id="be7a31416eb06ebc304a614c3460a1a0" category="list-text">Vai al <block ref="5a5dddcca17792452be16c79d0405d2d" category="inline-link-macro-rx"></block>.</block>
 </blocks>

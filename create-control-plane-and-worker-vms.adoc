@@ -98,8 +98,8 @@ Scopri di più su link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/conne
 
 
 .E ora?
-Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile scegliere una delle seguenti opzioni:
+Dopo aver appreso come creare il piano di controllo e le macchine virtuali di lavoro, è possibile eseguire le seguenti operazioni:
 
-* Facoltativamente,link:validate-control-plane-vm.html["Convalidare la macchina virtuale del piano di controllo"]
+* Facoltativamente link:validate-control-plane-vm.html["convalidare la macchina virtuale del piano di controllo"]
 * link:access-data-migrator-ui.html["Accedere all'interfaccia utente di NetApp Data Migrator e connettersi al piano di controllo e ai worker"]
 

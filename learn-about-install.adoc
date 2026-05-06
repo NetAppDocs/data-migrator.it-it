@@ -11,7 +11,7 @@ summary: Scopri come installare il piano di controllo NetApp Data Migrator e le 
 
 
 [role="lead"]
-È necessario installare un control plane e dei worker per eseguire i job di migrazione NFS e SMB utilizzando NetApp Data Migrator.
+NetApp Data Migrator è costituito da un piano di controllo e da uno o più worker che collaborano per eseguire lavori di migrazione dei dati utilizzando i protocolli di trasporto NFS e SMB.
 
 * *Piano di controllo*: Il piano di controllo funge da livello centrale di gestione e controllo. Distribuisci il piano di controllo su una macchina virtuale (VM) Linux, quindi distribuisci i worker.
 * *Workers*: I worker sono macchine virtuali che eseguono la migrazione dei dati. È possibile distribuire più worker in base alla scalabilità e alle proprie esigenze. Il tipo di worker dipende dal protocollo:
@@ -22,9 +22,9 @@ summary: Scopri come installare il piano di controllo NetApp Data Migrator e le 
 
 
 
-Innanzitutto, si distribuiscono la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando i servizi cloud AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal sito di supporto NetApp.
+Innanzitutto, si distribuisce la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux utilizzando il servizio AWS, Azure o Google Cloud oppure tramite modelli Open Virtual Appliance (OVA). Si scaricano le immagini NetApp Data Migrator necessarie per la distribuzione dal NetApp Support Site.
 
-Dopo la distribuzione, si creano le macchine virtuali del piano di controllo e di lavoro per accedere a NetApp Data Migrator. La macchina virtuale del piano di controllo e la macchina virtuale di lavoro Linux vengono create utilizzando le immagini distribuite. La macchina virtuale di lavoro Windows viene creata utilizzando Windows Worker Installer, che si scarica dal sito di supporto NetApp.
+Dopo la distribuzione, crea la VM del piano di controllo e le VM worker per accedere a NetApp Data Migrator. Crea la VM del piano di controllo e la VM worker Linux utilizzando le immagini distribuite. Crea la VM worker Windows utilizzando il Windows Worker Installer, che puoi scaricare dal NetApp Support Site. Puoi quindi, facoltativamente, convalidare la VM del piano di controllo oppure accedere all'interfaccia utente di NetApp Data Migrator e connetterti al piano di controllo e alle VM worker.
 
 .E ora?
-Dopo aver appreso come installare NetApp Data Migrator, puoi link:register-for-account.html["registrarsi per un account"].
+Dopo aver appreso come installare NetApp Data Migrator, puoi link:register-for-account.html["registrarsi per un account"] sul NetApp Support Site se sei un nuovo cliente oppure procedere a link:deploy-control-plane-and-linux-workers.html["distribuire il piano di controllo e le macchine virtuali worker Linux"] se hai già un account.

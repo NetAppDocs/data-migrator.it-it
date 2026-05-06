@@ -14,7 +14,7 @@ summary: Scopri come installare il piano di controllo NetApp Data Migrator e le 
 Distribuisci la macchina virtuale (VM) del piano di controllo e la VM di lavoro Linux per NetApp Data Migrator utilizzando i servizi AWS, Azure o Google Cloud oppure i modelli Open Virtual Appliance (OVA). Il worker Linux supporta le migrazioni di dati NFS.
 
 .Prima di iniziare
-Scarica le immagini di NetApp Data Migrator dal link:https://mysupport.netapp.com/site/downloads["NetApp sito di supporto"^]:
+Scarica le immagini di NetApp Data Migrator dal link:https://mysupport.netapp.com/site/downloads["Sito di supporto NetApp"^]:
 
 . Seleziona *NetApp Data Migrator*.
 . Segui le istruzioni nella pagina di download di NetApp Data Migrator per accedere alle immagini di NetApp Data Migrator.
@@ -63,11 +63,11 @@ Group 1065216673, Grouped object  --destination-container <YOUR_CONTAINER_NAME> 
 [source, cli]
 ----
 az image create \
-  --resource-group <YOUR_RESOURCE_GROUP> \
-  --name <YOUR_IMAGE_NAME> \
-  --source https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/<YOUR_CONTAINER_NAME>/<VHD_FILE_NAME>.vhd \
+  --resource-group <your_resource_group> \
+  --name <your_image_name> \
+  --source https://<your_storage_account>.blob.core.windows.net/<your_container_name>/<VHD_file_name>.vhd \
   --os-type linux \
-  --location <YOUR_AZURE_REGION>
+  --location <your_Azure_region>
 ----
 
 
@@ -86,8 +86,8 @@ Scopri come link:https://cloud.google.com/storage/docs/creating-buckets#console[
 +
 [source, cli]
 ----
-gcloud storage buckets add-iam-policy-binding gs://<GCS_BUCKET> \
-  --member=serviceAccount:service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com \
+gcloud storage buckets add-iam-policy-binding gs://<Google_Cloud_Storage_bucket> \
+  --member=serviceAccount:service-<project_number>@gcp-sa-vmmigration.iam.gserviceaccount.com \
   --role=roles/storage.objectViewer
 ----
 +
@@ -97,7 +97,7 @@ L'account di servizio necessita dell'autorizzazione roles/storage.objectViewer p
 Quando l'API di migrazione delle macchine virtuali è abilitata, Google Cloud crea automaticamente un account di servizio con il seguente formato:
 
 +
-`service-<PROJECT_NUMBER>@gcp-sa-vmmigration.iam.gserviceaccount.com`
+`service-<project_number>@gcp-sa-vmmigration.iam.gserviceaccount.com`
 
 +
 *** `++ gcp-sa` è l'account di servizio Google Cloud
@@ -109,8 +109,8 @@ Quando l'API di migrazione delle macchine virtuali è abilitata, Google Cloud cr
 +
 [source, cli]
 ----
-gcloud projects add-iam-policy-binding <PROJECT_ID> \
-  --member=user:<YOUR_EMAIL> \
+gcloud projects add-iam-policy-binding <project_ID> \
+  --member=user:<your_email> \
   --role=roles/vmmigration.admin
 ----
 +
@@ -128,11 +128,12 @@ Questo ti concede le autorizzazioni amministrative per la migrazione delle macch
 +
 [source, cli]
 ----
---source-file=gs://<GCS_BUCKET>/<IMAGE_NAME>.tar.gz \
-  --image-name=<IMAGE_NAME> \
-  --location=<REGION> \
-  --target-project=projects/<PROJECT_ID>/locations/global/targetProjects/<PROJECT_ID> \
-  --project=<PROJECT_ID>
+gcloud migration vms image-imports create <image_name> \
+ --source-file=gs://<Google_Cloud_Storage_bucket>/<image_name>.tar.gz \
+  --image-name=<image_name> \
+  --location=<region> \
+  --target-project=projects/<project_ID>/locations/global/targetProjects/<project_ID> \
+  --project=<project_ID>
 ----
 +
 Questo comando crea una nuova immagine di macchina virtuale di Google Cloud Platform dall'archivio fornito nella regione specificata.
@@ -141,7 +142,7 @@ Questo comando crea una nuova immagine di macchina virtuale di Google Cloud Plat
 +
 [source, cli]
 ----
-gcloud migration vms image-imports list --location=<REGION> --project=<PROJECT_ID>
+gcloud migration vms image-imports list --location=<region> --project=<project_ID>
 ----
 
 

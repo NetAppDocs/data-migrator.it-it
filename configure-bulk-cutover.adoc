@@ -56,9 +56,52 @@ Viene visualizzata la finestra di dialogo *Cutover Confirmation*.
 +
 Esamina il report per verificare se il cutover è andato a buon fine e se tutti i dati sono stati migrati correttamente dalla sorgente alla destinazione.
 
-. Selezionare la casella di controllo accanto a *Ho esaminato e verificato il documento COC e tutte le altre informazioni essenziali*.
-. Se le informazioni contenute nel report COC ti soddisfano, seleziona *Conferma* per approvare il *Bulk Cutover*.
+. Seleziona la casella di controllo accanto a *Ho esaminato e verificato il documento della catena di custodia (CoC) e tutte le altre informazioni essenziali*.
+. Se le informazioni contenute nel rapporto sulla catena di custodia (CoC) sono corrette, seleziona *Conferma* per approvare il *Bulk Cutover*.
 +
 Lo stato cambia in *Complete.*
+
+
+
+
+
+=== Risolvere i conflitti di aggiornamento dei metadati
+
+Potrebbero verificarsi conflitti di aggiornamento dei metadati durante il processo di conferma del cutover per le migrazioni SMB. Per risolvere i conflitti di aggiornamento dei metadati, eseguire lo script di sincronizzazione dei metadati per i file interessati.
+
+.Passaggi
+. Scarica la cartella ZIP del report CoC che è stata generata come parte del processo di cutover.
+. Estrai la cartella ZIP sul computer di lavoro Windows coinvolto nel cutover per la coppia di percorsi.
++
+
+NOTE: Le lettere di unità  `S` e  `T` sono utilizzate per mappare i volumi di origine e di destinazione sul worker Windows. Non utilizzare queste lettere di unità per altri punti di montaggio durante l'esecuzione di questo script.
+
+. Copia il file  `metadata_conflict_errors.csv` richiesto.
+. Aprire PowerShell come amministratore sul computer di lavoro Windows.
+. Accedere alla directory degli script:
++
+[source, cli]
+----
+cd C:\datamigrator\scripts
+----
+. Eseguire lo script di aggiunta dei metadati utilizzando i segnaposto per tutti i parametri:
++
+[source, cli]
+----
+.\stamp-metadata.ps1 `
+-SourceHost "<SourceFileServer_FQDN_or_IP>" `
+-SourceShare "<Source_ShareName_Only (e.g., data)>" `
+-DestHost "<DestinationFileServer_FQDN_or_IP>" `
+-DestShare "<Destination_ShareName_Only>" `
+-SourceUsername "<DOMAIN User_With_Read_Access_To_Source>" `
+-SourcePassword "<Password_For_Source_User>" `
+-DestUsername "<DOMAIN User_With_Write_Access_To_Destination>" `
+-DestPassword "<Password_For_Destination_User>" `
+-InputFile "<Full_Path_To_File_List_CSV (e.g., C:\Migration\files.csv)>" `
+-SidMapFile "<Full_Path_To_SID_Mapping_CSV (OldSID_to_NewSID)>" `
+-Domain "<ActiveDirectory_Domain (e.g., company.com_or_COMPANY)>"
+----
++
+La mappatura SID e i parametri relativi al dominio (SidMapFile e Domain) sono opzionali e possono essere inclusi a seconda delle necessità.
 
 
