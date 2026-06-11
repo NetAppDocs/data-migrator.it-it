@@ -62,6 +62,11 @@ Dalla pagina *Opzioni* è possibile selezionare diverse impostazioni per persona
 | Opzione | Descrizione 
 
 
+| Convertire le autorizzazioni ereditate in autorizzazioni esplicite  a| 
+Quando si abilita questa opzione, tutte le autorizzazioni ereditate dall'origine vengono scritte come autorizzazioni esplicite sulla destinazione durante le migrazioni SMB a livello di directory.
+
+
+
 | Modelli di percorso esclusi  a| 
 Definisce i percorsi o le directory specifici da escludere dall'elaborazione. Ciò contribuisce a ottimizzare lo storage e le prestazioni saltando i file non necessari.
 

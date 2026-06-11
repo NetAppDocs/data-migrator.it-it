@@ -106,7 +106,6 @@
   <block id="4dbe34dcfaf21a426bc5f1d0a9947fc0" category="section-title">Passaggio 2: Aggiungi le mappature di origine e destinazione</block>
   <block id="87834d34f8d8989b4c54caedbea8b7d4" category="paragraph">Aggiungi le mappature di origine e di destinazione per specificare i percorsi di esportazione di origine e di destinazione per la tua migrazione.</block>
   <block id="a270c874dd3f23eef6fb2f8c7a227252" category="list-text">Seleziona il percorso di esportazione nell'origine che desideri migrare.</block>
-  <block id="1ada8f7056024f536b0017b8a818a648" category="list-text">Facoltativamente, seleziona *Aggiungi directory di origine* se desideri eseguire una migrazione a livello di directory.</block>
   <block id="5657e4af05fc77ede4d05249c45b45e9" category="paragraph">Dopo aver selezionato *Aggiungi directory di origine*, viene visualizzata la vista Esplora directory. Questa vista mostra l'elenco delle directory a livello radice. È possibile navigare fino alla directory desiderata oppure copiare e incollare direttamente il percorso della directory desiderata nella barra di ricerca della finestra Esplora directory per accedere a quella cartella.</block>
   <block id="96a001e4dedac46d583f146f571969b2" category="list-text">Dopo aver selezionato la directory di origine, selezionare il file server di destinazione e il percorso di esportazione di destinazione.</block>
   <block id="72f51b9743f5e36c1ea9f0ecd58e0f52" category="list-text">Facoltativamente, selezionare la directory nel percorso di esportazione di destinazione.</block>
@@ -1174,4 +1173,7 @@
   <block id="034b07d5c19791bdc29e619054083834" category="admonition">Potrebbe essere necessario fino a un giorno lavorativo per l'aggiornamento del tuo nuovo account da *Guest access* a *Full access*.</block>
   <block id="173529d8b3d8c0ff4ea8f40dbf7aabe9" category="inline-link-macro">NetApp Support Site pagina di registrazione</block>
   <block id="be7a31416eb06ebc304a614c3460a1a0" category="list-text">Vai al <block ref="5a5dddcca17792452be16c79d0405d2d" category="inline-link-macro-rx"></block>.</block>
+  <block id="70081c17ffe468cb19f06de7d6b65a51" category="list-text">Facoltativamente, seleziona *Aggiungi directory di origine* se desideri eseguire una migrazione a livello di directory.</block>
+  <block id="d76c25422f3dafa6f43c2fc5410dfaef" category="cell">Convertire le autorizzazioni ereditate in autorizzazioni esplicite</block>
+  <block id="c9fbfd8a6f3192f2f1e72e34686607dc" category="paragraph">Quando si abilita questa opzione, tutte le autorizzazioni ereditate dall'origine vengono scritte come autorizzazioni esplicite sulla destinazione durante le migrazioni SMB a livello di directory.</block>
 </blocks>
