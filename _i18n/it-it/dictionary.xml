@@ -323,7 +323,6 @@
   <block id="2d3cf36868e8ecba40d8329def6db3b3" category="paragraph-title">Quali possono essere le cause dell'errore "Directory di lavoro non valida"?</block>
   <block id="cbb858a114f3445ffa109f7630f3128c" category="paragraph">Verifica di aver inserito la directory di lavoro corretta per il percorso di esportazione selezionato.</block>
   <block id="d3795f5dcf68afb12396dfb622c6c2f9" category="paragraph-title">Perché ricevo un errore di 'permessi di scrittura' sulla directory di lavoro?</block>
-  <block id="d80ce1c87712e8ebb10558acf165c002" category="paragraph">Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallirà e l'utente non sarà in grado di eseguire i job. Verificare che l'utente che riscontra l'errore disponga dei permessi di scrittura necessari.</block>
   <block id="e5f0109a3dde59ac6cf199ab61c19ca6" category="summary">Genera e scarica un bundle di supporto NetApp Data Migrator contenente log diagnostici, report degli errori e dati di configurazione per la risoluzione dei problemi.</block>
   <block id="8f1ffc521357732dac238b9425def2a4" category="doc">Genera un pacchetto di supporto NetApp Data Migrator</block>
   <block id="0a42ec79a244c6ee75a271fa0c580a0e" category="paragraph">NetApp Data Migrator consente di generare un pacchetto di supporto per la risoluzione di eventuali problemi riscontrati. Questo pacchetto contiene informazioni diagnostiche come file di registro, report di errore e dati di configurazione.</block>
@@ -1176,4 +1175,6 @@
   <block id="70081c17ffe468cb19f06de7d6b65a51" category="list-text">Facoltativamente, seleziona *Aggiungi directory di origine* se desideri eseguire una migrazione a livello di directory.</block>
   <block id="d76c25422f3dafa6f43c2fc5410dfaef" category="cell">Convertire le autorizzazioni ereditate in autorizzazioni esplicite</block>
   <block id="c9fbfd8a6f3192f2f1e72e34686607dc" category="paragraph">Quando si abilita questa opzione, tutte le autorizzazioni ereditate dall'origine vengono scritte come autorizzazioni esplicite sulla destinazione durante le migrazioni SMB a livello di directory.</block>
+  <block id="2df75f082db896eeb89f434ebd16a479" category="admonition">NetApp Data Migrator non supporta la migrazione dei dati verso destinazioni di sistemi storage ONTAP on-premises.</block>
+  <block id="e1aa567e142d04af6a707f8d980bb5b2" category="paragraph">Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallisce e non puoi eseguire i job. Controlla che l'utente che riscontra l'errore abbia i permessi di scrittura richiesti.</block>
 </blocks>

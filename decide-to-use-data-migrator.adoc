@@ -13,6 +13,9 @@ summary: Utilizza questa matrice per determinare se utilizzare NetApp Data Migra
 [role="lead"]
 Utilizza la matrice per determinare se utilizzare NetApp Data Migrator o SnapMirror per le operazioni di migrazione dei dati NFS e SMB da un sistema storage ONTAP on-premises. Ad esempio, se stai migrando file NFS e SMB da un'origine ONTAP on-premises con ONTAP 9.12.1 a una destinazione Google Cloud NetApp Volumes Flex service, dovresti utilizzare NetApp Data Migrator.
 
+
+NOTE: NetApp Data Migrator non supporta la migrazione dei dati verso destinazioni di sistemi storage ONTAP on-premises.
+
 [cols="2,1,1,1,1,1,1a"]
 |===
 | Origine del sistema storage locale o storage di terze parti | Amazon FSx for NetApp ONTAP | Hardware di Azure NetApp Files | Cloud Volumes ONTAP | Hardware Google Cloud NetApp Volumes | Google Cloud NetApp Volumes Flex | Google Cloud NetApp Volumes Flex (basato su VSA) 

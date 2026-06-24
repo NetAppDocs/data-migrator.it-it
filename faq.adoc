@@ -29,4 +29,4 @@ Assicurarsi che il percorso di esportazione sia inserito correttamente e che esi
 Verifica di aver inserito la directory di lavoro corretta per il percorso di esportazione selezionato.
 
 .Perché ricevo un errore di 'permessi di scrittura' sulla directory di lavoro?
-Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallirà e l'utente non sarà in grado di eseguire i job. Verificare che l'utente che riscontra l'errore disponga dei permessi di scrittura necessari.
+Questo errore si verifica quando vengono specificati il percorso di esportazione e la directory di lavoro corretti, ma non vengono concessi i permessi di scrittura necessari. Senza i permessi di scrittura corretti, il pre-check del file server fallisce e non puoi eseguire i job. Controlla che l'utente che riscontra l'errore abbia i permessi di scrittura richiesti.
